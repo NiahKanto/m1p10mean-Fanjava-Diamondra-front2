@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { AuthentificationService } from '../authentification.service';
+import { response } from 'express';
 
 @Component({
   selector: 'app-login',
@@ -9,20 +10,15 @@ import { HttpClient } from '@angular/common/http';
 export class LoginComponent {
   username = ''
   password = ''
-  constructor(private http: HttpClient){}
+  constructor(private authService: AuthentificationService){}
 
   login(){
     const credentials = {
       username: this.username,
       password: this.password
     };
-    this.http.post<any>('http://localhost:3000/login',credentials).subscribe(
-      response => {
-        console.log(response)
-      },
-      error => {
-        console.error(error)
-      }
-    )
+    this.authService.login(credentials).subscribe(response =>{
+      this.authService.setToken(response.token);
+    })
   }
 }

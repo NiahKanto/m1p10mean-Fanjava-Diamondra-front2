@@ -6,6 +6,12 @@
   <title>Document</title>
 </head>
 <body>
-  <app-login></app-login>
+  <div *ngIf="!isLoggedIn()" >
+    <app-login></app-login>
+  </div>
+  <div *ngIf="isLoggedIn()">
+    <button (click)="fetchData()" >Fetch</button>
+    <button (click)="logout()" >Deconnexion</button>
+  </div>
 </body>
 </html>
