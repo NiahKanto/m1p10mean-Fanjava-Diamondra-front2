@@ -10,7 +10,7 @@ export class AuthentificationService {
   constructor(private http: HttpClient ){}
 
   login(credentials: any): Observable <any> {
-    return this.http.post('http://localhost:3000/login',credentials);
+    return this.http.post('http://localhost:3000/login_user',credentials);
   }
 
   setToken(token: string):void{
@@ -32,4 +32,5 @@ export class AuthentificationService {
       'Authorization': `Bearer ${this.getToken}`
     });
   }
+  
 }

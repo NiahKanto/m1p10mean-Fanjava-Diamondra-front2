@@ -6,19 +6,37 @@ import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
+import { Routes } from '@angular/router';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { ClientRegistrationComponent } from './client-registration/client-registration.component';
+import { ManagerRegistrationComponent } from './manager-registration/manager-registration.component';
+
+const routes: Routes = [
+  // ... autres routes
+  { path: 'login', component: LoginComponent },
+];
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent
+    LoginComponent,
+    ClientRegistrationComponent,
+    ManagerRegistrationComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    MatFormFieldModule,
+    MatInputModule  
   ],
-  providers: [],
+  providers: [
+    provideAnimationsAsync()
+  ],
   bootstrap: [AppComponent]
 })
+
 export class AppModule { }
