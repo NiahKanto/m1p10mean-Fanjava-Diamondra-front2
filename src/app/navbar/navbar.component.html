@@ -1,11 +1,15 @@
 <mat-sidenav-container class="sidenav-container" >
     <mat-sidenav style="margin-top: 60px;" #drawer class="sidenav" fixedInViewport [mode]="'side'"
       [opened]="true">
+      <mat-nav-list *ngIf="isClient()">
+      <a mat-list-item routerLink="/home">Accueil</a>
+      <a  mat-list-item routerLink="/home">Service</a>
+    </mat-nav-list>
       <mat-accordion multi="false" >
-        <mat-expansion-panel>
+        <mat-expansion-panel *ngIf="isEmploye()" >
             <mat-expansion-panel-header>
                 <mat-panel-title>
-                    Essai
+                    Employé
                 </mat-panel-title>
             </mat-expansion-panel-header>
             <mat-nav-list>
@@ -14,10 +18,10 @@
                 <a mat-list-item routerLink="/lien3">Lien 3</a>
               </mat-nav-list>
           </mat-expansion-panel>
-          <mat-expansion-panel>
+          <mat-expansion-panel *ngIf="isManager()" >
             <mat-expansion-panel-header>
                 <mat-panel-title>
-                    Essai
+                    Manager
                 </mat-panel-title>
             </mat-expansion-panel-header>
             <mat-nav-list>

@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthentificationService } from '../authentification.service';
 import { finalize } from 'rxjs';
+import { UserLogin } from '../Types/User';
 
 @Component({
   selector: 'app-login',
@@ -20,7 +21,7 @@ export class LoginComponent {
   isFetching: boolean = false;
   login() {
     this.isFetching = true;
-    const credentials = {
+    const credentials: UserLogin = {
       nom: this.username,
       mdp: this.password,
     };
@@ -35,7 +36,7 @@ export class LoginComponent {
     .subscribe(
       success => {
         this.authService.setToken(success.token);
-        console.log(success.authorities)
+        this.authService.updateRoles(success.authorities);
         this.router.navigate(['/home']);
       },
       error => {

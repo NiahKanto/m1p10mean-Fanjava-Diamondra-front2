@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AuthentificationService } from '../authentification.service';
 
 @Component({
   selector: 'app-home',
@@ -6,5 +7,9 @@ import { Component } from '@angular/core';
   styleUrl: './home.component.css'
 })
 export class HomeComponent {
-
+  constructor(private authService: AuthentificationService){}
+  roles = this.authService.getRoles();
+  ngOnInit(){
+    console.log(this.roles)
+  }
 }
