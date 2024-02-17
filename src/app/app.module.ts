@@ -6,24 +6,29 @@ import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
-import { Routes } from '@angular/router';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
-import { ClientRegistrationComponent } from './client-registration/client-registration.component';
-import { ManagerRegistrationComponent } from './manager-registration/manager-registration.component';
-
-const routes: Routes = [
-  // ... autres routes
-  { path: 'login', component: LoginComponent },
-];
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { HomeComponent } from './home/home.component'
+import { MatToolbarModule } from '@angular/material/toolbar'
+import { MatButtonModule } from '@angular/material/button';
+import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { NavbarComponent } from './navbar/navbar.component';
+import { MatListModule } from '@angular/material/list'
+import { MatExpansionModule } from '@angular/material/expansion'
+import { MatIconModule } from '@angular/material/icon'
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    ClientRegistrationComponent,
-    ManagerRegistrationComponent
+    HomeComponent,
+    HeaderComponent,
+    FooterComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
@@ -31,7 +36,14 @@ const routes: Routes = [
     HttpClientModule,
     FormsModule,
     MatFormFieldModule,
-    MatInputModule  
+    MatInputModule,
+    MatProgressSpinnerModule,
+    MatToolbarModule,
+    MatButtonModule,
+    MatSidenavModule,
+    MatListModule,
+    MatExpansionModule,
+    MatIconModule
   ],
   providers: [
     provideAnimationsAsync()
