@@ -10,8 +10,9 @@
     <app-login></app-login>
   </div>
   <div *ngIf="isLoggedIn()">
-    <button (click)="fetchData()" >Fetch</button>
-    <button (click)="logout()" >Deconnexion</button>
+    <app-header></app-header>
+    <app-navbar></app-navbar>
+    <app-footer></app-footer>
   </div>
 </body>
 </html>

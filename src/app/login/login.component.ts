@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthentificationService } from '../authentification.service';
-import { response } from 'express';
+import { finalize } from 'rxjs';
 
 @Component({
   selector: 'app-login',
@@ -14,33 +14,31 @@ export class LoginComponent {
   errorMessage = '';
   constructor(
     private authService: AuthentificationService,
-    private router: Router // Injectez Router  ici
+    private router: Router
   ) {}
   
-  // login(){
-  //   const credentials = {
-  //     username: this.username,
-  //     password: this.password
-  //   };
-  //   this.authService.login(credentials).subscribe(response =>{
-  //     this.authService.setToken(response.token);
-  //   })
-  // }
-
+  isFetching: boolean = false;
   login() {
+    this.isFetching = true;
     const credentials = {
       nom: this.username,
       mdp: this.password,
     };
     
-    this.authService.login(credentials).subscribe(
+    this.authService.login(credentials)
+    .pipe(
+      finalize(
+        () => {
+          this.isFetching = false;
+        })
+    )
+    .subscribe(
       success => {
         this.authService.setToken(success.token);
-        // Rediriger l'utilisateur vers la page d'accueil après la connexion réussie
+        console.log(success.authorities)
         this.router.navigate(['/home']);
       },
       error => {
-        // Gérer l'erreur de connexion
         console.error('Login failed', error);
         this.errorMessage = error.error.message || 'Verifier vos informations personnelles';
       }

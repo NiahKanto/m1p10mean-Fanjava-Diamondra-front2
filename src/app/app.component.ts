@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { AuthentificationService } from './authentification.service';
 import { HttpClient,HttpHeaders } from '@angular/common/http';
-import { response } from 'express';
 
 @Component({
   selector: 'app-root',
@@ -14,10 +13,6 @@ export class AppComponent {
 
   isLoggedIn(): boolean{
     return !!this.authService.getToken();
-  }
-
-  logout():void{
-    this.authService.logout();
   }
 
   fetchData() : void {

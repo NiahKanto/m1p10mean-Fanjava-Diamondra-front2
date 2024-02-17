@@ -1,0 +1,35 @@
+<mat-sidenav-container class="sidenav-container" >
+    <mat-sidenav style="margin-top: 60px;" #drawer class="sidenav" fixedInViewport [mode]="'side'"
+      [opened]="true">
+      <mat-accordion multi="false" >
+        <mat-expansion-panel>
+            <mat-expansion-panel-header>
+                <mat-panel-title>
+                    Essai
+                </mat-panel-title>
+            </mat-expansion-panel-header>
+            <mat-nav-list>
+                <a mat-list-item routerLink="/lien1">Lien 1</a>
+                <a mat-list-item routerLink="/lien2">Lien 2</a>
+                <a mat-list-item routerLink="/lien3">Lien 3</a>
+              </mat-nav-list>
+          </mat-expansion-panel>
+          <mat-expansion-panel>
+            <mat-expansion-panel-header>
+                <mat-panel-title>
+                    Essai
+                </mat-panel-title>
+            </mat-expansion-panel-header>
+            <mat-nav-list>
+                <a mat-list-item routerLink="/lien1">Lien 1</a>
+                <a mat-list-item routerLink="/lien2">Lien 2</a>
+                <a mat-list-item routerLink="/lien3">Lien 3</a>
+              </mat-nav-list>
+          </mat-expansion-panel>
+      </mat-accordion>
+    </mat-sidenav>
+    <mat-sidenav-content style="margin-top: 60px;" >
+      <router-outlet></router-outlet>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+  
