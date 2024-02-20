@@ -25,6 +25,7 @@ import { MatMenuModule } from '@angular/material/menu';
 import { RdvComponent } from './rdv/rdv.component'
 import { DragDropModule } from '@angular/cdk/drag-drop'
 import { MatGridListModule } from '@angular/material/grid-list'
+import { MatDatepickerModule } from '@angular/material/datepicker'
 
 @NgModule({
   declarations: [
@@ -53,7 +54,8 @@ import { MatGridListModule } from '@angular/material/grid-list'
     MatIconModule,
     MatMenuModule,
     DragDropModule,
-    MatGridListModule
+    MatGridListModule,
+    MatDatepickerModule
   ],
   providers: [
     provideAnimationsAsync()
