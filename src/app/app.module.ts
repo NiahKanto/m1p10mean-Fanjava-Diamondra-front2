@@ -21,7 +21,14 @@ import { MatListModule } from '@angular/material/list'
 import { MatExpansionModule } from '@angular/material/expansion'
 import { MatIconModule } from '@angular/material/icon';
 import { ManagerComponent } from './manager/manager.component'
-import { MatMenuModule } from '@angular/material/menu'
+import { MatMenuModule } from '@angular/material/menu';
+import { RdvComponent } from './rdv/rdv.component'
+import { DragDropModule } from '@angular/cdk/drag-drop'
+import { MatGridListModule } from '@angular/material/grid-list'
+import { MatDatepickerModule } from '@angular/material/datepicker'
+import { MatNativeDateModule } from '@angular/material/core';
+import { NgxMaterialTimepickerModule } from 'ngx-material-timepicker'
+import { DatePipe } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -31,7 +38,8 @@ import { MatMenuModule } from '@angular/material/menu'
     HeaderComponent,
     FooterComponent,
     NavbarComponent,
-    ManagerComponent
+    ManagerComponent,
+    RdvComponent
   ],
   imports: [
     BrowserModule,
@@ -47,10 +55,16 @@ import { MatMenuModule } from '@angular/material/menu'
     MatListModule,
     MatExpansionModule,
     MatIconModule,
-    MatMenuModule
+    MatMenuModule,
+    DragDropModule,
+    MatGridListModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    NgxMaterialTimepickerModule
   ],
   providers: [
-    provideAnimationsAsync()
+    provideAnimationsAsync(),
+    DatePipe
   ],
   bootstrap: [AppComponent]
 })
