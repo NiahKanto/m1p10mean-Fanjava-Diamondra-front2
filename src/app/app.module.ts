@@ -26,6 +26,9 @@ import { RdvComponent } from './rdv/rdv.component'
 import { DragDropModule } from '@angular/cdk/drag-drop'
 import { MatGridListModule } from '@angular/material/grid-list'
 import { MatDatepickerModule } from '@angular/material/datepicker'
+import { MatNativeDateModule } from '@angular/material/core';
+import { NgxMaterialTimepickerModule } from 'ngx-material-timepicker'
+import { DatePipe } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -55,10 +58,13 @@ import { MatDatepickerModule } from '@angular/material/datepicker'
     MatMenuModule,
     DragDropModule,
     MatGridListModule,
-    MatDatepickerModule
+    MatDatepickerModule,
+    MatNativeDateModule,
+    NgxMaterialTimepickerModule
   ],
   providers: [
-    provideAnimationsAsync()
+    provideAnimationsAsync(),
+    DatePipe
   ],
   bootstrap: [AppComponent]
 })

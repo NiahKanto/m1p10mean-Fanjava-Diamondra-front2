@@ -1,9 +1,14 @@
 <h1>Nouveau RDV</h1>
 <h2>Choix de la date et de l'heure</h2>
 <mat-form-field>
-    <input matInput [matDatepicker]="picker">
+    <input matInput [matDatepicker]="picker" (dateChange)="onDateChange($event)" readonly>
     <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
     <mat-datepicker #picker></mat-datepicker>
+</mat-form-field>
+<mat-form-field>
+    <input [format]="24" matInput [ngxTimepicker]="timerPicker" [(ngModel)]="selectedTime" [disableClick]="true" readonly >
+    <ngx-material-timepicker-toggle matSuffix [for]="timerPicker"></ngx-material-timepicker-toggle>
+    <ngx-material-timepicker #timerPicker></ngx-material-timepicker>
 </mat-form-field>
 <h2>Choix des services</h2> 
 <mat-grid-list cols="2" gutterSize="10px" rowHeight="{{rowHeight}}px" >
@@ -18,3 +23,5 @@
         </div>
     </mat-grid-tile>
 </mat-grid-list>
+<br>
+<button mat-button style="background-color:darkolivegreen" (click)="addRDV()" >Enregistrer</button>
