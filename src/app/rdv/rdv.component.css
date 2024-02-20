@@ -1,0 +1,18 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background-color: gray;
+    width: 100%;
+    min-height: 100px;
+}
+
+.container .item{
+    background-color:rgb(21, 4, 37);
+    color: white;
+    justify-content: center;
+    align-items: center;
+    cursor: move;
+    padding: 1em;
+    transition: transform 0.2s ease-in-out;
+}

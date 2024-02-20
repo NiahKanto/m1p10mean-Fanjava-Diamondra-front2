@@ -2,9 +2,9 @@
     <mat-sidenav style="margin-top: 60px;" #drawer class="sidenav" fixedInViewport [mode]="'side'"
       [opened]="true">
       <mat-nav-list *ngIf="isClient()">
-      <a mat-list-item routerLink="/home">Accueil</a>
-      <a  mat-list-item routerLink="/home">Service</a>
-    </mat-nav-list>
+        <a mat-list-item routerLink="/home">Accueil</a>
+        <a  mat-list-item routerLink="/rdv">RDV</a>
+      </mat-nav-list>
       <mat-accordion multi="false" >
         <mat-expansion-panel *ngIf="isEmploye()" >
             <mat-expansion-panel-header>

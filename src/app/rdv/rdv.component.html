@@ -1,0 +1,14 @@
+<h1>Nouveau RDV</h1>
+<h2>Liste des services disponibles</h2> 
+<mat-grid-list cols="2" gutterSize="10px" rowHeight="{{rowHeight}}px" >
+    <mat-grid-tile>
+        <div class="container" cdkDropList id="sourceList" [cdkDropListConnectedTo]="['targetList']" [cdkDropListData]="sourceList" (cdkDropListDropped)="drop($event)" >
+            <div class="item" *ngFor="let item of sourceList" cdkDrag>{{item}}</div>
+        </div>
+    </mat-grid-tile>
+    <mat-grid-tile>
+        <div class="container" cdkDropList id="targetList"  [cdkDropListConnectedTo]="['sourceList']" [cdkDropListData]="targetList" (cdkDropListDropped)="drop($event)">
+            <div class="item" *ngFor="let item of targetList" cdkDrag >{{item}}</div>
+        </div>
+    </mat-grid-tile>
+</mat-grid-list>
