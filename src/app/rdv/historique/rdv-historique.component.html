@@ -1,24 +1,23 @@
 <div class="rdv-list">
-  <h2>Historique de mes rendez-vous</h2>
+  <h2 class="list-title">Historique de mes rendez-vous</h2>
   <table class="table">
     <thead>
       <tr>
-        <th>Nom Service & Delai</th>
+        <th>Nom Service</th>
+        <th>Délai</th>
         <th>Date et heure</th>
         <th>Client</th>
-        <th>Etat</th>
+        <th>État</th>
       </tr>
     </thead>
     <tbody>
       <ng-container *ngFor="let rdv of rendezVous">
-        <tr>
-          <div *ngFor="let service of rdv.service">
-              <td><a [routerLink]="['/ficheService',service.idService]">{{ service.nom }}</a></td>
-              <td>{{ service.delai }} minutes </td>
-          </div>
+        <tr *ngFor="let service of rdv.service; let first = first">
+          <td ><a [routerLink]="['/ficheService', service.idService]">{{ service.nom }}</a></td>
+          <td>{{ service.delai }} minutes</td>
           <td>{{ rdv.dateHeure | date:'short' }}</td>
-          <td>client mbola alaina</td>
-          <td>{{ rdv.etat }}</td>
+          <td *ngIf="first" class="client-name">client mbola alaina</td>
+          <td *ngIf="first">{{ rdv.etat }}</td>
         </tr>
       </ng-container>
     </tbody>

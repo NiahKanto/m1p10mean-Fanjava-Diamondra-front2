@@ -1,0 +1,42 @@
+.rdv-list {
+    margin-top: 40px; /* Espacement supérieur */
+  }
+  
+  .list-title {
+    font-size: 24px; /* Taille du titre */
+    font-weight: bold; /* Texte en gras */
+    color: #3498db; /* Couleur bleue pour le titre */
+    margin-bottom: 16px; /* Espacement inférieur du titre */
+  }
+  
+  .table {
+    width: 100%; /* Largeur de la table */
+    border-collapse: collapse; /* Fusionner les bordures */
+  }
+  
+  th, td {
+    border: 1px solid #ddd; /* Bordures */
+    padding: 8px; /* Espacement intérieur */
+    text-align: left; /* Alignement du texte */
+  }
+  
+  th {
+    background-color: #f2f2f2; /* Couleur de fond pour les en-têtes */
+  }
+  
+  .service-details {
+    display: flex; /* Afficher les détails du service en ligne */
+    align-items: center; /* Alignement vertical */
+  }
+  
+  .service-details a {
+    text-decoration: none; /* Supprimer les soulignements des liens */
+    color: #3498db; /* Couleur bleue pour les liens */
+    margin-right: 8px; /* Espacement à droite */
+  }
+  
+  .service-details span {
+    font-size: 14px; /* Taille de police pour le délai */
+    color: #555; /* Couleur de police pour le délai */
+  }
+  

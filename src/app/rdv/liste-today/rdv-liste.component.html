@@ -1,5 +1,5 @@
 <div class="rdv-list">
-  <h2>Mes rendez-vous aujourd'hui</h2>
+  <h2 class="list-title">Mes rendez-vous aujourd'hui</h2>
   <table class="table">
     <thead>
       <tr>
@@ -12,9 +12,11 @@
     <tbody>
       <ng-container *ngFor="let rdv of rendezVous">
         <tr>
-          <div *ngFor="let service of rdv.service"> 
-              <td><a [routerLink]="['/ficheService',service.idService]">{{ service.nom }}</a></td>
-              <td>{{ service.delai }} minutes </td>
+          <div *ngFor="let service of rdv.service">
+            <td class="service-details">
+              <a [routerLink]="['/ficheService', service.idService]">{{ service.nom }}</a>
+              <span>{{ service.delai }} minutes</span>
+            </td>
           </div>
           <td>{{ rdv.dateHeure | date:'short' }}</td>
           <td>client mbola alaina</td>
