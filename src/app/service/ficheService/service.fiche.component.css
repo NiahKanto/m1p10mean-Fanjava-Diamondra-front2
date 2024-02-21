@@ -1,8 +1,42 @@
-.card-with-transition {
-    transition: box-shadow 0.3s ease;
-  }
-  
-  .card-with-transition:hover {
-    box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.75);
-  }
-  
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.service-card {
+  width: 90%; /* Largeur de la carte */
+  max-width: 400px; /* Largeur maximale */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Ombre douce */
+  border-radius: 12px; /* Coins arrondis */
+}
+
+.title {
+  font-size: 24px; /* Taille du titre */
+  font-weight: bold; /* Texte en gras */
+  color: #3498db; /* Couleur bleue pour le titre */
+  text-align: center; /* Centrage du titre */
+  margin-bottom: 16px; /* Espacement inférieur du titre */
+}
+
+.details {
+  padding: 16px; /* Espacement intérieur */
+}
+
+.detail-item {
+  margin-bottom: 12px; /* Espacement entre chaque détail */
+  display: flex; /* Afficher les détails en ligne */
+  align-items: center; /* Alignement vertical des détails */
+}
+
+.detail-label {
+  font-weight: bold; /* Texte en gras */
+  margin-right: 12px; /* Espacement à droite du label */
+  color: #3498db; /* Couleur bleue pour les labels */
+}
+
+.detail-value {
+  flex-grow: 1; /* Permet au détail de prendre autant d'espace que possible */
+  font-size: 16px; /* Taille de police */
+}
