@@ -11,7 +11,7 @@ export class AppComponent {
   constructor(private authService: AuthentificationService){}
 
   isLoggedIn(): boolean{
-    return !!this.authService.getToken();
+    return !this.authService.getToken();
   }
 
 }
