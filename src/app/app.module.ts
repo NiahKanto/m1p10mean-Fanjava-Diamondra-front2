@@ -34,7 +34,8 @@ import { RdvComponent } from './rdv/rdv.component'
 import { HomeComponent } from './home/home.component';
 import { RDVlisteComponent } from './rdv/liste-today/rdv-liste.component'; 
 import { RDVhistoriqueComponent } from './rdv/historique/rdv-historique.component'; 
-import { ServiceFicheComponent } from './service/ficheService/service.fiche.component'; 
+import { ServiceFicheComponent } from './service/ficheService/service.fiche.component';
+import { SuiviTachesComponent } from './user/suivi-taches/suivi-taches.component'; 
 
 @NgModule({
   declarations: [
@@ -49,6 +50,7 @@ import { ServiceFicheComponent } from './service/ficheService/service.fiche.comp
     NavbarComponent,
     ManagerComponent,
     RdvComponent,
+    SuiviTachesComponent,
   ],
   imports: [
     BrowserModule,

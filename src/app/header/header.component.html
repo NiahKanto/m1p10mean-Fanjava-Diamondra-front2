@@ -1,10 +1,12 @@
-<mat-toolbar class="header" color="primary" >
+<mat-toolbar class="header">
   <mat-toolbar-row>
-    <span>Beauty</span>
-    <span class="spacer" ></span>
-    <button mat-button [matMenuTriggerFor]="menu" ><mat-icon>menu</mat-icon></button>
-    <mat-menu #menu="matMenu" >
-      <button mat-menu-item (click)="logout()" >Déconnexion<mat-icon>logout</mat-icon></button>
+    <!-- <span><link rel="icon" type="image/png" href="beaute-verte.png"></span> -->
+    <img src="assets/beaute-verte.png" alt="Logo" class="logo-sary">
+    <span class="logo">Beauty</span>
+    <span class="spacer"></span>
+    <button mat-button [matMenuTriggerFor]="menu"><mat-icon>menu</mat-icon></button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item (click)="logout()">Déconnexion<mat-icon>logout</mat-icon></button>
     </mat-menu>
   </mat-toolbar-row>
 </mat-toolbar>
