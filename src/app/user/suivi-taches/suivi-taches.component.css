@@ -1,0 +1,31 @@
+.container {
+  border: 2px dashed #ccc;
+  padding: 10px;
+  min-height: 200px; /* Définissez une hauteur minimale pour chaque conteneur de glisser-déposer */
+}
+
+.item {
+  background-color: #f0f0f0;
+  border: 1px solid #ddd;
+  padding: 10px;
+  margin-bottom: 10px; 
+  border-radius: 5px; 
+  cursor: grab;
+}
+
+.mat-grid-tile {
+  display: flex;
+  justify-content: center; /* Centrez les éléments à l'intérieur des colonnes */
+  height: 400px; 
+}
+
+mat-grid-list {
+  margin: 20px auto; /* Centrez le mat-grid-list sur la page */
+}
+.page-title {
+  margin-bottom: 20px; /* Ajoute un espace en bas du titre de la page */
+}
+
+.column-title {
+  margin-bottom: 10px; /* Ajoute un espace en bas des titres de colonne */
+}
