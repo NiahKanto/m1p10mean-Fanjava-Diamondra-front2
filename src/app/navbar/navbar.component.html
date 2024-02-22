@@ -3,7 +3,8 @@
       [opened]="true">
       <mat-nav-list *ngIf="isClient()">
         <a mat-list-item routerLink="/home">Accueil</a>
-        <a  mat-list-item routerLink="/rdv">RDV</a>
+        <a  mat-list-item routerLink="/rdv">Rendez-vous</a>
+        <a  mat-list-item routerLink="/historic">Historiques</a>
       </mat-nav-list>
       <mat-accordion multi="false"  >
         <mat-nav-list *ngIf="isEmploye()" > 

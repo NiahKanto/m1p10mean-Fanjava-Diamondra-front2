@@ -18,3 +18,18 @@
     padding: 1em;
     transition: transform 0.2s ease-in-out;
 }
+
+.list-title {
+    font-size: 24px; /* Taille de police */
+    font-weight: bold; /* Texte en gras */
+    color: #3498db; /* Couleur bleue */
+  }
+
+  .btn{
+    background-color: #2c3e50;
+    color: #ffffff; /* Couleur du texte */
+    text-align: center; /* Alignement du texte au centre */
+    padding: 20px; /* Espacement intérieur */
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; /* Police de caractère */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Ombre douce */
+  }

@@ -1,7 +1,10 @@
-<h1>Nouveau RDV</h1>
-<h2>Choix de la date et de l'heure</h2>
+<h2 class="list-title">Nouveau rendez-vous</h2>
+<div *ngIf="errorMessage !== ''" class="error-message">
+    {{ errorMessage }}
+</div>
+<h3>Choix de la date et de l'heure :</h3>
 <mat-form-field>
-    <input matInput [matDatepicker]="picker" (dateChange)="onDateChange($event)" readonly>
+    <input matInput [matDatepicker]="picker" [(ngModel)]="selectedDate" (dateChange)="onDateChange($event)" readonly>
     <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
     <mat-datepicker #picker></mat-datepicker>
 </mat-form-field>
@@ -10,7 +13,7 @@
     <ngx-material-timepicker-toggle matSuffix [for]="timerPicker"></ngx-material-timepicker-toggle>
     <ngx-material-timepicker #timerPicker></ngx-material-timepicker>
 </mat-form-field>
-<h2>Choix des services</h2> 
+<h3>Choix des services :</h3> 
 <mat-grid-list cols="2" gutterSize="10px" rowHeight="{{rowHeight}}px" >
     <mat-grid-tile>
         <div class="container" cdkDropList id="services" [cdkDropListConnectedTo]="['targetServices']" [cdkDropListData]="services" (cdkDropListDropped)="drop($event)" >
@@ -24,5 +27,5 @@
     </mat-grid-tile>
 </mat-grid-list>
 <br>
-<button mat-button style="background-color:darkolivegreen" (click)="addRDV()" >Enregistrer</button>
+<button class="btn" mat-button (click)="addRDV()" >Enregistrer</button>
 
