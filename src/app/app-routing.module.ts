@@ -7,7 +7,9 @@ import { RdvComponent } from './rdv/rdv.component';
 import { RDVhistoriqueComponent } from './rdv//historique/rdv-historique.component'; 
 import { RDVlisteComponent } from './rdv/liste-today/rdv-liste.component'; 
 import { ServiceFicheComponent } from './service/ficheService/service.fiche.component'; 
+import { SuiviTachesComponent } from './user/suivi-taches/suivi-taches.component'; 
 import { HistoriqueClientComponent } from './historique-client/historique-client.component';
+
 
 const routes: Routes = [
 
@@ -17,6 +19,7 @@ const routes: Routes = [
   { path: 'listeRDV', component: RDVlisteComponent },
   { path: 'HistoriqueRDV', component: RDVhistoriqueComponent }, 
   { path: 'ficheService/:id', component: ServiceFicheComponent }, 
+  { path: 'suiviTaches', component: SuiviTachesComponent }, 
   { path: 'historic', component: HistoriqueClientComponent }, 
 ];
 

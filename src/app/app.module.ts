@@ -36,6 +36,7 @@ import { HomeComponent } from './home/home.component';
 import { RDVlisteComponent } from './rdv/liste-today/rdv-liste.component'; 
 import { RDVhistoriqueComponent } from './rdv/historique/rdv-historique.component'; 
 import { ServiceFicheComponent } from './service/ficheService/service.fiche.component';
+import { SuiviTachesComponent } from './user/suivi-taches/suivi-taches.component'; 
 import { HistoriqueClientComponent } from './historique-client/historique-client.component'; 
 
 @NgModule({
@@ -51,6 +52,7 @@ import { HistoriqueClientComponent } from './historique-client/historique-client
     NavbarComponent,
     ManagerComponent,
     RdvComponent,
+    SuiviTachesComponent,
     HistoriqueClientComponent,
   ],
   imports: [

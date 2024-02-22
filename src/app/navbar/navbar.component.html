@@ -1,42 +1,40 @@
 <mat-sidenav-container class="sidenav-container" >
-    <mat-sidenav style="margin-top: 60px;" #drawer class="sidenav" fixedInViewport [mode]="'side'"
-      [opened]="true">
+     <mat-sidenav #drawer class="sidenav" fixedInViewport [mode]="'side'" [opened]="true">
+       <div class="navbar">
       <mat-nav-list *ngIf="isClient()">
         <a mat-list-item routerLink="/home">Accueil</a>
         <a  mat-list-item routerLink="/rdv">Rendez-vous</a>
         <a  mat-list-item routerLink="/historic">Historiques</a>
       </mat-nav-list>
-      <mat-accordion multi="false"  >
-        <mat-nav-list *ngIf="isEmploye()" > 
-            <a mat-list-item routerLink="/lien1">Mon Profil</a>
-            <a mat-list-item routerLink="/lien1">Mon emploi du temps</a>
-            <a mat-list-item routerLink="/lien1">Mes taches</a>
-          </mat-nav-list>
-      <mat-expansion-panel *ngIf="isEmploye()" >
-        <mat-expansion-panel-header>
-            <mat-panel-title>  Rendez-vous </mat-panel-title>
-        </mat-expansion-panel-header>
-        <mat-nav-list>
-            <a mat-list-item routerLink="/HistoriqueRDV">Historique</a>
-            <a mat-list-item routerLink="/listeRDV">Aujourd'hui</a>
-          </mat-nav-list>
-      </mat-expansion-panel>
-      <mat-expansion-panel *ngIf="isManager()" >
-            <mat-expansion-panel-header>
-                <mat-panel-title>
-                    Manager
-                </mat-panel-title>
-      </mat-expansion-panel-header>
-              <mat-nav-list>
-                <a mat-list-item routerLink="/lien1">Lien 1</a>
-                <a mat-list-item routerLink="/lien2">Lien 2</a>
-                <a mat-list-item routerLink="/lien3">Lien 3</a>
+          <mat-accordion multi="false">
+              <mat-nav-list *ngIf="isEmploye()">
+                  <a mat-list-item routerLink="/lien1">Mon Profil</a>
+                  <a mat-list-item routerLink="/lien1">Mon emploi du temps</a>
+                  <a mat-list-item routerLink="/suiviTaches">Mes taches</a>
               </mat-nav-list>
-          </mat-expansion-panel>
-      </mat-accordion>
-    </mat-sidenav>
-    <mat-sidenav-content style="margin-top: 60px;" >
-      <router-outlet></router-outlet>
-    </mat-sidenav-content>
-  </mat-sidenav-container>
-  
+              <mat-expansion-panel *ngIf="isEmploye()">
+                  <mat-expansion-panel-header>
+                      <mat-panel-title>Rendez-vous</mat-panel-title>
+                  </mat-expansion-panel-header>
+                  <mat-nav-list>
+                      <a mat-list-item routerLink="/HistoriqueRDV">Historique</a>
+                      <a mat-list-item routerLink="/listeRDV">Aujourd'hui</a>
+                  </mat-nav-list>
+              </mat-expansion-panel>
+              <mat-expansion-panel *ngIf="isManager()">
+                  <mat-expansion-panel-header>
+                      <mat-panel-title>Manager</mat-panel-title>
+                  </mat-expansion-panel-header>
+                  <mat-nav-list>
+                      <a mat-list-item routerLink="/lien1">Lien 1</a>
+                      <a mat-list-item routerLink="/lien2">Lien 2</a>
+                      <a mat-list-item routerLink="/lien3">Lien 3</a>
+                  </mat-nav-list>
+              </mat-expansion-panel>
+          </mat-accordion>
+      </div>
+  </mat-sidenav>
+  <mat-sidenav-content class="main-content">
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>

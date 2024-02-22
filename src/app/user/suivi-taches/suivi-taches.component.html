@@ -1,0 +1,21 @@
+<h2 class="page-title">Title</h2> 
+<mat-grid-list cols="3" gutterSize="10px" rowHeight="{{rowHeight}}px">
+    <mat-grid-tile>
+        <h3 class="column-title">À faire</h3>
+        <div class="container" cdkDropList id="afaire" [cdkDropListConnectedTo]="['encours','fini']" [cdkDropListData]="afaire" (cdkDropListDropped)="drop($event)">
+            <div class="item" *ngFor="let item of afaire" cdkDrag>{{item.nom}} - {{item.delai}}min - {{item.prix}}Ar</div>
+        </div>
+    </mat-grid-tile>
+    <mat-grid-tile>
+        <h3 class="column-title">En cours</h3>
+        <div class="container" cdkDropList id="encours" [cdkDropListConnectedTo]="['afaire','fini']" [cdkDropListData]="encours" (cdkDropListDropped)="drop($event)">
+            <div class="item" *ngFor="let item of encours" cdkDrag>{{item.nom}} - {{item.delai}}min - {{item.prix}}Ar</div>
+        </div>
+    </mat-grid-tile>
+    <mat-grid-tile>
+        <h3 class="column-title">Terminé</h3>
+        <div class="container" cdkDropList id="fini" [cdkDropListConnectedTo]="['afaire','encours']" [cdkDropListData]="fini" (cdkDropListDropped)="drop($event)">
+            <div class="item" *ngFor="let item of fini" cdkDrag>{{item.nom}} - {{item.delai}}min - {{item.prix}}Ar</div>
+        </div>
+    </mat-grid-tile>
+</mat-grid-list>

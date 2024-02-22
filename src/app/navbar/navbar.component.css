@@ -1,0 +1,49 @@
+.sidenav-container {
+    background-color: #FFF; /* Couleur de fond pour le conteneur */
+}
+
+.sidenav {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Ombre légère pour la navbar */
+}
+
+.navbar {
+    padding: 20px; /* Espacement intérieur pour la navbar */
+    background-color: #AFE3C0; /* Couleur de fond pour la navbar */
+    color: #000; /* Couleur du texte pour la navbar */
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; /* Police de caractère pour la navbar */
+}
+
+.mat-nav-list,
+.mat-expansion-panel {
+    background-color: transparent; /* Fond transparent pour les listes et panneaux d'expansion dans la navbar */
+    padding: 0; /* Supprimer le rembourrage par défaut */
+}
+
+.mat-list-item {
+    color: #000; /* Couleur du texte des éléments de liste dans la navbar */
+    padding: 12px 24px; /* Ajouter un peu d'espace autour des éléments de liste */
+    font-weight: bold; /* Mettre en gras les éléments de liste */
+    text-transform: uppercase; /* Mettre en majuscules */
+    transition: background-color 0.3s; /* Animation de transition */
+}
+
+.mat-list-item:hover { 
+    background-color: #E0E0E0; /* Couleur de fond au survol */
+}
+ 
+.mat-expansion-panel-header {
+    background-color: #F5F5F5; /* Couleur de fond pour les en-têtes de panneaux d'expansion dans la navbar */
+}
+
+.mat-panel-title {
+    color: #000; /* Couleur du texte des titres de panneaux d'expansion dans la navbar */
+    font-weight: bold; /* Mettre en gras les titres */
+    text-transform: uppercase; /* Mettre en majuscules */
+}
+
+/* Ajoutez d'autres styles spécifiques à votre navbar ici */
+.main-content {
+    margin-top: 64px; /* Marge supérieure pour compenser la hauteur du header */
+    height: calc(100vh - 64px); /* Hauteur du contenu principal (taille de la fenêtre moins la hauteur du header) */
+    overflow-y: auto; /* Ajoute une barre de défilement verticale si le contenu dépasse la hauteur de la fenêtre */
+} 

@@ -7,7 +7,7 @@
       <div class="details">
         <div class="detail-item">
           <span class="detail-label">Prix:</span>
-          <span class="detail-value">{{ services.prix | currency:'EUR':'symbol':'1.2-2' }}</span>
+          <span class="detail-value">{{ services.prix }}Ar</span>
         </div>
         <div class="detail-item">
           <span class="detail-label">Délai:</span>
@@ -16,10 +16,6 @@
         <div class="detail-item">
           <span class="detail-label">Commission:</span>
           <span class="detail-value">{{ services.commission }}%</span>
-        </div>
-        <div class="detail-item">
-          <span class="detail-label">État:</span>
-          <span class="detail-value">{{ services.etat }}</span>
         </div>
       </div>
     </mat-card-content>
