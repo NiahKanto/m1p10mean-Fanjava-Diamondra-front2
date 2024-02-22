@@ -28,11 +28,17 @@
     display: flex; /* Afficher les détails du service en ligne */
     align-items: center; /* Alignement vertical */
   }
+  .service-details td{
+    min-width: 20%;
+  }
   
   .service-details a {
     text-decoration: none; /* Supprimer les soulignements des liens */
     color: #3498db; /* Couleur bleue pour les liens */
     margin-right: 8px; /* Espacement à droite */
+  }
+  .service-infos  {
+    text-align: center;
   }
   
   .service-details span {
