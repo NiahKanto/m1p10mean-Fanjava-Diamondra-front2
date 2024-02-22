@@ -9,3 +9,35 @@ export interface ServiceRDV{
 }
 
 export type ServicesRDV = ServiceRDV[]
+
+export interface ServiceRDVData{
+    idService : string
+    idEmploye : string | null
+    nom: string
+    prix: number
+    delai: number
+    commission: number
+    etat: number
+}
+
+export type ServicesRDVData = ServiceRDVData[]
+
+export interface RDVDataUnit {
+    dateHeure : Date
+    service: ServicesRDVData 
+    etat: number
+}
+
+export type RDVDataUnits= RDVDataUnit[]
+
+export interface RDVDataTotal {
+    totalMontant:number
+    totalDuree:number
+}
+
+export type RDVDataTotals = RDVDataTotal[]
+
+export interface RDVData {
+    totalRdvs : RDVDataTotals,
+    rdvs: RDVDataUnits
+}

@@ -1,0 +1,24 @@
+<div class="rdv-list">
+    <h2 class="list-title">Historique de mes rendez-vous</h2>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Libelé</th>
+          <th>Durée</th>
+          <th>Montant total</th>
+          <th>Etat</th>
+        </tr>
+      </thead>
+      <tbody>
+        <ng-container *ngFor="let rdv of fusion">
+            <tr >
+                <td>RDV du {{ rdv.dateHeure | date:'dd-MM-yyyy' }} à {{ rdv.dateHeure | date:'hh:mm' }}</td>
+                <td>{{rdv.totalDuree}}min</td>
+                <td>{{rdv.totalMontant}}Ar</td>
+                <td>{{rdv.etat}}</td>
+            </tr>
+        </ng-container>
+      </tbody>
+    </table>
+  </div>
+  
