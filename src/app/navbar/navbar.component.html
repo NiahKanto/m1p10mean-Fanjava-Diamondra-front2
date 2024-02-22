@@ -1,10 +1,11 @@
-<mat-sidenav-container class="sidenav-container">
-  <mat-sidenav #drawer class="sidenav" fixedInViewport [mode]="'side'" [opened]="true">
-      <div class="navbar">
-          <mat-nav-list *ngIf="isClient()">
-              <a mat-list-item routerLink="/home">Accueil</a>
-              <a mat-list-item routerLink="/rdv">RDV</a>
-          </mat-nav-list>
+<mat-sidenav-container class="sidenav-container" >
+     <mat-sidenav #drawer class="sidenav" fixedInViewport [mode]="'side'" [opened]="true">
+       <div class="navbar">
+      <mat-nav-list *ngIf="isClient()">
+        <a mat-list-item routerLink="/home">Accueil</a>
+        <a  mat-list-item routerLink="/rdv">Rendez-vous</a>
+        <a  mat-list-item routerLink="/historic">Historiques</a>
+      </mat-nav-list>
           <mat-accordion multi="false">
               <mat-nav-list *ngIf="isEmploye()">
                   <a mat-list-item routerLink="/lien1">Mon Profil</a>

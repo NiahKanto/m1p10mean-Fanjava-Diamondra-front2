@@ -29,6 +29,7 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { NgxMaterialTimepickerModule } from 'ngx-material-timepicker'
 import { DatePipe } from '@angular/common';
 import { MatCardModule } from '@angular/material/card';
+import { MatSnackBarModule } from '@angular/material/snack-bar'
 
 import { RdvComponent } from './rdv/rdv.component'
 import { HomeComponent } from './home/home.component';
@@ -36,6 +37,7 @@ import { RDVlisteComponent } from './rdv/liste-today/rdv-liste.component';
 import { RDVhistoriqueComponent } from './rdv/historique/rdv-historique.component'; 
 import { ServiceFicheComponent } from './service/ficheService/service.fiche.component';
 import { SuiviTachesComponent } from './user/suivi-taches/suivi-taches.component'; 
+import { HistoriqueClientComponent } from './historique-client/historique-client.component'; 
 
 @NgModule({
   declarations: [
@@ -51,6 +53,7 @@ import { SuiviTachesComponent } from './user/suivi-taches/suivi-taches.component
     ManagerComponent,
     RdvComponent,
     SuiviTachesComponent,
+    HistoriqueClientComponent,
   ],
   imports: [
     BrowserModule,
@@ -72,7 +75,8 @@ import { SuiviTachesComponent } from './user/suivi-taches/suivi-taches.component
     MatDatepickerModule,
     MatNativeDateModule,
     NgxMaterialTimepickerModule,
-    MatCardModule
+    MatCardModule,
+    MatSnackBarModule
   ],
   providers: [
     provideAnimationsAsync(),

@@ -8,6 +8,7 @@ import { Employes } from '../Types/Employe';
 import { MatDatepickerInputEvent } from '@angular/material/datepicker';
 import { RDV, ServicesRDV, ServiceRDV } from '../Types/RDV'
 import { DatePipe } from '@angular/common';
+import { MatSnackBar, MatSnackBarHorizontalPosition, MatSnackBarVerticalPosition } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-rdv',
@@ -15,13 +16,22 @@ import { DatePipe } from '@angular/common';
   styleUrl: './rdv.component.css'
 })
 export class RdvComponent implements OnInit{
-  constructor(private http: HttpClient, private authService: AuthentificationService, private datePipe: DatePipe){}
+  constructor(
+    private http: HttpClient, 
+    private authService: AuthentificationService, 
+    private datePipe: DatePipe,
+    private _snackBar: MatSnackBar
+  ){}
   selectedDate: Date|null = null;
   selectedTime: string = '';
 
   services : Services =[];
   targetServices : Services=[];
   rowHeight = 0;
+  errorMessage = '';
+
+  horizontalPosition: MatSnackBarHorizontalPosition = 'end';
+  verticalPosition: MatSnackBarVerticalPosition = 'top'
 
   drop(event: CdkDragDrop<Services>){
     if(event.previousContainer === event.container){
@@ -44,13 +54,6 @@ export class RdvComponent implements OnInit{
     return  this.http.get<Services>('http://localhost:3000/service/all',{headers: headers});
   }
 
-  fetchEmployes() : Observable<Services> {
-    const headers = new HttpHeaders({
-      'Authorization': `Bearer ${this.authService.getToken()}`
-    });
-    return  this.http.get<Services>('http://localhost:3000/liste_user/employe',{headers: headers});
-  }
-
   sendData(credentials: RDV) : Observable<any> {
     const headers = new HttpHeaders({
       'Authorization': `Bearer ${this.authService.getToken()}`
@@ -63,23 +66,28 @@ export class RdvComponent implements OnInit{
       this.services = data;
       this.rowHeight = 50 * this.services.length;
     })
-
-    this.fetchEmployes().subscribe((data: Employes)=>{
-      console.log(data)
-    })
   }
 
   onDateChange(event: MatDatepickerInputEvent<Date> ){
     this.selectedDate = event.value;
   }
 
+  openSnackBar(message: string, action:string){
+    this._snackBar.open(message, action,{
+      duration: 5000,
+      horizontalPosition: this.horizontalPosition,
+      verticalPosition: this.verticalPosition
+    });
+  }
+
   addRDV(){
+    this.errorMessage ='';
     if(this.targetServices.length === 0){
-      alert("Service Vide");
+      this.errorMessage='Veuillez choisir un service au moins';
       return;
     }
     if(this.selectedDate === null || this.selectedTime === ''){
-      alert("Date et heure non definis");
+      this.errorMessage="Veuillez définir la date et l'heure";
       return;
     }
     const paramService: ServicesRDV = [];
@@ -95,8 +103,14 @@ export class RdvComponent implements OnInit{
       dateHeure: dateHeure,
       service: paramService
     };
-    this.sendData(rdv).subscribe((response) => {
-      console.log(response);
+    this.sendData(rdv).subscribe(succes => {
+      this.errorMessage = '';
+      this.selectedDate = null;
+      this.selectedTime = '';
+      this.targetServices = [];
+      this.openSnackBar('Rendez-vous ajouté avec succès','Fermer');
+    }, error => {
+        this.errorMessage=error.error.message;
     })
   }
 }

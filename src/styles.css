@@ -67,3 +67,29 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .spacer{
   flex: 1 1 auto;
 }
+
+.error-message {
+  background-color:indianred; /* Un ton de rouge foncé */
+  color: rgb(56, 9, 9);
+  padding:  10px;
+
+  border-radius:  4px; /* Coins arrondis pour une apparence plus douce */
+  box-shadow:  1px  1px  3px rgba(0,  0,  0,  0.2); /* Ombre légère pour un effet  3D */
+  margin-top:  10px; /* Espacement entre le champ de formulaire et le message d'erreur */
+  display: inline-block; /* Permet d'ajuster la largeur du bloc selon son contenu */
+  text-align: center; /* Centre le texte horizontalement dans le bloc */
+  transition: opacity  0.3s ease; /* Transition fluide pour les changements d'état */
+}
+
+.success-message {
+  background-color:lightgreen;
+  color: rgb(8, 56, 36);
+  padding:  10px;
+
+  border-radius:  4px; /* Coins arrondis pour une apparence plus douce */
+  box-shadow:  1px  1px  3px rgba(0,  0,  0,  0.2); /* Ombre légère pour un effet  3D */
+  margin-top:  10px; /* Espacement entre le champ de formulaire et le message d'erreur */
+  display: inline-block; /* Permet d'ajuster la largeur du bloc selon son contenu */
+  text-align: center; /* Centre le texte horizontalement dans le bloc */
+  transition: opacity  0.3s ease; /* Transition fluide pour les changements d'état */
+}
