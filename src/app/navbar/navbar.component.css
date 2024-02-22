@@ -7,6 +7,7 @@
 }
 
 .navbar {
+    height: calc(100vh - 128px);
     padding: 20px; /* Espacement intérieur pour la navbar */
     background-color: #AFE3C0; /* Couleur de fond pour la navbar */
     color: #000; /* Couleur du texte pour la navbar */
@@ -44,6 +45,7 @@
 /* Ajoutez d'autres styles spécifiques à votre navbar ici */
 .main-content {
     margin-top: 64px; /* Marge supérieure pour compenser la hauteur du header */
-    height: calc(100vh - 64px); /* Hauteur du contenu principal (taille de la fenêtre moins la hauteur du header) */
+    margin-bottom: 64px;
+    height: calc(100vh - 128px); /* Hauteur du contenu principal (taille de la fenêtre moins la hauteur du header) */
     overflow-y: auto; /* Ajoute une barre de défilement verticale si le contenu dépasse la hauteur de la fenêtre */
 } 

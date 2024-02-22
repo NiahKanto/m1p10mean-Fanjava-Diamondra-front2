@@ -30,6 +30,8 @@ export class HistoriqueClientComponent implements OnInit{
     this.fetchRDV().subscribe((data: RDVData) => {
       this.rdvs = data.rdvs;
       this.totalRdvs=data.totalRdvs;
+      console.log(this.rdvs);
+      console.log(this.totalRdvs)
       this.fusion = this.rdvs.map((obj,index) => ({
         ...obj,
         ...this.totalRdvs[index]

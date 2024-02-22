@@ -1,31 +1,38 @@
-<h2 class="list-title">Nouveau rendez-vous</h2>
-<div *ngIf="errorMessage !== ''" class="error-message">
-    {{ errorMessage }}
+<div class="rdv-create">
+    <h2 class="list-title">Nouveau rendez-vous</h2>
+    <div *ngIf="errorMessage !== ''" class="error-message">
+        {{ errorMessage }}
+    </div>
+    <h3>Choix de la date et de l'heure :</h3>
+    <mat-form-field>
+        <input matInput [matDatepicker]="picker" [(ngModel)]="selectedDate" (dateChange)="onDateChange($event)" readonly>
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+    {{' '}}
+    <mat-form-field>
+        <input [format]="24" matInput [ngxTimepicker]="timerPicker" [(ngModel)]="selectedTime" [disableClick]="true" readonly >
+        <ngx-material-timepicker-toggle matSuffix [for]="timerPicker"></ngx-material-timepicker-toggle>
+        <ngx-material-timepicker #timerPicker></ngx-material-timepicker>
+    </mat-form-field>
+    <h3>Choix des services :</h3> 
+    <mat-grid-list cols="2" gutterSize="10px" rowHeight="{{rowHeight}}px" >
+        <mat-grid-tile>
+            <div class="container" cdkDropList id="services" [cdkDropListConnectedTo]="['targetServices']" [cdkDropListData]="services" (cdkDropListDropped)="drop($event)" [cdkDropListSortingDisabled]="true"  >
+                <div class="item" *ngFor="let item of services" cdkDrag>{{item.nom}} - {{item.delai}}min - {{item.prix}}Ar</div>
+            </div>
+        </mat-grid-tile>
+        <mat-grid-tile>
+            <div class="container" cdkDropList id="targetServices"  [cdkDropListConnectedTo]="['services']" [cdkDropListData]="targetServices" (cdkDropListDropped)="drop($event)">
+                <div class="centered-content" *ngIf="targetServices.length === 0" >
+                    <mat-icon >add_box</mat-icon>
+                    <p>Glissez les services ici</p>
+                </div>
+                <div class="item" *ngFor="let item of targetServices" cdkDrag >{{item.nom}} - {{item.delai}}min - {{item.prix}}Ar</div>
+            </div>
+        </mat-grid-tile>
+    </mat-grid-list>
+    <br>
+    <button class="btn" mat-button (click)="addRDV()" >Enregistrer</button>
 </div>
-<h3>Choix de la date et de l'heure :</h3>
-<mat-form-field>
-    <input matInput [matDatepicker]="picker" [(ngModel)]="selectedDate" (dateChange)="onDateChange($event)" readonly>
-    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-    <mat-datepicker #picker></mat-datepicker>
-</mat-form-field>
-<mat-form-field>
-    <input [format]="24" matInput [ngxTimepicker]="timerPicker" [(ngModel)]="selectedTime" [disableClick]="true" readonly >
-    <ngx-material-timepicker-toggle matSuffix [for]="timerPicker"></ngx-material-timepicker-toggle>
-    <ngx-material-timepicker #timerPicker></ngx-material-timepicker>
-</mat-form-field>
-<h3>Choix des services :</h3> 
-<mat-grid-list cols="2" gutterSize="10px" rowHeight="{{rowHeight}}px" >
-    <mat-grid-tile>
-        <div class="container" cdkDropList id="services" [cdkDropListConnectedTo]="['targetServices']" [cdkDropListData]="services" (cdkDropListDropped)="drop($event)" >
-            <div class="item" *ngFor="let item of services" cdkDrag>{{item.nom}} - {{item.delai}}min - {{item.prix}}Ar</div>
-        </div>
-    </mat-grid-tile>
-    <mat-grid-tile>
-        <div class="container" cdkDropList id="targetServices"  [cdkDropListConnectedTo]="['services']" [cdkDropListData]="targetServices" (cdkDropListDropped)="drop($event)">
-            <div class="item" *ngFor="let item of targetServices" cdkDrag >{{item.nom}} - {{item.delai}}min - {{item.prix}}Ar</div>
-        </div>
-    </mat-grid-tile>
-</mat-grid-list>
-<br>
-<button class="btn" mat-button (click)="addRDV()" >Enregistrer</button>
 
