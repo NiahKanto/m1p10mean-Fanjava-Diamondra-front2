@@ -1,10 +1,9 @@
-import { CdkDragDrop, moveItemInArray, copyArrayItem } from '@angular/cdk/drag-drop';
+import { CdkDragDrop, moveItemInArray, copyArrayItem, transferArrayItem } from '@angular/cdk/drag-drop';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { HttpClient,HttpHeaders } from '@angular/common/http';
 import { AuthentificationService } from '../authentification.service';
 import { Services } from '../Types/Service';
 import { Observable } from 'rxjs'
-import { Employes } from '../Types/Employe';
 import { MatDatepickerInputEvent } from '@angular/material/datepicker';
 import { RDV, ServicesRDV, ServiceRDV } from '../Types/RDV'
 import { DatePipe } from '@angular/common';
@@ -34,16 +33,8 @@ export class RdvComponent implements OnInit{
   verticalPosition: MatSnackBarVerticalPosition = 'top'
 
   drop(event: CdkDragDrop<Services>){
-    if(event.previousContainer === event.container){
-      moveItemInArray(event.container.data,event.previousIndex,event.currentIndex);
-    } else{
-      if (event.previousContainer.data === this.targetServices && event.container.data === this.services){
-        this.targetServices.splice(event.previousIndex,1);
-      }
-      else if(!this.targetServices.includes(event.previousContainer.data[event.previousIndex])){
-        copyArrayItem(event.previousContainer.data, event.container.data,event.previousIndex,event.currentIndex);
-      }
-     
+    if(event.previousContainer !== event.container){
+        transferArrayItem(event.previousContainer.data, event.container.data,event.previousIndex,event.currentIndex);     
     }
   }
 

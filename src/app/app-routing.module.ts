@@ -9,6 +9,7 @@ import { RDVlisteComponent } from './rdv/liste-today/rdv-liste.component';
 import { ServiceFicheComponent } from './service/ficheService/service.fiche.component'; 
 import { SuiviTachesComponent } from './user/suivi-taches/suivi-taches.component'; 
 import { HistoriqueClientComponent } from './historique-client/historique-client.component';
+import { GestionServiceComponent } from './gestion-service/gestion-service.component';
 
 
 const routes: Routes = [
@@ -21,6 +22,7 @@ const routes: Routes = [
   { path: 'ficheService/:id', component: ServiceFicheComponent }, 
   { path: 'suiviTaches', component: SuiviTachesComponent }, 
   { path: 'historic', component: HistoriqueClientComponent }, 
+  { path: 'manageService', component: GestionServiceComponent}
 ];
 
 @NgModule({

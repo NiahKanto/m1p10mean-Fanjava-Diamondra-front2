@@ -2,34 +2,56 @@
     display: flex;
     flex-direction: column;
     gap: 10px;
-    background-color: gray;
+    border: 2px dashed #ccc;
+    padding: 10px;
     width: 100%;
     min-height: 200px;
     max-height: 200px;
     overflow-y: auto;
 }
 
-.container .item{
-    background-color:rgb(21, 4, 37);
-    color: white;
-    justify-content: center;
-    align-items: center;
-    cursor: move;
-    padding: 1em;
-    transition: transform 0.2s ease-in-out;
+.item{
+  background-color: #f0f0f0;
+  border: 1px solid #ddd;
+  padding:5px;
+  border-radius: 5px; 
+  cursor: grab;
+  display: flex;
+  align-items: center;
+}
+
+.mat-grid-tile {
+  display: flex;
+  justify-content: center; /* Centrez les éléments à l'intérieur des colonnes */
+  height: 400px; 
 }
 
 .list-title {
     font-size: 24px; /* Taille de police */
     font-weight: bold; /* Texte en gras */
-    color: #3498db; /* Couleur bleue */
+    color: #2a9b70; /* Couleur bleue */
   }
 
   .btn{
-    background-color: #2c3e50;
+    background-color: #2c5044;
     color: #ffffff; /* Couleur du texte */
     text-align: center; /* Alignement du texte au centre */
     padding: 20px; /* Espacement intérieur */
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; /* Police de caractère */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Ombre douce */
+  }
+  .centered-content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: grey;
+    height: 100vh;
+  }
+  
+  .rdv-create {
+    width: 100%; /* Utilise toute la largeur de la page */
+    margin-top: 40px; /* Marge en haut de la liste */
+    padding: 0 20px; /* Espacement intérieur pour une apparence aérée */
+    box-sizing: border-box; /* Inclut les bordures et les marges dans la largeur totale */
   }

@@ -21,16 +21,9 @@
                       <a mat-list-item routerLink="/listeRDV">Aujourd'hui</a>
                   </mat-nav-list>
               </mat-expansion-panel>
-              <mat-expansion-panel *ngIf="isManager()">
-                  <mat-expansion-panel-header>
-                      <mat-panel-title>Manager</mat-panel-title>
-                  </mat-expansion-panel-header>
-                  <mat-nav-list>
-                      <a mat-list-item routerLink="/lien1">Lien 1</a>
-                      <a mat-list-item routerLink="/lien2">Lien 2</a>
-                      <a mat-list-item routerLink="/lien3">Lien 3</a>
-                  </mat-nav-list>
-              </mat-expansion-panel>
+                <mat-nav-list *ngIf="isManager()">
+                    <a mat-list-item routerLink="/manageService">Service</a>
+                </mat-nav-list>
           </mat-accordion>
       </div>
   </mat-sidenav>

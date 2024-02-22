@@ -1,0 +1,26 @@
+<div class="rdv-list">
+    <h2 class="list-title">Liste des services</h2>
+    <button class="btn" mat-button (click)="openDialog()" >Ajouter</button>
+    <p></p>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Nom</th>
+          <th>Prix</th>
+          <th>Délai</th>
+          <th>Commission</th>
+        </tr>
+      </thead>
+      <tbody>
+        <ng-container *ngFor="let service of services">
+            <tr >
+                <td>{{service.nom}}</td>
+                <td>{{service.prix}}Ar</td>
+                <td>{{service.delai}}min</td>
+                <td>{{service.commission}}%</td>
+            </tr>
+        </ng-container>
+      </tbody>
+    </table>
+  </div>
+  

@@ -30,6 +30,7 @@ import { NgxMaterialTimepickerModule } from 'ngx-material-timepicker'
 import { DatePipe } from '@angular/common';
 import { MatCardModule } from '@angular/material/card';
 import { MatSnackBarModule } from '@angular/material/snack-bar'
+import { MatDialogModule } from '@angular/material/dialog'
 
 import { RdvComponent } from './rdv/rdv.component'
 import { HomeComponent } from './home/home.component';
@@ -37,7 +38,9 @@ import { RDVlisteComponent } from './rdv/liste-today/rdv-liste.component';
 import { RDVhistoriqueComponent } from './rdv/historique/rdv-historique.component'; 
 import { ServiceFicheComponent } from './service/ficheService/service.fiche.component';
 import { SuiviTachesComponent } from './user/suivi-taches/suivi-taches.component'; 
-import { HistoriqueClientComponent } from './historique-client/historique-client.component'; 
+import { HistoriqueClientComponent } from './historique-client/historique-client.component';
+import { GestionServiceComponent } from './gestion-service/gestion-service.component';
+import { DialogAjoutServiceComponent } from './dialog-ajout-service/dialog-ajout-service.component'; 
 
 @NgModule({
   declarations: [
@@ -54,6 +57,8 @@ import { HistoriqueClientComponent } from './historique-client/historique-client
     RdvComponent,
     SuiviTachesComponent,
     HistoriqueClientComponent,
+    GestionServiceComponent,
+    DialogAjoutServiceComponent,
   ],
   imports: [
     BrowserModule,
@@ -76,7 +81,8 @@ import { HistoriqueClientComponent } from './historique-client/historique-client
     MatNativeDateModule,
     NgxMaterialTimepickerModule,
     MatCardModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatDialogModule
   ],
   providers: [
     provideAnimationsAsync(),

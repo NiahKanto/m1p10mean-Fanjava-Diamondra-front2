@@ -39,7 +39,7 @@ body {
     width:  100%;
     min-height: 40px;
     padding:  12px;
-    background-color: #3f51b5;
+    background-color: #2c5044;
     color: white;
     border: none;
     cursor: pointer;
@@ -72,7 +72,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   background-color:indianred; /* Un ton de rouge foncé */
   color: rgb(56, 9, 9);
   padding:  10px;
-
+  width:90%;
   border-radius:  4px; /* Coins arrondis pour une apparence plus douce */
   box-shadow:  1px  1px  3px rgba(0,  0,  0,  0.2); /* Ombre légère pour un effet  3D */
   margin-top:  10px; /* Espacement entre le champ de formulaire et le message d'erreur */
