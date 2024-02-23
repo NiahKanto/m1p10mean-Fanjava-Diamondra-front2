@@ -11,17 +11,43 @@ export class AuthentificationService {
   roles: string[] = [];
   constructor(private http: HttpClient ){}
 
+  private getTokenExpirationDate(token : string ): Date | null {
+    try{
+      const jwtPayload = JSON.parse(atob(token.split('.')[1]));
+      if(jwtPayload && jwtPayload.exp){
+        return new Date(jwtPayload.exp*1000);
+      }
+    }catch (e){
+
+    }
+    return null;
+  }
+
+  isTokenExpired(token: string): boolean{
+    const expirationDate = this.getTokenExpirationDate(token);
+    if(!expirationDate){
+      return false;
+    }
+    return expirationDate < new Date();
+  }
+
   login(credentials: UserLogin): Observable <any> {
     return this.http.post('http://localhost:3000/login_user',credentials);
   }
 
-  setToken(token: string):void{
+  setToken(token: string ):void{
     this.token = token
     localStorage.setItem('jwtToken',token);
   }
 
   getToken() : string | null{
-    return this.token || localStorage.getItem('jwtToken')
+    const t = this.token || localStorage.getItem('jwtToken')
+    if(t !== null ){
+        if(this.isTokenExpired(t)){
+          return null;
+        }
+    }
+    return t;
   }
 
   logout(): void {

@@ -18,6 +18,7 @@
   cursor: grab;
   display: flex;
   align-items: center;
+  height: 30px;
 }
 
 .mat-grid-tile {

@@ -20,7 +20,6 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { MatListModule } from '@angular/material/list'
 import { MatExpansionModule } from '@angular/material/expansion'
 import { MatIconModule } from '@angular/material/icon';
-import { ManagerComponent } from './manager/manager.component'
 import { MatMenuModule } from '@angular/material/menu';
 import { DragDropModule } from '@angular/cdk/drag-drop'
 import { MatGridListModule } from '@angular/material/grid-list'
@@ -53,7 +52,6 @@ import { DialogAjoutServiceComponent } from './dialog-ajout-service/dialog-ajout
     HeaderComponent,
     FooterComponent,
     NavbarComponent,
-    ManagerComponent,
     RdvComponent,
     SuiviTachesComponent,
     HistoriqueClientComponent,

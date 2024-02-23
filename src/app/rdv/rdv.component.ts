@@ -55,7 +55,7 @@ export class RdvComponent implements OnInit{
   ngOnInit(): void {
     this.fetchServices().subscribe((data: Services) => {
       this.services = data;
-      this.rowHeight = 50 * this.services.length;
+      this.rowHeight = 40 * this.services.length;
     })
   }
 
