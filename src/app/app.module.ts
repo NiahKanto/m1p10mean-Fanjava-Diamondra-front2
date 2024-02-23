@@ -39,7 +39,8 @@ import { ServiceFicheComponent } from './service/ficheService/service.fiche.comp
 import { SuiviTachesComponent } from './user/suivi-taches/suivi-taches.component'; 
 import { HistoriqueClientComponent } from './historique-client/historique-client.component';
 import { GestionServiceComponent } from './gestion-service/gestion-service.component';
-import { DialogAjoutServiceComponent } from './dialog-ajout-service/dialog-ajout-service.component'; 
+import { DialogAjoutServiceComponent } from './dialog-ajout-service/dialog-ajout-service.component';
+import { InscriptionComponent } from './inscription/inscription.component'; 
 
 @NgModule({
   declarations: [
@@ -57,6 +58,7 @@ import { DialogAjoutServiceComponent } from './dialog-ajout-service/dialog-ajout
     HistoriqueClientComponent,
     GestionServiceComponent,
     DialogAjoutServiceComponent,
+    InscriptionComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,34 @@
+<div class="login-container">
+    <h2>Inscription</h2>
+    <div *ngIf="errorMessage" class="error-message">
+        {{ errorMessage }}
+      </div>
+      <div *ngIf="successMessage" class="success-message">
+        {{ successMessage }}
+      </div>
+    <form (ngSubmit)="inscription()">
+      <div>
+        <label for="nom">Nom:</label>
+        <input required type="text" id="nom" name="nom" [(ngModel)]="nom" />
+      </div>
+      <div>
+        <label for="email">Email:</label>
+        <input type="text" id="email" name="email" [(ngModel)]="email" required>
+      </div>
+      <div>
+        <label for="mdp">Mot de passe:</label>
+        <input required type="password" id="mdp" name="mdp" [(ngModel)]="mdp" />
+      </div>
+      <div>
+        <label for="confirmmdp">Confirmation mot de passe:</label>
+        <input type="password" id="email" name="confirmmdp" [(ngModel)]="confirmmdp" required>
+      </div>
+      <button type="submit" [disabled]="isFetching" >
+         <span *ngIf="!isFetching" >S'inscrire</span> 
+         <mat-spinner  style="margin-left: 45%;" color="accent" *ngIf="isFetching" diameter="15" ></mat-spinner>
+      </button>
+      <p></p>
+      <span>Déjà un compte? </span><a [routerLink]="['/']">Connectez-vous</a>
+    </form>
+  </div>
+  

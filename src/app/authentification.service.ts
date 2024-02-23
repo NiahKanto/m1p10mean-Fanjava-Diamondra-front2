@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { UserLogin } from './Types/User';
+import { UserLogin, UserInscription } from './Types/User';
 
 @Injectable({
   providedIn: 'root'
@@ -83,5 +83,9 @@ export class AuthentificationService {
 
   isClient(){
     return this.getRoles().includes('ROLE_CLIENT')
+  }
+
+  inscription(credentials: UserInscription): Observable <any> {
+    return this.http.post('http://localhost:3000/inscription_user',credentials);
   }
 }

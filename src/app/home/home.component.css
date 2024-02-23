@@ -1,0 +1,20 @@
+.home {
+    width: 100%; /* Utilise toute la largeur de la page */
+    margin-top: 40px; /* Marge en haut de la liste */
+    padding: 0 20px; /* Espacement intérieur pour une apparence aérée */
+    box-sizing: border-box; /* Inclut les bordures et les marges dans la largeur totale */
+  }
+
+.rappel-card{
+    border-radius: 8px;
+    box-shadow: 0 2px 2px rgb(233, 225, 225);
+    margin: 5px;
+    background-color:darksalmon
+}
+
+.avatar{
+    background-color: brown;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

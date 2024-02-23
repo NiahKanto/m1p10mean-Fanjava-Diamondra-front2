@@ -2,6 +2,8 @@
     font-size: 24px; /* Taille de police */
     font-weight: bold; /* Texte en gras */
     color: #2a9b70; /* Couleur bleue */
+    display: flex;
+    justify-content: center;
   }
 
   .btn{
@@ -10,6 +12,7 @@
     text-align: center; /* Alignement du texte au centre */
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; /* Police de caractère */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Ombre douce */
+    width: 100%;
   }
   
   .srv-create {
@@ -19,7 +22,7 @@
   }
 
  input {
-    width:  80%;
+    width:  100%;
     padding:  12px;
     margin-bottom:  16px;
     border:  1px solid #ddd;
