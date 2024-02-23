@@ -14,7 +14,7 @@
       <tbody>
         <ng-container *ngFor="let service of services">
             <tr >
-                <td>{{service.nom}}</td>
+                <td><a [routerLink]="['/ficheService', service._id]">{{ service.nom }}</a></td>
                 <td>{{service.prix}}Ar</td>
                 <td>{{service.delai}}min</td>
                 <td>{{service.commission}}%</td>
