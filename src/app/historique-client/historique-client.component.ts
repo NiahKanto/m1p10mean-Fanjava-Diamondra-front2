@@ -23,7 +23,7 @@ export class HistoriqueClientComponent implements OnInit{
     const headers = new HttpHeaders({
       'Authorization': `Bearer ${this.authService.getToken()}`
     });
-    return  this.http.get<RDVData>('http://localhost:3000/rdv//list-by-client',{headers: headers});
+    return  this.http.get<RDVData>('http://localhost:3000/rdv/list-by-client',{headers: headers});
   }
 
   ngOnInit(): void {

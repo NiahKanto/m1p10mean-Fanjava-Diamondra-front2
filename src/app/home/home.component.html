@@ -1,4 +1,13 @@
-<div>
-    <h2>Home</h2>
+<div class="home">
+    <div *ngIf="isClient()">
+        <mat-card *ngIf="rdv" class="rappel-card" >
+            <mat-card-header>
+                <div mat-card-avatar class="avatar" >
+                    <mat-icon>event</mat-icon>
+                </div>
+                <mat-card-title>Prochain rendez-vous</mat-card-title>
+                <mat-card-subtitle>{{ rdv.dateHeure | date:'dd-MM-yyyy' }} à {{ rdv.dateHeure | date:'hh:mm' }}</mat-card-subtitle>
+            </mat-card-header>
+        </mat-card>
+    </div>
 </div>
-  

@@ -8,10 +8,13 @@
   <title>Document</title>
 </head>
 <body>
-  <div *ngIf="!isLoggedIn()" >
+  <div *ngIf="isInscription()" >
+    <app-inscription></app-inscription>
+  </div>
+  <div *ngIf="!isLoggedIn() && !isInscription()" >
     <app-login></app-login>
   </div>
-  <div *ngIf="isLoggedIn()">
+  <div *ngIf="isLoggedIn() && !isInscription()">
     <app-header></app-header>
     <app-navbar></app-navbar>
     <app-footer></app-footer>

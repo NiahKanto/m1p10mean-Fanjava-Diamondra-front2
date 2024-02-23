@@ -24,7 +24,7 @@ export type ServicesRDVData = ServiceRDVData[]
 
 export interface RDVDataUnit {
     dateHeure : Date
-    service: ServicesRDVData 
+    service?: ServicesRDVData 
     etat: number
 }
 
@@ -40,4 +40,9 @@ export type RDVDataTotals = RDVDataTotal[]
 export interface RDVData {
     totalRdvs : RDVDataTotals,
     rdvs: RDVDataUnits
+}
+
+export interface RDVUnit {
+    totalRdv : RDVDataTotal,
+    rdv: RDVDataUnit
 }
