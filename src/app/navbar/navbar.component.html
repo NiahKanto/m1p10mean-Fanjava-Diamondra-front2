@@ -21,10 +21,10 @@
                       <a mat-list-item routerLink="/listeRDV">Aujourd'hui</a>
                   </mat-nav-list>
               </mat-expansion-panel>
-                <mat-nav-list *ngIf="isManager()">
-                    <a mat-list-item routerLink="/manageService">Service</a>
-                </mat-nav-list>
           </mat-accordion>
+          <mat-nav-list *ngIf="isManager()">
+            <a mat-list-item routerLink="/manageService">Service</a>
+        </mat-nav-list>
       </div>
   </mat-sidenav>
   <mat-sidenav-content class="main-content">
