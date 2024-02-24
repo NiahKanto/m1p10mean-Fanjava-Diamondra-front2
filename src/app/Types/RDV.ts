@@ -37,9 +37,18 @@ export interface RDVDataTotal {
 
 export type RDVDataTotals = RDVDataTotal[]
 
+export interface RDVDataIdUnit {
+    _id: string
+    dateHeure : Date
+    service?: ServicesRDVData 
+    etat: number
+}
+
+export type RDVDataIdUnits = RDVDataIdUnit[]
+
 export interface RDVData {
     totalRdvs : RDVDataTotals,
-    rdvs: RDVDataUnits
+    rdvs: RDVDataIdUnits
 }
 
 export interface RDVUnit {

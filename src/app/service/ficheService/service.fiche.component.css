@@ -41,3 +41,27 @@
   flex-grow: 1; /* Permet au détail de prendre autant d'espace que possible */
   font-size: 16px; /* Taille de police */
 }
+
+.icone {
+  color:lightsteelblue;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+input {
+  width:  80%;
+  padding:  12px;
+  margin-bottom:  16px;
+  border:  1px solid #ddd;
+  height: 45px;
+}
+
+.mat-form-field-wrapper{
+  display: flex;
+  align-items: center;
+}
+
+.error{
+  color: red;
+  font-size: 12px;
+}

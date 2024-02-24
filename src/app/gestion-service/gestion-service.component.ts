@@ -6,6 +6,7 @@ import { Services } from '../Types/Service';
 import { Observable } from 'rxjs';
 import { MatDialog } from '@angular/material/dialog';
 import { DialogAjoutServiceComponent } from '../dialog-ajout-service/dialog-ajout-service.component';
+import { DialogDeleteServiceComponent } from '../dialog-delete-service/dialog-delete-service.component';
 
 @Component({
   selector: 'app-gestion-service',
@@ -41,6 +42,19 @@ export class GestionServiceComponent {
     });
 
     dialogRef.componentInstance.ajoutElement.subscribe(() => {
+      this.fetchServices().subscribe((data: Services) => {
+        this.services = data;
+      })
+    });
+  }
+
+  openDialogDelete(id: string): void{
+    const dialogRef = this.dialog.open(DialogDeleteServiceComponent,{
+      width: '50%',
+      data: id
+    });
+
+    dialogRef.componentInstance.deleteElement.subscribe(() => {
       this.fetchServices().subscribe((data: Services) => {
         this.services = data;
       })

@@ -89,7 +89,7 @@ export class RdvComponent implements OnInit{
     const times = this.selectedTime.split(':');
     this.selectedDate.setHours(parseInt(times[0]));
     this.selectedDate.setMinutes(parseInt(times[1]));
-    const dateHeure = this.datePipe.transform(this.selectedDate,'yyyy-MM-dd hh:mm:ss')
+    const dateHeure = this.datePipe.transform(this.selectedDate,'yyyy-MM-dd HH:mm:ss')
     const rdv: RDV ={
       dateHeure: dateHeure,
       service: paramService
