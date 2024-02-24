@@ -46,3 +46,7 @@ export interface RDVUnit {
     totalRdv : RDVDataTotal,
     rdv: RDVDataUnit
 }
+
+export interface RDVID {
+    _id : string
+}

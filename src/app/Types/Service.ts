@@ -15,3 +15,13 @@ export interface ServiceAjout{
     delai: number
     prix: number
 }
+
+export interface serv4rdv{
+    idService: string
+    nom:string
+    delai: number
+    prix: number
+    commission: number 
+    etat:number
+    _id: string
+}
