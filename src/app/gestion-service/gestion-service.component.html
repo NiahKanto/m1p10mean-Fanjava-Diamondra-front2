@@ -18,6 +18,7 @@
                 <td>{{service.prix}}Ar</td>
                 <td>{{service.delai}}min</td>
                 <td>{{service.commission}}%</td>
+                <td><mat-icon (click)="openDialogDelete(service._id)">delete</mat-icon></td>
             </tr>
         </ng-container>
       </tbody>

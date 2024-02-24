@@ -55,3 +55,6 @@
     padding: 0 20px; /* Espacement intérieur pour une apparence aérée */
     box-sizing: border-box; /* Inclut les bordures et les marges dans la largeur totale */
   }
+.error-message{
+  width: 100%;
+}

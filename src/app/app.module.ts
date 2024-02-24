@@ -40,7 +40,9 @@ import { SuiviTachesComponent } from './user/suivi-taches/suivi-taches.component
 import { HistoriqueClientComponent } from './historique-client/historique-client.component';
 import { GestionServiceComponent } from './gestion-service/gestion-service.component';
 import { DialogAjoutServiceComponent } from './dialog-ajout-service/dialog-ajout-service.component';
-import { InscriptionComponent } from './inscription/inscription.component'; 
+import { InscriptionComponent } from './inscription/inscription.component';
+import { DialogDeleteServiceComponent } from './dialog-delete-service/dialog-delete-service.component';
+import { DialogPayRdvComponent } from './dialog-pay-rdv/dialog-pay-rdv.component'; 
 
 @NgModule({
   declarations: [
@@ -59,6 +61,8 @@ import { InscriptionComponent } from './inscription/inscription.component';
     GestionServiceComponent,
     DialogAjoutServiceComponent,
     InscriptionComponent,
+    DialogDeleteServiceComponent,
+    DialogPayRdvComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,21 +1,64 @@
 <div class="container">
   <mat-card class="service-card">
-    <mat-card-header>
-      <mat-card-title class="title">{{ services.nom }}</mat-card-title>
+    <mat-card-header *ngIf="!modifyNom">
+      <mat-card-title class="title" >
+        {{ services.nom }}
+      </mat-card-title>
+      <mat-icon class="icone" (click)="setModifyNom(true)" >edit</mat-icon>
     </mat-card-header>
+    <mat-form-field *ngIf="modifyNom">
+      <div class="error" *ngIf="errorNom !== ''"  >{{ errorNom }}</div>
+      <div class="mat-form-field-wrapper">
+        <input  [(ngModel)]="newNom" placeholder="Entrez le nom">
+        <div>
+          <mat-icon class="icone" (click)="setModifyNom(false)" >cancel</mat-icon>
+          <mat-icon class="icone" (click)="handleModifyNom()" >check</mat-icon>
+        </div>
+      </div>
+    </mat-form-field>
     <mat-card-content>
       <div class="details">
-        <div class="detail-item">
-          <span class="detail-label">Prix:</span>
-          <span class="detail-value">{{ services.prix }}Ar</span>
+        <div class="error" *ngIf="errorPrix !== ''"  >{{ errorPrix }}</div>
+        <div class="detail-item" >
+          <span class="detail-label" >Prix:</span>
+          <span class="detail-value" *ngIf="!modifyPrix" >{{ services.prix }}Ar
+            <mat-icon class="icone" (click)="setModifyPrix(true)">edit</mat-icon>
+          </span>
+          <mat-form-field *ngIf="modifyPrix">
+            <div class="mat-form-field-wrapper">
+              <input  [(ngModel)]="newPrix" placeholder="Entrez le prix">
+              <mat-icon class="icone" (click)="setModifyPrix(false)" >cancel</mat-icon>
+              <mat-icon class="icone" (click)="handleModifyPrix()" >check</mat-icon>
+            </div>
+          </mat-form-field>
         </div>
-        <div class="detail-item">
-          <span class="detail-label">Délai:</span>
-          <span class="detail-value">{{ services.delai }} minutes</span>
+        <div class="error" *ngIf="errorDelai !== ''"  >{{ errorDelai }}</div>
+        <div class="detail-item" >
+          <span class="detail-label" >Délai:</span>
+          <span class="detail-value" *ngIf="!modifyDelai" >{{ services.delai }}min
+            <mat-icon class="icone" (click)="setModifyDelai(true)">edit</mat-icon>
+          </span>
+          <mat-form-field *ngIf="modifyDelai">
+            <div class="mat-form-field-wrapper">
+              <input  [(ngModel)]="newDelai" placeholder="Entrez le delai">
+              <mat-icon class="icone" (click)="setModifyDelai(false)" >cancel</mat-icon>
+              <mat-icon class="icone" (click)="handleModifyDelai()" >check</mat-icon>
+            </div>
+          </mat-form-field>
         </div>
-        <div class="detail-item">
-          <span class="detail-label">Commission:</span>
-          <span class="detail-value">{{ services.commission }}%</span>
+        <div class="error" *ngIf="errorCommission !== ''"  >{{ errorCommission }}</div>
+        <div class="detail-item" >
+          <span class="detail-label" >Commission:</span>
+          <span class="detail-value" *ngIf="!modifyCommission" >{{ services.commission }}%
+            <mat-icon class="icone" (click)="setModifyCommission(true)">edit</mat-icon>
+          </span>
+          <mat-form-field *ngIf="modifyCommission">
+            <div class="mat-form-field-wrapper">
+              <input  [(ngModel)]="newCommission" placeholder="Entrez la commission">
+              <mat-icon class="icone" (click)="setModifyCommission(false)" >cancel</mat-icon>
+              <mat-icon class="icone" (click)="handleModifyCommission()" >check</mat-icon>
+            </div>
+          </mat-form-field>
         </div>
       </div>
     </mat-card-content>

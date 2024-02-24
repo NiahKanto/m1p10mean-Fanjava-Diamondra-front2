@@ -6,16 +6,19 @@
           <th>Libelé</th>
           <th>Durée</th>
           <th>Montant total</th>
+          <th>Montant payé</th>
           <th>Etat</th>
         </tr>
       </thead>
       <tbody>
         <ng-container *ngFor="let rdv of fusion">
             <tr >
-                <td>RDV du {{ rdv.dateHeure | date:'dd-MM-yyyy' }} à {{ rdv.dateHeure | date:'hh:mm' }}</td>
+                <td>RDV du {{ rdv.dateHeure | date:'dd-MM-yyyy' }} à {{ rdv.dateHeure | date:'HH:mm' }}</td>
                 <td>{{rdv.totalDuree}}min</td>
                 <td>{{rdv.totalMontant}}Ar</td>
-                <td>{{rdv.etat}}</td>
+                <td>{{rdv.totalPaiement}}Ar</td>
+                <td>{{rdv.etat === 1 ? 'Payé':'Non payé'}}</td>
+                <td><button class="btn" mat-button (click)="openDialog(rdv._id)" *ngIf="rdv.etat === 0"  >Payer</button></td>
             </tr>
         </ng-container>
       </tbody>
