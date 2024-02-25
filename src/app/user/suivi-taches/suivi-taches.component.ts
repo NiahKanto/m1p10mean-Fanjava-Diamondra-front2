@@ -21,31 +21,13 @@ export class SuiviTachesComponent implements OnInit {
   afaire: serv4rdv[] = [];
   encours: serv4rdv[] = [];
   fini: serv4rdv[] = [];
-  rowHeight = 0;
+  rowHeight = 400;
   errorMessage = '';
   
 
   horizontalPosition: MatSnackBarHorizontalPosition = 'end';
   verticalPosition: MatSnackBarVerticalPosition = 'top'
 
-// drop(event: CdkDragDrop<serv4rdv[]>): void {
-    
-  //   // Vérifier si l'élément est déjà dans le conteneur "fini"
-  //   if (  event.previousContainer.id === 'fini') {
-  //     // Si oui, ne rien faire
-  //     return;
-  //   }
-  //   // Si la zone de départ est "à faire" et la zone de destination est "fini", ne rien faire
-  //   if (event.previousContainer.id === 'afaire' && event.container.id === 'fini') {
-  //     return;
-  //   }
-  //   if (event.previousContainer.id === 'encours' && event.container.id === 'afaire') {
-  //     return;
-  //   }
-  //   // Effectuer le glisser-déposer
-  //   transferArrayItem(event.previousContainer.data, event.container.data, event.previousIndex, event.currentIndex);
-  // }
-  // findRDV4Serv
   drop(event: CdkDragDrop<serv4rdv[]>){
     if (event.previousContainer.id === 'afaire' && event.container.id === 'fini') {
           return;

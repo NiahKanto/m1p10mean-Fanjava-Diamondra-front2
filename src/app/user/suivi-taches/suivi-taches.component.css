@@ -1,90 +1,97 @@
-.container {
-  display: flex;
-    flex-direction: column;
-    gap: 10px;
-    border: 2px dashed #ccc;
-    padding: 10px;
-    width: 100%;
-    min-height: 200px;
-    max-height: 200px;
-    overflow-y: auto;
-}
-
-.item {
-  background-color: #f0f0f0;
-  border: 1px solid #ddd;
-  padding: 10px; 
-  /* margin-bottom: 10px;  */
-  border-radius: 5px; 
-  cursor: grab;
-}
-
-.mat-grid-tile {
-  display: flex;
-  justify-content: center; /* Centrez les éléments à l'intérieur des colonnes */
-  height: 100%;
-  width:100%; 
-}
-
-.mat-grid-list {
-   margin: 40px auto; /*Centrez le mat-grid-list sur la page */
-}
-.list-title {
-  font-size: 24px; /* Taille de police */
-  font-weight: bold; /* Texte en gras */
-  color: #2a9b70;
-  margin-bottom: 20px; /* Ajoute un espace en bas du titre de la page */
-}
-
-.column-title {
-  margin-bottom: 10px; /* Ajoute un espace en bas des titres de colonne */
-}
-.centered-content{
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  align-items: center;
-  justify-content: center;
-  color: grey;
-  height: 100vh;
-}
+/* Appliquer la police par défaut */
 .lapage {
-  width: 100%; /* Utilise toute la largeur de la page */
-  margin-top: 40px; /* Marge en haut de la liste */
-  padding: 0 20px; /* Espacement intérieur pour une apparence aérée */
-  box-sizing: border-box; /* Inclut les bordures et les marges dans la largeur totale */
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
+/* Styling du titre */
+.list-title {
+  color: #2a9b70;
+  font-size: 24px; /* Taille du titre */
+  margin-bottom: 20px; /* Espacement en bas du titre */
+}
+
+/* Styling des zones */
+.zone { 
+  flex: 1; /* Chaque zone prendra la même largeur */
+ 
+  border-radius: 5px; /* Bord arrondi */
+  padding: 15px; /* Espacement interne */
+  margin-bottom: 20px; /* Espacement en bas entre les zones */
+  overflow-y: auto; /* Permettre le défilement vertical des éléments */
+  max-height: calc(100vh - 150px); /* Taille maximale de la zone pour éviter le défilement de la page */
+}
 .zones-container {
-  display: flex;
-  justify-content: space-around;
-  align-items: flex-start;
-  flex-wrap: nowrap;
-  overflow-x: auto;
-  margin-bottom: 20px;
-  
+  display: flex; /* Utiliser flexbox */
+  justify-content: space-between; /* Espacement égal entre les zones */
 }
 
 .zone {
-  flex: 1 0 auto;
-  margin: 0 10px;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  background-color: #f9f9f9;
-  min-width: 200px;
   
+  flex: 1; /* Chaque zone prendra la même largeur */
+  height: 400px;
+}
+.zone-title {
+  font-size: 20px; /* Taille du titre de la zone */
+  margin-bottom: 10px; /* Espacement en bas du titre de la zone */
 }
 
-.zone-title {
-  margin-top: 0;
-  text-align: center;
-} 
+/* Styling des éléments de tâches */
+.container {
+  min-height: 250px; /* Hauteur minimale de la zone de dépôt */
+  border: 2px dashed #ccc; /* Bordure pointillée */
+  border-radius: 5px; /* Bord arrondi */
+  padding: 10px; /* Espacement interne */
+}
 
-.btn{
-  background-color: #2c5044;
-  color: #ffffff; /* Couleur du texte */
-  text-align: center; /* Alignement du texte au centre */
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; /* Police de caractère */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Ombre douce */
+.item {
+  background-color: #fff; /* Couleur de fond de l'élément */
+  border: 1px solid #ccc; /* Bordure solide */
+  border-radius: 3px; /* Bord arrondi */
+  padding: 5px 10px; /* Espacement interne */
+  margin-bottom: 5px; /* Espacement en bas entre les éléments */
+  cursor: pointer; /* Curseur pointeur */
+  transition: background-color 0.3s ease; /* Transition fluide */
+}
+
+.item:hover {
+  background-color: #f0f0f0; /* Changement de couleur au survol */
+}
+
+.centered-content {
+  display: flex; /* Utiliser flexbox */
+  flex-direction: column; /* Aligner le contenu verticalement */
+  align-items: center; /* Aligner horizontalement au centre */
+  justify-content: center; /* Aligner verticalement au centre */
+  height: 100%; /* Hauteur 100% */
+  color: #888; /* Couleur de texte */
+}
+
+.error-message {
+  color: #ff0000; /* Couleur du message d'erreur */
+  margin-bottom: 10px; /* Espacement en bas du message d'erreur */
+}
+
+/* Styling du bouton Enregistrer */
+.btn {
+  background-color: #2a9b70; /* Couleur de fond */
+  color: #fff; /* Couleur du texte */
+  border: none; /* Pas de bordure */
+  border-radius: 3px; /* Bord arrondi */
+  padding: 10px 20px; /* Espacement interne */
+  font-size: 16px; /* Taille de police */
+  cursor: pointer; /* Curseur pointeur */
+  transition: background-color 0.3s ease; /* Transition fluide */
+}
+
+/* Styling du bouton au survol */
+.btn:hover {
+  background-color: #207653; /* Changement de couleur au survol */
+}
+.mat-grid-tile {
+  overflow-y: auto; /* Permettre le défilement vertical si nécessaire */
+  /* max-height: 200px; Limiter la hauteur maximale des cellules */
+  margin:auto;
+}
+.mat-grid-list {
+  margin: auto; /* Centrez le mat-grid-list sur la page */
 }
