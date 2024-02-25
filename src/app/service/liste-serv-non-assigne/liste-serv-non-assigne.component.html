@@ -1,0 +1,26 @@
+<div class="rdv-list"  *ngIf="services && services.length > 0">
+    <h2 class="list-title">Service non prise assignées</h2>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Client proprietaire</th>
+          <th>Date et heure du rendez-vous</th>
+          <th>Nom du service demandé</th>
+        </tr>
+      </thead> 
+      <tbody>
+        <ng-container *ngFor="let rdv of services">
+          <tr>
+            <td>{{rdv.nomUser}}</td>
+            <td>{{ rdv.dateHeure | date:'short' }}</td>
+            <td><a [routerLink]="['/ficheService', rdv.service.idService]">{{ rdv.service.nom }}</a></td>
+            <td><button class="btn" mat-button (click)="prendreEnCharge(rdv.service._id)">Prendre en charge</button></td>
+          </tr>
+        </ng-container>
+      </tbody>
+    </table>
+  </div>
+  <div class="rdv-list" *ngIf="!services || services.length === 0">
+    <h2>Aucun service non assigné</h2>
+  </div>
+  
