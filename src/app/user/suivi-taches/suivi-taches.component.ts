@@ -89,7 +89,7 @@ export class SuiviTachesComponent implements OnInit {
   private async processFini(fini: serv4rdv[]): Promise<void> {
     for (const item of fini) {
       const rdvId = await this.findRDV4Serv(item._id).toPromise();
-      await this.terminerServ(rdvId._id, item.idService).subscribe(response => {
+      await this.terminerServ(rdvId._id, item._id).subscribe(response => {
       }, error => {
         console.error(error);
       });;
@@ -98,7 +98,7 @@ export class SuiviTachesComponent implements OnInit {
   private async processEncours(encours: serv4rdv[]): Promise<void> {
     for (const item of encours) {
       const rdvId = await this.findRDV4Serv(item._id).toPromise();
-      this.acceptServ(rdvId._id, item.idService).subscribe(response => {
+      this.acceptServ(rdvId._id, item._id).subscribe(response => {
       }, error => {
         console.error(error);
       });;

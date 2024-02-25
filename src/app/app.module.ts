@@ -43,7 +43,8 @@ import { DialogAjoutServiceComponent } from './dialog-ajout-service/dialog-ajout
 import { InscriptionComponent } from './inscription/inscription.component';
 import { DialogDeleteServiceComponent } from './dialog-delete-service/dialog-delete-service.component';
 import { DialogPayRdvComponent } from './dialog-pay-rdv/dialog-pay-rdv.component';
-import { ListeServNonAssigneComponent } from './service/liste-serv-non-assigne/liste-serv-non-assigne.component'; 
+import { ListeServNonAssigneComponent } from './service/liste-serv-non-assigne/liste-serv-non-assigne.component';
+
 
 @NgModule({
   declarations: [

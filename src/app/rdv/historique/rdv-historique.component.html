@@ -1,25 +1,51 @@
-<div class="rdv-list">
-  <h2 class="list-title">Historique de mes rendez-vous</h2>
-  <table class="table">
-    <thead>
-      <tr>
-        <th>Nom Service</th>
-        <th>Délai</th>
-        <th>Date et heure</th>
-        <th>Client</th>
-        <th>Payé</th>
-      </tr>
-    </thead>
-    <tbody>
-      <ng-container *ngFor="let rdv of rendezVous">
-        <tr *ngFor="let service of rdv.service; let first = first">
-          <td ><a [routerLink]="['/ficheService', service.idService]">{{ service.nom }}</a></td>
-          <td>{{ service.delai }} minutes</td>
-          <td>{{ rdv.dateHeure | date:'short' }}</td>
-          <td *ngIf="first" class="client-name">client mbola alaina</td>
-          <td *ngIf="first">{{ rdv.etat }}</td>
-        </tr>
-      </ng-container>
-    </tbody>
-  </table>
+<div class="container">
+  <div class="row">
+    <!-- Colonne pour la liste des rendez-vous -->
+    <div class="col-md-6">
+      <div class="rappel-list">
+        <h1 class="rappel-title">RDV auquel j'ai participé</h1>
+        <mat-card *ngFor="let rdv of rendezVous" class="rappel-card">
+          <mat-card-header>
+            <div mat-card-avatar class="avatar">
+              <mat-icon>event</mat-icon>
+            </div>
+            <mat-card-title>Rendez-vous</mat-card-title>
+            <mat-card-subtitle>{{ rdv.dateHeure | date:'dd-MM-yyyy à HH:mm' }}</mat-card-subtitle>
+          </mat-card-header>
+          <mat-card-actions>
+            <button mat-button color="primary" (click)="voirDetails(rdv._id)">Voir Détails</button>
+          </mat-card-actions>
+        </mat-card>
+        <br>
+        <div *ngIf="!rendezVous" class="no-rdv-message">
+          <h2>Aucun rendez-vous disponible</h2>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Colonne pour les détails du rendez-vous sélectionné -->
+    <div class="col-md-6" *ngIf="rdvDetails && selectedRdvId">
+      <div class="card">
+        <div class="card-header">
+          <h5 class="card-title">Détails du rendez-vous</h5>
+        </div>
+        <div class="card-body">
+          <ul class="list-group">
+            <li *ngFor="let service of rdvDetails" class="list-group-item">
+              <div>
+                <strong>{{ service.nom }}</strong>
+              </div>
+              <div>
+                <span>Delai : {{ service.delai }}</span>
+              </div>
+              <div>
+                <span>Commission : {{ service.commission }}</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    
+  </div>
 </div>
