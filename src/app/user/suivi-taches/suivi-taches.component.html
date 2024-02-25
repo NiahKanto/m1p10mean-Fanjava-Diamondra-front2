@@ -48,9 +48,26 @@
                         </div>
                         <div class="item" *ngFor="let item of fini" cdkDrag>{{item.nom}} - {{item.delai}}min</div>
                     </div>
+                    
                 </mat-grid-tile>
             </mat-grid-list>
         </div>
     </div>
     <button class="btn" mat-button (click)="saveChangement(encours,fini)" >Enregistrer</button>
+   
+    <div class="commission-container">
+        <h2>Commissions de la journée</h2>
+        <div class="total-commission">
+          <h3>Total de la journée : <strong>{{ total }} Ar</strong></h3>
+        </div>
+        <div class="commission-list">
+          <div class="commission-item" *ngFor="let item of fini">
+            <div class="commission-info">
+              <h4>{{ item.nom }}</h4>
+              <p>Commission : {{ item.prix * item.commission / 100 }} Ar</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
 </div>

@@ -17,8 +17,8 @@
   border-radius: 5px; /* Bord arrondi */
   padding: 15px; /* Espacement interne */
   margin-bottom: 20px; /* Espacement en bas entre les zones */
-  overflow-y: auto; /* Permettre le défilement vertical des éléments */
-  max-height: calc(100vh - 150px); /* Taille maximale de la zone pour éviter le défilement de la page */
+  /* overflow-y: auto;  */
+  max-height: calc(140vh - 60px);  
 }
 .zones-container {
   display: flex; /* Utiliser flexbox */
@@ -28,7 +28,7 @@
 .zone {
   
   flex: 1; /* Chaque zone prendra la même largeur */
-  height: 400px;
+  height: 300px;
 }
 .zone-title {
   font-size: 20px; /* Taille du titre de la zone */
@@ -37,10 +37,10 @@
 
 /* Styling des éléments de tâches */
 .container {
-  min-height: 250px; /* Hauteur minimale de la zone de dépôt */
+  min-height: 160px; /* Hauteur minimale de la zone de dépôt */
   border: 2px dashed #ccc; /* Bordure pointillée */
   border-radius: 5px; /* Bord arrondi */
-  padding: 10px; /* Espacement interne */
+  padding: 10px; 
 }
 
 .item {
@@ -94,4 +94,42 @@
 }
 .mat-grid-list {
   margin: auto; /* Centrez le mat-grid-list sur la page */
+}
+
+/*--------------------------*/
+.commission-container {
+  margin: 20px;
+}
+
+.commission-container h2 {
+  font-size: 24px;
+  color: #2a9b70;
+  margin-bottom: 10px;
+}
+
+.total-commission h3 {
+  font-size: 18px;
+}
+
+.commission-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.commission-item {
+  width: calc(33.33% - 20px);
+  margin: 0 10px 20px;
+  padding: 15px;
+  background-color: #f9f9f9;
+  border-radius: 5px;
+}
+
+.commission-item h4 {
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.commission-item p {
+  font-size: 16px;
+  color: #666;
 }

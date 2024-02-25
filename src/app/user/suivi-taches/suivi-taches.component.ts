@@ -21,6 +21,7 @@ export class SuiviTachesComponent implements OnInit {
   afaire: serv4rdv[] = [];
   encours: serv4rdv[] = [];
   fini: serv4rdv[] = [];
+  total: any;
   rowHeight = 400;
   errorMessage = '';
   
@@ -147,11 +148,21 @@ export class SuiviTachesComponent implements OnInit {
       this.encours = data;
       this.rowHeight = 50 * this.afaire.length;
     });
-    this.fetchfini().subscribe((data: serv4rdv[]) => 
-    {
+    this.fetchfini().subscribe((data: serv4rdv[]) => {
       this.fini = data;
-      this.rowHeight = 50 * this.afaire.length;
+      let total: number = 0; // Initialiser la variable total à 0
+    
+      for (let i = 0; i < data.length; i++) {
+        total += data[i].prix * data[i].commission / 100; // Ajouter la commission de chaque élément à total
+        console.log('total=' + total); // Afficher le total à chaque itération
+      }
+    
+      this.total = total; // Assigner la valeur finale de total à this.total
+    
+      this.rowHeight = 50 * this.afaire.length; // Ajuster la hauteur de la grille
     });
+    
+  
 
 
   }
