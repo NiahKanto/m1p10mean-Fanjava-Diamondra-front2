@@ -1,37 +1,57 @@
-.rdv-list {
-  width: 100%; /* Utilise toute la largeur de la page */
-  margin-top: 40px; /* Marge en haut de la liste */
-  padding: 0 20px; /* Espacement intérieur pour une apparence aérée */
-  box-sizing: border-box; /* Inclut les bordures et les marges dans la largeur totale */
+/* CSS */
+.home {
+  display: flex;
+  /* justify-content: center; */
+  /* align-items: center; */
+  height: 100vh; /* Ajustez la hauteur selon vos besoins */
 }
 
-.table {
-  width: 100%; /* Utilise toute la largeur de la liste */
-  border-collapse: collapse; /* Fusionne les bordures des cellules */
+.rappel-card {
+  max-width: 600px; /* Largeur maximale de la carte */
+  width: 100%; /* Garantit que la carte s'adapte à la largeur maximale */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Ombre */
+  text-align: left; /* Alignement du texte à gauche */
+  margin-bottom: 20px; /* Marge en bas pour l'espacement entre les cartes */
 }
 
-/* Styles pour les en-têtes de colonnes */
-th {
-  background-color: #f2f2f2; /* Couleur de fond */
-  border: 1px solid #ddd; /* Bordure */
-  padding: 10px; /* Espacement intérieur */
+.avatar {
+  width: 50px; /* Largeur de l'avatar */
+  height: 50px; /* Hauteur de l'avatar */
+  border-radius: 50%; /* Bord arrondi */
+  background-color: #e0e0e0; /* Couleur de fond */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 10px; /* Marge à droite pour l'espacement */
 }
 
-/* Styles pour les cellules de données */
-td {
-  border: 1px solid #ddd; /* Bordure */
-  padding: 10px; /* Espacement intérieur */
+mat-icon {
+  font-size: 24px; /* Taille de l'icône */
 }
 
-/* Styles pour le titre de la liste */
-.list-title {
-  font-size: 24px; /* Taille de police */
-  font-weight: bold; /* Texte en gras */
-  color: #3498db; /* Couleur bleue */
+mat-card-title {
+  font-size: 20px; /* Taille du titre */
+  margin-bottom: 10px; /* Marge en bas pour l'espacement */
 }
-.service-details a { 
-    text-decoration: none; /* Supprimer les soulignements des liens */
-    color: #3498db; /* Couleur bleue pour les liens */
-    margin-right: 8px; /* Espacement à droite */
+
+mat-card-subtitle {
+  font-size: 16px; /* Taille du sous-titre */
+  color: #666; /* Couleur du texte */
+}
+
+/* Optionnel : ajoutez des médias pour rendre la mise en page réactive */
+@media (max-width: 768px) {
+  .rappel-card {
+    padding: 15px; /* Réduire le rembourrage pour les écrans plus petits */
   }
-  
+}
+/* CSS */
+.rappel-title {
+  color: #2a9b70; /* Couleur du titre */
+  text-align: center; /* Alignement centré */
+  margin-bottom: 20px; /* Marge en bas pour l'espacement */
+  font-size: 24px; /* Taille de la police du titre */
+}
+

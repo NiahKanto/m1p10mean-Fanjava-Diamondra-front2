@@ -21,31 +21,13 @@ export class SuiviTachesComponent implements OnInit {
   afaire: serv4rdv[] = [];
   encours: serv4rdv[] = [];
   fini: serv4rdv[] = [];
-  rowHeight = 0;
+  rowHeight = 400;
   errorMessage = '';
   
 
   horizontalPosition: MatSnackBarHorizontalPosition = 'end';
   verticalPosition: MatSnackBarVerticalPosition = 'top'
 
-// drop(event: CdkDragDrop<serv4rdv[]>): void {
-    
-  //   // Vérifier si l'élément est déjà dans le conteneur "fini"
-  //   if (  event.previousContainer.id === 'fini') {
-  //     // Si oui, ne rien faire
-  //     return;
-  //   }
-  //   // Si la zone de départ est "à faire" et la zone de destination est "fini", ne rien faire
-  //   if (event.previousContainer.id === 'afaire' && event.container.id === 'fini') {
-  //     return;
-  //   }
-  //   if (event.previousContainer.id === 'encours' && event.container.id === 'afaire') {
-  //     return;
-  //   }
-  //   // Effectuer le glisser-déposer
-  //   transferArrayItem(event.previousContainer.data, event.container.data, event.previousIndex, event.currentIndex);
-  // }
-  // findRDV4Serv
   drop(event: CdkDragDrop<serv4rdv[]>){
     if (event.previousContainer.id === 'afaire' && event.container.id === 'fini') {
           return;
@@ -107,7 +89,7 @@ export class SuiviTachesComponent implements OnInit {
   private async processFini(fini: serv4rdv[]): Promise<void> {
     for (const item of fini) {
       const rdvId = await this.findRDV4Serv(item._id).toPromise();
-      await this.terminerServ(rdvId._id, item.idService).subscribe(response => {
+      await this.terminerServ(rdvId._id, item._id).subscribe(response => {
       }, error => {
         console.error(error);
       });;
@@ -116,7 +98,7 @@ export class SuiviTachesComponent implements OnInit {
   private async processEncours(encours: serv4rdv[]): Promise<void> {
     for (const item of encours) {
       const rdvId = await this.findRDV4Serv(item._id).toPromise();
-      this.acceptServ(rdvId._id, item.idService).subscribe(response => {
+      this.acceptServ(rdvId._id, item._id).subscribe(response => {
       }, error => {
         console.error(error);
       });;

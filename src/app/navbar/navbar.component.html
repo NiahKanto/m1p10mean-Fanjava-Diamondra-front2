@@ -10,7 +10,7 @@
               <mat-nav-list *ngIf="isEmploye()">
                   <a mat-list-item routerLink="/lien1">Mon Profil</a>
                   <a mat-list-item routerLink="/lien1">Mon emploi du temps</a>
-                  <a mat-list-item routerLink="/suiviTaches">Mes taches</a>
+                  <a mat-list-item routerLink="/suiviTaches">Mes taches aujourd'hui</a>
               </mat-nav-list>
               <mat-expansion-panel *ngIf="isEmploye()">
                   <mat-expansion-panel-header>
@@ -18,8 +18,16 @@
                   </mat-expansion-panel-header>
                   <mat-nav-list>
                       <a mat-list-item routerLink="/HistoriqueRDV">Historique</a>
-                      <a mat-list-item routerLink="/listeRDV">Aujourd'hui</a>
+                      <a mat-list-item routerLink="/listeRDV">Mes Rendez-vous aujourd'hui</a>
                   </mat-nav-list>
+                  <mat-expansion-panel *ngIf="isEmploye()">
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>Services</mat-panel-title>
+                    </mat-expansion-panel-header>
+                    <mat-nav-list>
+                        <a mat-list-item routerLink="/servNonAssigne">Services non-assignés</a>
+                    </mat-nav-list>
+                </mat-expansion-panel>
               </mat-expansion-panel>
           </mat-accordion>
           <mat-nav-list *ngIf="isManager()">

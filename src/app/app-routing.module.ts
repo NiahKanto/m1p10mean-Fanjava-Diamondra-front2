@@ -10,6 +10,7 @@ import { SuiviTachesComponent } from './user/suivi-taches/suivi-taches.component
 import { HistoriqueClientComponent } from './historique-client/historique-client.component';
 import { GestionServiceComponent } from './gestion-service/gestion-service.component';
 import { InscriptionComponent } from './inscription/inscription.component';
+import { ListeServNonAssigneComponent } from './service/liste-serv-non-assigne/liste-serv-non-assigne.component'; 
 
 
 const routes: Routes = [
@@ -23,6 +24,7 @@ const routes: Routes = [
   { path: 'historic', component: HistoriqueClientComponent }, 
   { path: 'inscription', component: InscriptionComponent},
   { path: 'manageService', component: GestionServiceComponent, canActivate: [AuthGuardManager]},
+  { path: 'servNonAssigne', component: ListeServNonAssigneComponent},
 ];
 
 @NgModule({
