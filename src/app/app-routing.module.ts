@@ -11,7 +11,8 @@ import { HistoriqueClientComponent } from './historique-client/historique-client
 import { GestionServiceComponent } from './gestion-service/gestion-service.component';
 import { InscriptionComponent } from './inscription/inscription.component';
 import { ListeServNonAssigneComponent } from './service/liste-serv-non-assigne/liste-serv-non-assigne.component'; 
-
+import { ClientComponent } from './client/client.component';
+import { EmployeComponent } from './employe/employe.component';
 
 const routes: Routes = [
 
@@ -25,6 +26,8 @@ const routes: Routes = [
   { path: 'inscription', component: InscriptionComponent},
   { path: 'manageService', component: GestionServiceComponent, canActivate: [AuthGuardManager]},
   { path: 'servNonAssigne', component: ListeServNonAssigneComponent},
+  { path: 'clients', component: ClientComponent, canActivate: [AuthGuardManager]},
+  { path: 'employes', component: EmployeComponent, canActivate: [AuthGuardManager]},
 ];
 
 @NgModule({

@@ -1,0 +1,23 @@
+<div class="user-list">
+    <h2 class="list-title">Liste des employés</h2>
+    <button class="btn" mat-button (click)="openDialog()" >Ajouter</button>
+    <p></p>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Nom</th>
+          <th>Email</th>
+        </tr>
+      </thead>
+      <tbody>
+        <ng-container *ngFor="let user of users">
+            <tr >
+                <td>{{ user.nom }}</td>
+                <td>{{user.email}}</td>
+                <td><mat-icon>delete</mat-icon></td>
+            </tr>
+        </ng-container>
+      </tbody>
+    </table>
+  </div>
+  

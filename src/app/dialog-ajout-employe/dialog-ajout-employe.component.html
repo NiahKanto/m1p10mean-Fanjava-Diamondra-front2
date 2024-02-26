@@ -1,0 +1,15 @@
+<div class="srv-create">
+    <h2 class="list-title">Nouvel employé</h2>
+    <div *ngIf="errorMessage !== ''" class="error-message">
+        {{ errorMessage }}
+    </div><p></p>
+    <span>Nom : </span>
+    <input [(ngModel)]="nom" placeholder="Entrez le nom"><br>
+    <span>Email : </span>
+    <input [(ngModel)]="email" placeholder="Entrez l'email" type="text" ><br>
+    <span>Mot de passe : </span>
+    <input [(ngModel)]="mdp" placeholder="Entrez le mot de passe" type="password"><br>
+    <span>Confirmation mot de passe : </span>
+    <input [(ngModel)]="confirmmdp" placeholder="Confirmez le mot de passe" type="password"><br>
+    <button class="btn" mat-button (click)="addService()" >Envoyer</button>
+</div>
