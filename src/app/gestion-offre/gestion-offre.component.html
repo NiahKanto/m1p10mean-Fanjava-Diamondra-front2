@@ -1,0 +1,29 @@
+<div class="rdv-list">
+    <h2 class="list-title">Liste des offres speciales</h2>
+    <button class="btn" mat-button (click)="openDialog()" >Ajouter</button>
+    <p></p>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Nom</th>
+          <th>Description</th>
+          <th>Date Debut</th>
+          <th>Date Fin</th>
+          <th>Prix total</th>
+        </tr>
+      </thead>
+      <tbody>
+        <ng-container *ngFor="let offre of offres">
+            <tr >
+                <td>{{ offre.nom }}</td>
+                <td>{{offre.description}}</td>
+                <td>{{offre.dateDebut | date:'dd-MM-yyyy'}}</td>
+                <td>{{offre.dateFin | date:'dd-MM-yyyy'}}</td>
+                <td>{{offre.prixTotal}} Ar</td>
+                <td><mat-icon >delete</mat-icon></td>
+            </tr>
+        </ng-container>
+      </tbody>
+    </table>
+  </div>
+  

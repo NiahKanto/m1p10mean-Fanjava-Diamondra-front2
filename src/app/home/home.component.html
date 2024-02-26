@@ -9,5 +9,15 @@
                 <mat-card-subtitle>{{ rdv.dateHeure | date:'dd-MM-yyyy' }} à {{ rdv.dateHeure | date:'HH:mm' }}</mat-card-subtitle>
             </mat-card-header>
         </mat-card>
+        <mat-card *ngFor="let offre of offres" class="notif-card" >
+            <mat-card-header>
+                <div mat-card-avatar class="avatar2" >
+                    <mat-icon>event</mat-icon>
+                </div>
+                <mat-card-title>{{offre.nom}}</mat-card-title>
+                <mat-card-subtitle>Du {{ offre.dateDebut | date:'dd-MM-yyyy' }} au {{offre.dateFin | date:'dd-MM-yyyy'}}</mat-card-subtitle>
+                <mat-card-content>{{ offre.description }}</mat-card-content>
+            </mat-card-header>
+        </mat-card>
     </div>
 </div>
