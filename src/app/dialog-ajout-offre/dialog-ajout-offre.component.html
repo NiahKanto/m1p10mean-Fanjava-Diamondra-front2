@@ -1,0 +1,27 @@
+<div class="srv-create">
+    <mat-dialog-content>
+        <h2 class="list-title">Nouvelle offre</h2>
+        <div *ngIf="errorMessage !== ''" class="error-message">
+            {{ errorMessage }}
+        </div><p></p>
+        <span>Nom : </span>
+        <input [(ngModel)]="nom" placeholder="Entrez le nom"><br>
+        <span>Description : </span>
+        <input [(ngModel)]="description" placeholder="Entrez la description" ><br>
+        <span>Date de début : </span>
+        <input [(ngModel)]="dateDebut" placeholder="Entrez la date de debut" type="date" ><br>
+        <span>Date de fin : </span>
+        <input [(ngModel)]="dateFin" placeholder="Entrez la date de fin" type="date" ><br>
+        <span>Valeur de réduction : </span>
+        <input [(ngModel)]="reduction" placeholder="Entrez la valeur de reduction" ><br>
+        <span>Les services à inclure : </span>
+        <mat-form-field style="width: 100%;">
+            <mat-select [(ngModel)]="service" multiple >
+                <mat-option  *ngFor="let serv of services" [value]="serv._id" >
+                    {{serv.nom}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+        <button class="btn" mat-button (click)="addOffre()" >Envoyer</button>
+    </mat-dialog-content>
+</div>

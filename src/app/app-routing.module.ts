@@ -13,6 +13,7 @@ import { InscriptionComponent } from './inscription/inscription.component';
 import { ListeServNonAssigneComponent } from './service/liste-serv-non-assigne/liste-serv-non-assigne.component'; 
 import { ClientComponent } from './client/client.component';
 import { EmployeComponent } from './employe/employe.component';
+import { GestionOffreComponent } from './gestion-offre/gestion-offre.component';
 
 const routes: Routes = [
 
@@ -28,6 +29,7 @@ const routes: Routes = [
   { path: 'servNonAssigne', component: ListeServNonAssigneComponent},
   { path: 'clients', component: ClientComponent, canActivate: [AuthGuardManager]},
   { path: 'employes', component: EmployeComponent, canActivate: [AuthGuardManager]},
+  { path: 'offres', component: GestionOffreComponent, canActivate: [AuthGuardManager]},
 ];
 
 @NgModule({

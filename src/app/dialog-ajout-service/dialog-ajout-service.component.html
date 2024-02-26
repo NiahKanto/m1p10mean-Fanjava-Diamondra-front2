@@ -1,15 +1,17 @@
 <div class="srv-create">
-    <h2 class="list-title">Nouveau service</h2>
-    <div *ngIf="errorMessage !== ''" class="error-message">
-        {{ errorMessage }}
-    </div><p></p>
-    <span>Nom : </span>
-    <input [(ngModel)]="nom" placeholder="Entrez le nom"><br>
-    <span>Prix : </span>
-    <input [(ngModel)]="prix" placeholder="Entrez le prix" type="number" ><br>
-    <span>Délai : </span>
-    <input [(ngModel)]="delai" placeholder="Entrez le délai" type="number"><br>
-    <span>Commission : </span>
-    <input [(ngModel)]="commission" placeholder="Entrez le montant de la commission" type="number"><br>
-    <button class="btn" mat-button (click)="addService()" >Envoyer</button>
+    <mat-dialog-content>
+        <h2 class="list-title">Nouveau service</h2>
+        <div *ngIf="errorMessage !== ''" class="error-message">
+            {{ errorMessage }}
+        </div><p></p>
+        <span>Nom : </span>
+        <input [(ngModel)]="nom" placeholder="Entrez le nom"><br>
+        <span>Prix : </span>
+        <input [(ngModel)]="prix" placeholder="Entrez le prix" type="number" ><br>
+        <span>Délai : </span>
+        <input [(ngModel)]="delai" placeholder="Entrez le délai" type="number"><br>
+        <span>Commission : </span>
+        <input [(ngModel)]="commission" placeholder="Entrez le montant de la commission" type="number"><br>
+        <button class="btn" mat-button (click)="addService()" >Envoyer</button>
+    </mat-dialog-content>
 </div>

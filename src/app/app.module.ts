@@ -30,6 +30,7 @@ import { DatePipe } from '@angular/common';
 import { MatCardModule } from '@angular/material/card';
 import { MatSnackBarModule } from '@angular/material/snack-bar'
 import { MatDialogModule } from '@angular/material/dialog'
+import { MatSelectModule } from '@angular/material/select'
 
 import { RdvComponent } from './rdv/rdv.component'
 import { HomeComponent } from './home/home.component';
@@ -47,6 +48,8 @@ import { ListeServNonAssigneComponent } from './service/liste-serv-non-assigne/l
 import { ClientComponent } from './client/client.component';
 import { EmployeComponent } from './employe/employe.component';
 import { DialogAjoutEmployeComponent } from './dialog-ajout-employe/dialog-ajout-employe.component';
+import { GestionOffreComponent } from './gestion-offre/gestion-offre.component';
+import { DialogAjoutOffreComponent } from './dialog-ajout-offre/dialog-ajout-offre.component';
 
 
 @NgModule({
@@ -72,6 +75,9 @@ import { DialogAjoutEmployeComponent } from './dialog-ajout-employe/dialog-ajout
     ClientComponent,
     EmployeComponent,
     DialogAjoutEmployeComponent,
+    GestionOffreComponent,
+    DialogAjoutOffreComponent,
+  
   ],
   imports: [
     BrowserModule,
@@ -95,7 +101,8 @@ import { DialogAjoutEmployeComponent } from './dialog-ajout-employe/dialog-ajout
     NgxMaterialTimepickerModule,
     MatCardModule,
     MatSnackBarModule,
-    MatDialogModule
+    MatDialogModule,
+    MatSelectModule
   ],
   providers: [
     provideAnimationsAsync(),

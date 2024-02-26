@@ -4,6 +4,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { RDVDataUnit, RDVUnit, RDVDataTotal } from '../Types/RDV';
 import { Observable } from 'rxjs';
+import { Offres } from '../Types/Offre';
 
 @Injectable({
   providedIn: 'root'
@@ -24,6 +25,7 @@ export class HomeComponent {
     totalMontant: 0,
     totalDuree: 0
   };
+  offres : Offres = []
 
   fetchRDV() : Observable<RDVUnit> {
     const headers = new HttpHeaders({
@@ -32,11 +34,21 @@ export class HomeComponent {
     return  this.http.get<RDVUnit>('http://localhost:3000/rdv/nextRDV',{headers: headers});
   }
 
+  fetchOffres() : Observable<Offres> {
+    const headers = new HttpHeaders({
+      'Authorization': `Bearer ${this.authService.getToken()}`
+    });
+    return  this.http.get<Offres>('http://localhost:3000/offre/listToday',{headers: headers});
+  }
+
   ngOnInit(){
     if(this.authService.isClient()){
       this.fetchRDV().subscribe((data: RDVUnit) => {
         this.rdv = data.rdv;
         this.totalRdv = data.totalRdv;
+      });
+      this.fetchOffres().subscribe((data: Offres) => {
+        this.offres = data;
       })
     }
   }

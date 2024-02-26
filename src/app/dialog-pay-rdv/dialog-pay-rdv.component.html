@@ -1,11 +1,13 @@
 <div class="srv-create">
-    <h2 class="list-title">Paiement</h2>
-    <div *ngIf="errorMessage !== ''" class="error-message">
-        {{ errorMessage }}
-    </div><p></p>
-    <span>Montant : </span>
-    <input [(ngModel)]="montant" placeholder="Entrez le montant" type="number"><br>
-    <span>Mot de passe : </span>
-    <input [(ngModel)]="mdp" placeholder="Entrez votre mot de passe" type="password" ><br>
-    <button class="btn" mat-button (click)="addPaiement()" >Envoyer</button>
+    <mat-dialog-content>
+        <h2 class="list-title">Paiement</h2>
+        <div *ngIf="errorMessage !== ''" class="error-message">
+            {{ errorMessage }}
+        </div><p></p>
+        <span>Montant : </span>
+        <input [(ngModel)]="montant" placeholder="Entrez le montant" type="number"><br>
+        <span>Mot de passe : </span>
+        <input [(ngModel)]="mdp" placeholder="Entrez votre mot de passe" type="password" ><br>
+        <button class="btn" mat-button (click)="addPaiement()" >Envoyer</button>
+    </mat-dialog-content>
 </div>
