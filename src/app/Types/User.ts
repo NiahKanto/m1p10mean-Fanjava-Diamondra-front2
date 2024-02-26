@@ -9,3 +9,10 @@ export interface UserInscription {
     mdp: string
     confirmmdp: string
 }
+
+export interface User{
+    nom: string
+    email: string
+}
+
+export type Users = User[]
