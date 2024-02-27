@@ -75,6 +75,7 @@ export class ProfilComponent {
       console.log(response);
       this.openSnackBar('Modification effectuée','Fermer');
       this.editMode = false;
+      this.passwordEditMode = false;
     }, error => { 
       this.errorMessage= error.error.message;
       console.error(error);
@@ -94,6 +95,7 @@ export class ProfilComponent {
       console.log(response);
       this.openSnackBar('Modification effectuée','Fermer');
       this.editMode = false;
+      this.passwordEditMode = false;
     }, error => { 
       this.errorMessage= error.error.message;
       console.error(error);
