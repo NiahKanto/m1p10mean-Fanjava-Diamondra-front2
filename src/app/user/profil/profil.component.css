@@ -1,0 +1,49 @@
+.profil-container {
+    margin: 20px;
+  }
+  
+  .btn{
+    background-color: #2c5044;
+    color: #ffffff; /* Couleur du texte */
+    text-align: center; /* Alignement du texte au centre */
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; /* Police de caractère */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Ombre douce */
+  }
+  .profil-container h2 {
+    font-size: 24px;
+    color: #2a9b70;
+    margin-bottom: 10px;
+  }
+  
+  .profil-info {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 20px;
+  }
+  
+  .info-item {
+    margin-bottom: 15px;
+  }
+  
+  .info-item strong {
+    font-weight: bold;
+  }
+  
+  .info-item span {
+    margin-left: 10px;
+  }
+  
+  .info-item ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .info-item ul li {
+    margin-left: 10px;
+  }
+  /* Mettre en page les formulaires côte à côte */
+  .error-message{
+    width: 100%;
+  }
+  
+  

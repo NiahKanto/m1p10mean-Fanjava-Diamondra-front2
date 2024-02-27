@@ -14,6 +14,7 @@ import { ListeServNonAssigneComponent } from './service/liste-serv-non-assigne/l
 import { ClientComponent } from './client/client.component';
 import { EmployeComponent } from './employe/employe.component';
 import { GestionOffreComponent } from './gestion-offre/gestion-offre.component';
+import { ProfilComponent } from './user/profil/profil.component'; 
 
 const routes: Routes = [
 
@@ -30,7 +31,9 @@ const routes: Routes = [
   { path: 'clients', component: ClientComponent, canActivate: [AuthGuardManager]},
   { path: 'employes', component: EmployeComponent, canActivate: [AuthGuardManager]},
   { path: 'offres', component: GestionOffreComponent, canActivate: [AuthGuardManager]},
+  { path: 'profil', component: ProfilComponent},
 ];
+
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

@@ -1,6 +1,8 @@
 <div class="lapage">
     <h2 class="list-title">Organisation des taches</h2>
-
+    <div *ngIf="errorMessage !== ''" class="error-message">
+        {{ errorMessage }}
+    </div>
     <div class="zones-container">
         <!-- Zone "A faire" -->
         <div class="zone">
