@@ -122,7 +122,7 @@ export class SuiviTachesComponent implements OnInit {
         this.openSnackBar('Tâches en cours ajoutées avec succès', 'Fermer');
       })
       .catch(error => {
-        this.errorMessage = error.error.message;
+        this.errorMessage = error.error.message; 
       });
   
     await this.processFini(fini)

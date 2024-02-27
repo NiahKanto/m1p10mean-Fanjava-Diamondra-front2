@@ -2,14 +2,14 @@
      <mat-sidenav #drawer class="sidenav" fixedInViewport [mode]="'side'" [opened]="true">
        <div class="navbar">
       <mat-nav-list *ngIf="isClient()">
+        <a mat-list-item routerLink="/profil">Mon Profil</a>  
         <a mat-list-item routerLink="/home">Accueil</a>
         <a  mat-list-item routerLink="/rdv">Rendez-vous</a>
         <a  mat-list-item routerLink="/historic">Historiques</a>
       </mat-nav-list>
           <mat-accordion multi="false">
               <mat-nav-list *ngIf="isEmploye()">
-                  <a mat-list-item routerLink="/lien1">Mon Profil</a>
-                  <a mat-list-item routerLink="/lien1">Mon emploi du temps</a>
+                  <a mat-list-item routerLink="/profil">Mon Profil</a>  
                   <a mat-list-item routerLink="/suiviTaches">Ma journée </a>
               </mat-nav-list>
               <mat-expansion-panel *ngIf="isEmploye()">
@@ -35,6 +35,7 @@
             <a mat-list-item routerLink="/employes">Employé</a>
             <a mat-list-item routerLink="/offres">Offre</a>
             <a mat-list-item routerLink="/manageService">Service</a>
+            <a mat-list-item routerLink="/profil">Mon Profil</a>  
         </mat-nav-list>
       </div>
   </mat-sidenav>

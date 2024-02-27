@@ -1,0 +1,70 @@
+<div class="profil-container mat-elevation-z2">
+    <h2>Mon profil </h2>
+    <div *ngIf="errorMessage !== ''" class="error-message">
+      {{ errorMessage }}
+    </div>
+    <div class="profil-info">
+      <mat-card>
+        <button mat-icon-button (click)="toggleEditMode()">
+            <mat-icon>{{ editMode ? 'cancel' : 'edit' }}</mat-icon>
+          </button>
+        <mat-card-content>
+          <div class="row">
+            <div *ngIf="!editMode">
+                <div class="info-item" >
+                    <strong>Nom :</strong>
+                    <span>{{ utilisateur.nom }}</span>
+                </div>
+                <div class="info-item">
+                    <strong>Email :</strong>
+                    <span>{{ utilisateur.email }}</span>
+                </div>
+                <div class="info-item">
+                    <strong>Rôles :</strong> 
+                    <mat-chip *ngFor="let role of utilisateur.roles">{{ role }}</mat-chip> 
+                </div>
+                <div class="info-item" *ngIf="!isClient()">
+                    <strong>Horaire de travail :</strong> 
+                    <span>Du: lundi au samedi, de 8h a 17h</span>
+                </div>
+            </div> 
+                <div class="col-md-4">
+                  <div *ngIf="editMode">
+                      <form #profileForm="ngForm" (ngSubmit)="saveChanges(profileForm)">
+                          <div class="info-item" >
+                            <mat-form-field>
+                              <input matInput placeholder="Nom" name="nom" [(ngModel)]="utilisateur.nom" ngModel required>
+                            </mat-form-field>
+                          </div>
+                          <div class="info-item" >
+                            <mat-form-field>
+                              <input matInput placeholder="Email" name="email" [(ngModel)]="utilisateur.email" ngModel required>
+                            </mat-form-field>
+                          </div>
+                        <button class="btn" type="submit">Enregistrer</button>
+                      </form>
+                              <br>
+                              <button mat-raised-button  (click)="togglePasswordEditMode()">Modifier mot de passe</button>
+                  </div>
+                </div>
+     
+              <!-- Formulaire de modification du mot de passe -->
+              <div class="col-md-8" *ngIf="passwordEditMode">
+                <form #passwordForm="ngForm" (ngSubmit)="changePassword(passwordForm)">
+                  <mat-form-field>
+                    <input matInput type="password" placeholder="Mot de passe actuel" name="currentPassword" ngModel required>
+                  </mat-form-field>
+                  <mat-form-field>
+                    <input matInput type="password" placeholder="Nouveau mot de passe" name="newPassword" ngModel required>
+                  </mat-form-field>
+                  <button mat-raised-button class="btn" type="submit">Enregistrer</button>
+                </form>
+              </div>
+            </div>
+        </mat-card-content>
+        
+      </mat-card>
+    </div>
+  </div>
+
+  

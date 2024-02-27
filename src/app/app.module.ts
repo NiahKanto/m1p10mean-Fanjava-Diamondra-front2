@@ -50,6 +50,8 @@ import { EmployeComponent } from './employe/employe.component';
 import { DialogAjoutEmployeComponent } from './dialog-ajout-employe/dialog-ajout-employe.component';
 import { GestionOffreComponent } from './gestion-offre/gestion-offre.component';
 import { DialogAjoutOffreComponent } from './dialog-ajout-offre/dialog-ajout-offre.component';
+import { ProfilComponent } from './user/profil/profil.component';
+import { MatChipsModule } from '@angular/material/chips';
 
 
 @NgModule({
@@ -77,6 +79,7 @@ import { DialogAjoutOffreComponent } from './dialog-ajout-offre/dialog-ajout-off
     DialogAjoutEmployeComponent,
     GestionOffreComponent,
     DialogAjoutOffreComponent,
+    ProfilComponent,
   
   ],
   imports: [
@@ -102,7 +105,8 @@ import { DialogAjoutOffreComponent } from './dialog-ajout-offre/dialog-ajout-off
     MatCardModule,
     MatSnackBarModule,
     MatDialogModule,
-    MatSelectModule
+    MatSelectModule,
+    MatChipsModule
   ],
   providers: [
     provideAnimationsAsync(),
