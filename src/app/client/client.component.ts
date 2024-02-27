@@ -21,7 +21,7 @@ export class ClientComponent {
     const headers = new HttpHeaders({
       'Authorization': `Bearer ${this.authService.getToken()}`
     });
-    return  this.http.get<Users>('http://localhost:3000/liste_user/client',{headers: headers});
+    return  this.http.get<Users>('https://m1p10mean-fanjava-diamondra-back.vercel.app/liste_user/client',{headers: headers});
   }
 
   ngOnInit(): void {

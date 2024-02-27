@@ -40,14 +40,14 @@ export class ProfilComponent {
     const headers = new HttpHeaders({
       'Authorization': `Bearer ${this.authService.getToken()}`
     });
-    return this.http.get<User>('http://localhost:3000/ma_fiche', { headers: headers });
+    return this.http.get<User>('https://m1p10mean-fanjava-diamondra-back.vercel.app/ma_fiche', { headers: headers });
   }
 
   modif_user(): Observable<any> {
     const headers = new HttpHeaders({
       'Authorization': `Bearer ${this.authService.getToken()}`
     });
-    return this.http.put('http://localhost:3000/modif_userfiche', { headers: headers });
+    return this.http.put('https://m1p10mean-fanjava-diamondra-back.vercel.app/modif_userfiche', { headers: headers });
   }
 
   togglePasswordEditMode(): void {
@@ -71,11 +71,12 @@ export class ProfilComponent {
       "nom": profileForm.value.nom,
       "email": profileForm.value.email
     }; 
-    this.http.put('http://localhost:3000/modif_userfiche/', body, { headers: headers }).subscribe(response => {
+    this.http.put('https://m1p10mean-fanjava-diamondra-back.vercel.app/modif_userfiche/', body, { headers: headers }).subscribe(response => {
       console.log(response);
       this.openSnackBar('Modification effectuée','Fermer');
       this.editMode = false;
       this.passwordEditMode = false;
+      this.errorMessage='';
     }, error => { 
       this.errorMessage= error.error.message;
       console.error(error);
@@ -91,11 +92,12 @@ export class ProfilComponent {
       "mdpAncien": passwordForm.value.currentPassword,
       "mdpVaovao": passwordForm.value.newPassword
     }; 
-    this.http.put('http://localhost:3000/modif_userMDP/', body, { headers: headers }).subscribe(response => {
+    this.http.put('https://m1p10mean-fanjava-diamondra-back.vercel.app/modif_userMDP/', body, { headers: headers }).subscribe(response => {
       console.log(response);
       this.openSnackBar('Modification effectuée','Fermer');
       this.editMode = false;
       this.passwordEditMode = false;
+      this.errorMessage='';
     }, error => { 
       this.errorMessage= error.error.message;
       console.error(error);

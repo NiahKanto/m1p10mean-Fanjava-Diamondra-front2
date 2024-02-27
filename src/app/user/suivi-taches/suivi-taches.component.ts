@@ -48,19 +48,19 @@ export class SuiviTachesComponent implements OnInit {
     const headers = new HttpHeaders({
       'Authorization': `Bearer ${this.authService.getToken()}`
     });
-    return this.http.get<serv4rdv[]>('http://localhost:3000/rdv/listAfaire', { headers: headers });
+    return this.http.get<serv4rdv[]>('https://m1p10mean-fanjava-diamondra-back.vercel.app/rdv/listAfaire', { headers: headers });
   }
   fetchencours(): Observable<serv4rdv[]> {
     const headers = new HttpHeaders({
       'Authorization': `Bearer ${this.authService.getToken()}`
     });
-    return this.http.get<serv4rdv[]>('http://localhost:3000/rdv/listEnCours', { headers: headers });
+    return this.http.get<serv4rdv[]>('https://m1p10mean-fanjava-diamondra-back.vercel.app/rdv/listEnCours', { headers: headers });
   }
   fetchfini(): Observable<serv4rdv[]> {
     const headers = new HttpHeaders({
       'Authorization': `Bearer ${this.authService.getToken()}`
     });
-    return this.http.get<serv4rdv[]>('http://localhost:3000/rdv/listFini', { headers: headers });
+    return this.http.get<serv4rdv[]>('https://m1p10mean-fanjava-diamondra-back.vercel.app/rdv/listFini', { headers: headers });
   }
   
   acceptServ(idRdv: string, idServ: string): Observable<any> {
@@ -70,7 +70,7 @@ export class SuiviTachesComponent implements OnInit {
     });
      
     // Ici, les en-têtes sont passés comme troisième argument
-    return this.http.post(`http://localhost:3000/rdv/acceptServ/${idRdv}/${idServ}`, {}, { headers: headers });
+    return this.http.post(`https://m1p10mean-fanjava-diamondra-back.vercel.app/rdv/acceptServ/${idRdv}/${idServ}`, {}, { headers: headers });
   }
   
   
@@ -78,13 +78,13 @@ export class SuiviTachesComponent implements OnInit {
     const headers = new HttpHeaders({
       'Authorization': `Bearer ${this.authService.getToken()}`
     });
-    return this.http.post(`http://localhost:3000/rdv/finishServ/${idRdv}/${idServ}`,{},{headers: headers});
+    return this.http.post(`https://m1p10mean-fanjava-diamondra-back.vercel.app/rdv/finishServ/${idRdv}/${idServ}`,{},{headers: headers});
   }
   findRDV4Serv(idService: string):  Observable<any> {
     const headers = new HttpHeaders({
       'Authorization': `Bearer ${this.authService.getToken()}`
     });
-    return this.http.get(`http://localhost:3000/rdv/findRDV4Serv/${idService}`, { headers: headers });
+    return this.http.get(`https://m1p10mean-fanjava-diamondra-back.vercel.app/rdv/findRDV4Serv/${idService}`, { headers: headers });
   }
  
   private async processFini(fini: serv4rdv[]): Promise<void> {

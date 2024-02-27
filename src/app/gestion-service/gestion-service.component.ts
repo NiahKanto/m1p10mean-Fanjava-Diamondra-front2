@@ -27,7 +27,7 @@ export class GestionServiceComponent {
     const headers = new HttpHeaders({
       'Authorization': `Bearer ${this.authService.getToken()}`
     });
-    return  this.http.get<Services>('http://localhost:3000/service/all',{headers: headers});
+    return  this.http.get<Services>('https://m1p10mean-fanjava-diamondra-back.vercel.app/service/all',{headers: headers});
   }
 
   ngOnInit(): void {

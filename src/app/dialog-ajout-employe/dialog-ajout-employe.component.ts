@@ -34,7 +34,7 @@ export class DialogAjoutEmployeComponent {
     const headers = new HttpHeaders({
       'Authorization': `Bearer ${this.authService.getToken()}`
     });
-    return this.http.post('http://localhost:3000/inscription_emp',credentials,{headers: headers});
+    return this.http.post('https://m1p10mean-fanjava-diamondra-back.vercel.app/inscription_emp',credentials,{headers: headers});
   }
 
   addService(){

@@ -32,7 +32,7 @@ export class AuthentificationService {
   }
 
   login(credentials: UserLogin): Observable <any> {
-    return this.http.post('http://localhost:3000/login_user',credentials);
+    return this.http.post('https://m1p10mean-fanjava-diamondra-back.vercel.app/login_user',credentials);
   }
 
   setToken(token: string ):void{
@@ -86,6 +86,6 @@ export class AuthentificationService {
   }
 
   inscription(credentials: UserInscription): Observable <any> {
-    return this.http.post('http://localhost:3000/inscription_user',credentials);
+    return this.http.post('https://m1p10mean-fanjava-diamondra-back.vercel.app/inscription_user',credentials);
   }
 }

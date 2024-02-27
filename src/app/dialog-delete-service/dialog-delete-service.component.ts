@@ -28,7 +28,7 @@ export class DialogDeleteServiceComponent {
     const headers = new HttpHeaders({
       'Authorization': `Bearer ${this.authService.getToken()}`
     });
-    return this.http.post('http://localhost:3000/service/delete',{id: id},{headers: headers});
+    return this.http.post('https://m1p10mean-fanjava-diamondra-back.vercel.app/service/delete',{id: id},{headers: headers});
   }
 
   deleteService(){

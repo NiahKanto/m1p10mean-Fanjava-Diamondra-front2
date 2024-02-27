@@ -27,7 +27,7 @@ export class GestionOffreComponent {
     const headers = new HttpHeaders({
       'Authorization': `Bearer ${this.authService.getToken()}`
     });
-    return  this.http.get<Offres>('http://localhost:3000/offre/list',{headers: headers});
+    return  this.http.get<Offres>('https://m1p10mean-fanjava-diamondra-back.vercel.app/offre/list',{headers: headers});
   }
 
   ngOnInit(): void {

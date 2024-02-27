@@ -31,14 +31,14 @@ export class HomeComponent {
     const headers = new HttpHeaders({
       'Authorization': `Bearer ${this.authService.getToken()}`
     });
-    return  this.http.get<RDVUnit>('http://localhost:3000/rdv/nextRDV',{headers: headers});
+    return  this.http.get<RDVUnit>('https://m1p10mean-fanjava-diamondra-back.vercel.app/rdv/nextRDV',{headers: headers});
   }
 
   fetchOffres() : Observable<Offres> {
     const headers = new HttpHeaders({
       'Authorization': `Bearer ${this.authService.getToken()}`
     });
-    return  this.http.get<Offres>('http://localhost:3000/offre/listToday',{headers: headers});
+    return  this.http.get<Offres>('https://m1p10mean-fanjava-diamondra-back.vercel.app/offre/listToday',{headers: headers});
   }
 
   ngOnInit(){

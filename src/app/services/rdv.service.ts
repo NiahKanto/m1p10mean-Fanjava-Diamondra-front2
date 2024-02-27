@@ -15,26 +15,26 @@ export class RDVService {
     const headers = new HttpHeaders({
         'Authorization': `Bearer ${this.authService.getToken()}`
       });
-    return this.http.get('http://localhost:3000/rdv/rdvToday/',{headers: headers});
+    return this.http.get('https://m1p10mean-fanjava-diamondra-back.vercel.app/rdv/rdvToday/',{headers: headers});
   }
   getHistorique(): Observable<any> {
     const headers = new HttpHeaders({
         'Authorization': `Bearer ${this.authService.getToken()}`
       });
-    return this.http.get('http://localhost:3000/rdv/historic-by-employee/',{headers: headers});
+    return this.http.get('https://m1p10mean-fanjava-diamondra-back.vercel.app/rdv/historic-by-employee/',{headers: headers});
   }
   getListeServNonAssigneComponent(): Observable<any> {
     const headers = new HttpHeaders({
         'Authorization': `Bearer ${this.authService.getToken()}`
       });
-    return this.http.get('http://localhost:3000/rdv/listServiceNonAssignes/',{headers: headers});
+    return this.http.get('https://m1p10mean-fanjava-diamondra-back.vercel.app/rdv/listServiceNonAssignes/',{headers: headers});
   }
   assignerServ(idService:string): Observable<any> {
     const headers = new HttpHeaders({
         'Authorization': `Bearer ${this.authService.getToken()}`
       });
       console.log('tonga eto @requete tsara')
-    return this.http.post(`http://localhost:3000/rdv/assignerservice/${idService}`,{},{headers: headers});
+    return this.http.post(`https://m1p10mean-fanjava-diamondra-back.vercel.app/rdv/assignerservice/${idService}`,{},{headers: headers});
   }
   
 }
