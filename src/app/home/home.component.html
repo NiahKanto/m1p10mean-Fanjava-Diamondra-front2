@@ -20,4 +20,7 @@
             </mat-card-header>
         </mat-card>
     </div>
+    <div *ngIf="isEmploye()" >
+        <app-rdv-liste-component></app-rdv-liste-component>
+    </div>
 </div>
