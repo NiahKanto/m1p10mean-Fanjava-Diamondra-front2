@@ -21,7 +21,6 @@
                         <a mat-list-item routerLink="/servNonAssigne">Services non-assignés</a>
                     </mat-nav-list>
                 </mat-expansion-panel>
-              </mat-expansion-panel>
           </mat-accordion>
           <mat-nav-list *ngIf="isManager()">
             <a mat-list-item routerLink="/home">Accueil</a>
@@ -46,8 +45,6 @@
                             <a mat-list-item routerLink="/servNonAssigne" class="mat-list-item"><mat-icon> list_alt</mat-icon>Services non-assignés</a>
                         </mat-nav-list>
                     </mat-expansion-panel>
-                  </mat-expansion-panel>
-              </mat-accordion>
               <mat-nav-list *ngIf="isManager()">
                 <a mat-list-item routerLink="/clients" class="mat-list-item"><mat-icon>supervised_user_circle</mat-icon>Client</a>
                 <a mat-list-item routerLink="/employes" class="mat-list-item"><mat-icon>supervised_user_circle</mat-icon>Employé</a>
