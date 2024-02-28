@@ -3,8 +3,8 @@
         <div class="home p-3 col-md-12 col-xs-12">
             <div *ngIf="isClient()" class="d-flex mt-3" >
                 <div class="rappel-container">
+                  <mat-card *ngIf="rdv" class="rappel-card" >
                     <h4 class="rappel-card-title" >Mes rendez-vous</h4>
-                    <mat-card *ngIf="rdv" class="rappel-card" >
                         <mat-card-header>
                             <div mat-card-avatar class="avatar" >
                                 <mat-icon>event</mat-icon>

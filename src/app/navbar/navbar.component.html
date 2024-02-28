@@ -1,4 +1,4 @@
-<mat-sidenav-container class="sidenav-container">
+<mat-sidenav-container class="sidenav-container ">
   <mat-sidenav #drawer class="sidenav" fixedInViewport [mode]="'side'" [opened]="true">
     <div *ngIf="divVisible$ | async">
       <div class="navbar">
@@ -12,15 +12,6 @@
         <mat-nav-list *ngIf="isEmploye()" class="mat-nav-list">
           <a mat-list-item routerLink="/profil" class="nav-item" ><mat-icon>account_circle</mat-icon> Profil</a>
           <a mat-list-item routerLink="/suiviTaches" class="nav-item" ><mat-icon>assignment</mat-icon> Ma journée </a>
-
-          <mat-expansion-panel *ngIf="isEmploye()">
-            <mat-expansion-panel-header>
-              <mat-panel-title>Services</mat-panel-title>
-            </mat-expansion-panel-header>
-            <mat-nav-list>
-              <a mat-list-item routerLink="/servNonAssigne" class="nav-item" >Services non-assignés</a>
-            </mat-nav-list>
-          </mat-expansion-panel>
 
           <mat-expansion-panel *ngIf="isEmploye()">
             <mat-expansion-panel-header>
@@ -51,7 +42,7 @@
     </div>
   </mat-sidenav>
 
-  <mat-sidenav-content class="main-content">
+  <mat-sidenav-content class="main-content ">
     <router-outlet></router-outlet>
   </mat-sidenav-content>
 </mat-sidenav-container>
