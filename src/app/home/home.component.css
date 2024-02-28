@@ -12,8 +12,8 @@
     margin-right: 16px;
   }
   .rappel-card-title{
-      font-size: 24px;
-      font-weight:500;
+      font-size: 24px !important;
+      font-weight:500 !important;
   }
   .rappel-card-title:first-child{
     text-align: start;
@@ -62,4 +62,24 @@
 
 .avatar2{
     background-color: #ffc300 !important;
+}
+.offer-name{
+  font-size: 16px !important;
+  font-size: 800 !important;
+  text-align: center;
+}
+.libelle{
+  padding: 4px 8px;
+  background-color: #dce1dd;
+  margin-right: 8px;
+  border-radius: 8px;
+  color: #333;
+}
+.libelle-fiche{
+  font-size: 12px;
+  font-weight: 600;
+}
+.dtls-header{
+  background-color: #dce1dd !important;
+  color: #333 !important;
 }

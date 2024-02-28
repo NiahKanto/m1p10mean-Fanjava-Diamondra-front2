@@ -8,7 +8,7 @@
                         <mat-card-header>
                             <div mat-card-avatar class="avatar" >
                                 <mat-icon>event</mat-icon>
-                            </div> 
+                            </div>
                             <mat-card-title>Prochain rendez-vous</mat-card-title>
                             <mat-card-subtitle>{{ rdv.dateHeure | date:'dd-MM-yyyy' }} à {{ rdv.dateHeure | date:'HH:mm' }}</mat-card-subtitle>
                             <mat-card-subtitle>à un prix total de: {{ totalRdv.totalMontant }}Ar </mat-card-subtitle>
@@ -42,47 +42,53 @@
             </div>
         </div>
 
-        
+
         <!-- Colonne pour les détails du rendez-vous sélectionné -->
         <div class="col-md-6 col-xs-12" *ngIf="rdvDetails && selectedRdvId">
             <div class="card">
-            <div class="card-header">
-                <h5 class="card-title">Détails du rendez-vous</h5>
+            <div class="card-header dtls-header">
+                <h5  class="offer-name" >Détails du rendez-vous</h5>
             </div>
             <div class="card-body">
                 <ul class="list-group">
                 <li *ngFor="let service of rdvDetails" class="list-group-item">
                     <div>
-                    <strong>{{ service.nom }}</strong>
+                    <strong class="offer-name" ><a [routerLink]="['/ficheService', service.idService]">{{ service.nom }}</a></strong>
+                    <div class="d-flex">
+                      <div class="libelle" >
+                        <span class="libelle-fiche" >Delai : {{ service.delai }}</span>
+                        </div>
+                      <div class="libelle" >
+                      <span class="libelle-fiche">Commission : {{ service.commission }}</span>
+                      </div>
                     </div>
-                    <div>
-                    <span>Delai : {{ service.delai }}</span>
-                    </div>
-                    <div>
-                    <span>Commission : {{ service.commission }}</span>
-                    </div>
+                  </div>
+
                 </li>
                 </ul>
             </div>
             </div>
         </div>
-        <div class="col-md-6 col-xs-12" *ngIf="offreDetails && selectedOffreId">
+        <div class="col-md-6 col-xs-12 mt-2" *ngIf="offreDetails && selectedOffreId">
             <div class="card">
             <div class="card-header">
-                <h5 class="card-title">Détails de l'Offre</h5>
+                <h5 class="offer-name">Détails de l'Offre</h5>
             </div>
             <div class="card-body">
                 <ul class="list-group">
                 <li *ngFor="let service of offreDetails" class="list-group-item">
-                    <div>
-                    <strong>{{ service.nom }}</strong>
+                    <div class="" >
+                    <strong class="offer-name" >{{ service.nom }}</strong>
+                    <div class="d-flex">
+                      <div class="libelle" >
+                        <span class="libelle-fiche" >Delai : {{ service.delai }}</span>
+                        </div>
+                      <div class="libelle" >
+                      <span class="libelle-fiche">Commission : {{ service.commission }}</span>
+                      </div>
                     </div>
-                    <div>
-                    <span>Delai : {{ service.delai }}</span>
                     </div>
-                    <div>
-                    <span>Commission : {{ service.commission }}</span>
-                    </div>
+
                 </li>
                 </ul>
             </div>
@@ -92,6 +98,6 @@
 
     </div>
     <div *ngIf="isManager()" >
-       <app-stat-rdv></app-stat-rdv> 
+       <app-stat-rdv></app-stat-rdv>
     </div>
 </div>
