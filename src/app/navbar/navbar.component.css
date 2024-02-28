@@ -13,12 +13,16 @@
     /* background-color: #AFE3C0;  Couleur de fond pour la navbar */
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
     align-items: flex-start !important;
+    width: 258px;
 }
 
 .mat-nav-list,
 .mat-expansion-panel {
     background-color: transparent; /* Fond transparent pour les listes et panneaux d'expansion dans la navbar */
-    padding: 0; /* Supprimer le rembourrage par défaut */
+    padding: 0px; /* Supprimer le rembourrage par défaut */
+    max-width: 218px;
+    margin-bottom: 8px;
+    white-space: nowrap;
 }
 
 .mat-list-item {
@@ -51,10 +55,10 @@
     text-decoration: none; */
 }
 
-.mat-list-item:hover { 
+.mat-list-item:hover {
     background-color: #E0E0E0; /* Couleur de fond au survol */
 }
- 
+
 .mat-expansion-panel-header {
     background-color: #F5F5F5; /* Couleur de fond pour les en-têtes de panneaux d'expansion dans la navbar */
 }
@@ -67,21 +71,20 @@
 
 /* Ajoutez d'autres styles spécifiques à votre navbar ici */
 .main-content {
-    margin-top: 64px; /* Marge supérieure pour compenser la hauteur du header */
-    margin-bottom: 64px;
+    margin-top: 64px;
     height: calc(100vh - 128px); /* Hauteur du contenu principal (taille de la fenêtre moins la hauteur du header) */
     overflow-y: auto; /* Ajoute une barre de défilement verticale si le contenu dépasse la hauteur de la fenêtre */
-} 
+}
 .inactive{
-    display: none !important; 
+    display: none !important;
 }
 
 @media (max-width: 767px) {
+  .main-content{
+    width: 100vw;
+  }
     .navbar {
-        width: 75vw;
-    }
-    .mat-nav-list{
-        width: 100%;
+        /* width: 75vw; */
     }
 }
 @media (max-width: 400px) {
@@ -89,4 +92,3 @@
         width: 100vw;
     }
 }
- 

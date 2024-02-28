@@ -15,6 +15,9 @@
       font-size: 24px;
       font-weight:500;
   }
+  .rappel-card-title:first-child{
+    text-align: start;
+  }
   .avatar {
     color: #fff;
     width: 50px; /* Largeur de l'avatar */
@@ -26,21 +29,21 @@
     align-items: center;
     margin-right: 10px; /* Marge à droite pour l'espacement */
   }
-  
+
   mat-icon {
     font-size: 24px; /* Taille de l'icône */
   }
-  
+
   mat-card-title {
     font-size: 20px; /* Taille du titre */
     margin-bottom: 10px; /* Marge en bas pour l'espacement */
   }
-  
+
   mat-card-subtitle {
     font-size: 16px; /* Taille du sous-titre */
     color: #666; /* Couleur du texte */
   }
-  
+
   /* Optionnel : ajoutez des médias pour rendre la mise en page réactive */
   @media (max-width: 768px) {
     .rappel-card {
@@ -54,8 +57,8 @@
     margin-bottom: 20px; /* Marge en bas pour l'espacement */
     font-size: 24px; /* Taille de la police du titre */
   }
-  
-  
+
+
 
 .avatar2{
     background-color: #ffc300 !important;
