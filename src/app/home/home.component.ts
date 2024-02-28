@@ -17,24 +17,20 @@ import { Offres } from '../Types/Offre';
 })
 export class HomeComponent {
   selectedRdvId: any;
+  selectedOffreId: any;
   rdvDetails:  any;
-
+  offreDetails:  any;
+  
   constructor(private authService: AuthentificationService, private http: HttpClient){}
-  rdv : RDVDataUnit = {
-    dateHeure: new Date(),
-    etat: 0,
-  };
-  totalRdv: RDVDataTotal = {
-    totalMontant: 0,
-    totalDuree: 0
-  };
+  rdv :any
+  totalRdv: any;
   offres : Offres = []
 
-  fetchRDV() : Observable<RDVUnit> {
+  fetchRDV() : Observable<any> {
     const headers = new HttpHeaders({
       'Authorization': `Bearer ${this.authService.getToken()}`
     });
-    return  this.http.get<RDVUnit>('https://m1p10mean-fanjava-diamondra-back.vercel.app/rdv/nextRDV',{headers: headers});
+    return  this.http.get('https://m1p10mean-fanjava-diamondra-back.vercel.app/rdv/nextRDV',{headers: headers});
   }
 
   fetchOffres() : Observable<Offres> {
@@ -44,32 +40,53 @@ export class HomeComponent {
     return  this.http.get<Offres>('https://m1p10mean-fanjava-diamondra-back.vercel.app/offre/listToday',{headers: headers});
   }
 
-  getfindServ4RDV(idRdv: string): Observable<any> {
+  getdetailRDV(idRdv: string): Observable<any> {
     const headers = new HttpHeaders({
       'Authorization': `Bearer ${this.authService.getToken()}`
     });
-    return this.http.get(`https://m1p10mean-fanjava-diamondra-back.vercel.app/rdv/findServ4RDV/${idRdv}`, { headers: headers });
+    return this.http.get(`https://m1p10mean-fanjava-diamondra-back.vercel.app/rdv/detailsServ4RDVbyID/${idRdv}`, { headers: headers });
+  }
+  
+  getdetailOffre(idOffre: string): Observable<any> {
+    const headers = new HttpHeaders({
+      'Authorization': `Bearer ${this.authService.getToken()}`
+    });
+    return this.http.get(`https://m1p10mean-fanjava-diamondra-back.vercel.app/offre/detailsPack/${idOffre}`, { headers: headers });
   }
 
-  voirDetails(idRdv: string): void {
+  voirDetailsRDV(idRdv: string): void {
     console.log('appel fonction')
     this.selectedRdvId = idRdv;
     console.log('idRdv='+idRdv)
-    this.getfindServ4RDV(idRdv).subscribe((details: any) => {
+    this.getdetailRDV(idRdv).subscribe((details: any) => {
       this.rdvDetails = details;
+      this.offreDetails=null;
+      console.log('rdvdetail==='+details)
+    });
+  }
+
+  voirDetailsOffre(idOffre: string): void {
+    console.log('appel fonction')
+    this.selectedOffreId = idOffre;
+    console.log('idOffre='+idOffre)
+    this.getdetailOffre(idOffre).subscribe((details: any) => {
+      this.offreDetails = details.service;
+      this.rdvDetails=null;
       console.log('rdvdetail==='+details)
     });
   }
 
   ngOnInit(){
-    if(this.authService.isClient()){
-      this.fetchRDV().subscribe((data: RDVUnit) => {
-        this.rdv = data.rdv;
-        this.totalRdv = data.totalRdv;
+    if(this.authService.isClient())
+    {
+      this.fetchRDV().subscribe((data: any) => {
+        this.rdv = data.rdvDetails;
+        console.log('vo azo'+data);
+        this.totalRdv = data.totalRdv; 
       });
       this.fetchOffres().subscribe((data: Offres) => {
         this.offres = data;
-      })
+      }) 
     }
   }
 
