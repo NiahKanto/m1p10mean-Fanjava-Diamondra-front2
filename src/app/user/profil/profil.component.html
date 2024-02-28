@@ -1,16 +1,19 @@
-<div class="profil-container mat-elevation-z2">
-    <h2>Mon profil </h2>
+<div class="profil-container col-lg-12 col-md-12 col-xs-12 mt-3">
+    
     <div *ngIf="errorMessage !== ''" class="error-message">
-      {{ errorMessage }}
+      <p>{{ errorMessage }} </p>
+      <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
     </div>
     <div class="profil-info">
-      <mat-card>
-        <button mat-icon-button (click)="toggleEditMode()">
-            <mat-icon>{{ editMode ? 'cancel' : 'edit' }}</mat-icon>
-          </button>
+      
+      <mat-card style="border: none;" >
+        <h2>Mon profil <button mat-icon-button (click)="toggleEditMode()">
+          <mat-icon>{{ editMode ? 'cancel' : 'edit' }}</mat-icon>
+        </button></h2>
+        
         <mat-card-content>
           <div class="row">
-            <div *ngIf="!editMode">
+            <div *ngIf="!editMode" class="d-flex flex-column justify-content-center">
                 <div class="info-item" >
                     <strong>Nom :</strong>
                     <span>{{ utilisateur.nom }}</span>
@@ -28,9 +31,9 @@
                     <span>Du: lundi au samedi, de 8h a 17h</span>
                 </div>
             </div> 
-                <div class="col-md-4">
+                <div class="">
                   <div *ngIf="editMode">
-                      <form #profileForm="ngForm" (ngSubmit)="saveChanges(profileForm)">
+                      <form #profileForm="ngForm" (ngSubmit)="saveChanges(profileForm)" class="col-md-12 d-flex flex-column justify-content-center">
                           <div class="info-item" >
                             <mat-form-field>
                               <input matInput placeholder="Nom" name="nom" [(ngModel)]="utilisateur.nom" ngModel required>
@@ -41,20 +44,22 @@
                               <input matInput placeholder="Email" name="email" [(ngModel)]="utilisateur.email" ngModel required>
                             </mat-form-field>
                           </div>
-                        <button class="btn" type="submit">Enregistrer</button>
+                        <button class="btn" type="submit"  >Enregistrer</button>
+                        
                       </form>
-                              <br>
-                              <button mat-raised-button  (click)="togglePasswordEditMode()">Modifier mot de passe</button>
+                      <br>
+                      <button mat-raised-button  (click)="togglePasswordEditMode()" style="margin-left: 16px;width: 212px;" >Modifier mot de passe</button>
+                              
                   </div>
                 </div>
      
               <!-- Formulaire de modification du mot de passe -->
               <div class="col-md-8" *ngIf="passwordEditMode">
                 <form #passwordForm="ngForm" (ngSubmit)="changePassword(passwordForm)">
-                  <mat-form-field>
+                  <mat-form-field style="margin-right: 8px;" >
                     <input matInput type="password" placeholder="Mot de passe actuel" name="currentPassword" ngModel required>
                   </mat-form-field>
-                  <mat-form-field>
+                  <mat-form-field style="margin-right: 8px;">
                     <input matInput type="password" placeholder="Nouveau mot de passe" name="newPassword" ngModel required>
                   </mat-form-field>
                   <button mat-raised-button class="btn" type="submit">Enregistrer</button>
