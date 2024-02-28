@@ -1,7 +1,7 @@
 <div class="container">
-  <div class="row">
+  <div class="row d-flex justify-content-center">
     <!-- Colonne pour la liste des rendez-vous -->
-    <div class="col-md-6">
+    <div class="col-md-6 col-xs-12">
       <div class="rappel-list">
         <h1 class="rappel-title">Mes rendez-vous d'aujourd'hui</h1>
         <mat-card *ngFor="let rdv of rendezVous" class="rappel-card">
@@ -24,7 +24,7 @@
     </div>
     
     <!-- Colonne pour les détails du rendez-vous sélectionné -->
-    <div class="col-md-6" *ngIf="rdvDetails && selectedRdvId">
+    <div class="col-md-6 col-xs-12" *ngIf="rdvDetails && selectedRdvId">
       <div class="card">
         <div class="card-header">
           <h5 class="card-title">Détails du rendez-vous</h5>
