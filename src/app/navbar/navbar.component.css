@@ -36,19 +36,19 @@
     width: 100%;
 }
 .nav-item{
-    display: flex !important;
+    /* display: flex !important;
     align-items: center !important;
+    flex-direction: column;
     gap: 10px !important;
     font-size: 16px !important;
-    color: #757575 !important; /* Couleur du texte des éléments de liste dans la navbar */
-    padding: 12px 24px !important; /* Ajouter un peu d'espace autour des éléments de liste */
-    font-weight: bold !important; /* Mettre en gras les éléments de liste */
-    transition: background-color 0.3s !important; /* Animation de transition */
+    color: #757575 !important;
+    padding: 12px 24px !important;
+    font-weight: bold !important;
+    transition: background-color 0.3s !important;
     border: 1.5px solid #f6f6f6 !important;
     border-radius: 8px !important;
-    margin-bottom: 5px !important;
     width: 100%;
-    text-decoration: none;
+    text-decoration: none; */
 }
 
 .mat-list-item:hover { 
