@@ -1,8 +1,20 @@
 .login-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height:  100vh;
-    gap:  1em;
-  }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height:  100vh;
+  gap:  1em;
+}
+.big-container{
+  width: 100vw;
+  background-image: url("../../assets/login-bg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.logo-sary {
+  width: 64px;
+  /* Largeur souhaitée */
+  height: auto;
+  /* Hauteur automatique pour maintenir les proportions */
+}

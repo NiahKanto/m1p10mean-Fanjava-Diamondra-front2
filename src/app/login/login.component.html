@@ -1,4 +1,6 @@
-<div class="login-container">
+<div class="big-container">
+  <div class="login-container">
+    <img src="../../assets/beaute-verte.png" class="logo-sary" alt="" srcset="">
     <h2>Login</h2>
     <div *ngIf="errorMessage" class="error-message">
         {{ errorMessage }}
@@ -20,4 +22,5 @@
       <span>Pas encore de compte? </span><a [routerLink]="['/inscription']">Inscrivez-vous</a>
     </form>
   </div>
+</div>
   
