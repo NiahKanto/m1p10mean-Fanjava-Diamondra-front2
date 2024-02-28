@@ -40,15 +40,9 @@
 }
 .menu{
     margin-right: 8px;
-    display: none;
     background-color: transparent;
 }
 .menu:active {
     background-color: transparent;
 }
 
-@media (max-width: 767px) {
-    .menu{
-        display: block;
-    }
-}
