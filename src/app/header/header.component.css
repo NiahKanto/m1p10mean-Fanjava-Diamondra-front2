@@ -1,26 +1,54 @@
-.header {  
-    height: 64px; /* Hauteur de l'en-tête */ 
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Ombre légère pour l'en-tête */
-    background-color: #AFE3C0; /* Couleur de fond */
-    color: #000000; /* Couleur du texte */
-    text-align: center; /* Alignement du texte au centre */ 
-    padding: 20px; /* Espacement intérieur */
-    font-size: 16px; /* Taille de la police */
-    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; /* Police de caractère */
+.header {
+    height: fit-content;
+    /* Hauteur de l'en-tête */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    /* Ombre légère pour l'en-tête */
+    background-color: #AFE3C0;
+    /* Couleur de fond */
+    color: #000000;
+    /* Couleur du texte */
+    text-align: center;
+    /* Alignement du texte au centre */
+    padding: 0 8px;
+    font-size: 16px;
+    /* Taille de la police */
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    /* Police de caractère */
     /* border-top: 3px solid #e67e22; Bordure supérieure */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Ombre douce */
-  }
-  
-  .logo {
-    font-size: 24px; /* Taille de la police pour le logo */
-    font-weight: bold; /* Police en gras pour le logo */
-  }
-  .logo-sary {
-    width: 60px; /* Largeur souhaitée */
-    height: auto; /* Hauteur automatique pour maintenir les proportions */
-  }
-  
-  .spacer {
-    flex: 1; /* Espace flexible pour pousser les éléments à droite */
-  }
- 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    /* Ombre douce */
+}
+
+.logo {
+    margin-left: 8px;
+    font-size: 24px;
+    /* Taille de la police pour le logo */
+    font-weight: 500;
+    /* Police en gras pour le logo */
+}
+
+.logo-sary {
+    width: 40px;
+    /* Largeur souhaitée */
+    height: auto;
+    /* Hauteur automatique pour maintenir les proportions */
+}
+
+.spacer {
+    flex: 1;
+    /* Espace flexible pour pousser les éléments à droite */
+}
+.menu{
+    margin-right: 8px;
+    display: none;
+    background-color: transparent;
+}
+.menu:active {
+    background-color: transparent;
+}
+
+@media (max-width: 767px) {
+    .menu{
+        display: block;
+    }
+}

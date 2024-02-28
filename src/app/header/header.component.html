@@ -1,12 +1,15 @@
 <mat-toolbar class="header">
   <mat-toolbar-row>
     <!-- <span><link rel="icon" type="image/png" href="beaute-verte.png"></span> -->
+    <button mat-icon-button (click)="toggleDiv()" class="menu">
+      <mat-icon >menu</mat-icon>
+    </button>
     <img src="assets/beaute-verte.png" alt="Logo" class="logo-sary">
-    <span class="logo">Beauty</span>
+    <span class="logo">MadaManja</span>
     <span class="spacer"></span>
-    <button mat-button [matMenuTriggerFor]="menu"><mat-icon>menu</mat-icon></button>
+    <button mat-button [matMenuTriggerFor]="menu"><mat-icon>logout</mat-icon></button>
     <mat-menu #menu="matMenu">
-      <button mat-menu-item (click)="logout()">Déconnexion<mat-icon>logout</mat-icon></button>
+      <button mat-menu-item (click)="logout()">Déconnexion</button>
     </mat-menu>
   </mat-toolbar-row>
 </mat-toolbar>

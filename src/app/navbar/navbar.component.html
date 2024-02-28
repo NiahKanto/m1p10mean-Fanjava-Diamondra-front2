@@ -1,24 +1,17 @@
 <mat-sidenav-container class="sidenav-container" >
      <mat-sidenav #drawer class="sidenav" fixedInViewport [mode]="'side'" [opened]="true">
-       <div class="navbar">
-      <mat-nav-list *ngIf="isClient()">
-        <a mat-list-item routerLink="/profil">Mon Profil</a>  
-        <a mat-list-item routerLink="/home">Accueil</a>
-        <a  mat-list-item routerLink="/rdv">Rendez-vous</a>
-        <a  mat-list-item routerLink="/historic">Historiques</a>
-      </mat-nav-list>
-          <mat-accordion multi="false">
-              <mat-nav-list *ngIf="isEmploye()">
-                  <a mat-list-item routerLink="/profil">Mon Profil</a>  
-                  <a mat-list-item routerLink="/suiviTaches">Ma journée </a>
-              </mat-nav-list>
-              <mat-expansion-panel *ngIf="isEmploye()">
-                  <mat-expansion-panel-header>
-                      <mat-panel-title>Rendez-vous</mat-panel-title>
-                  </mat-expansion-panel-header>
-                  <mat-nav-list>
-                      <a mat-list-item routerLink="/HistoriqueRDV">Historique</a>
-                      <a mat-list-item routerLink="/listeRDV">Mes Rendez-vous aujourd'hui</a>
+      <div *ngIf="divVisible$ | async">
+        <div class="navbar">
+          <mat-nav-list *ngIf="isClient()" class="mat-nav-list" >
+            <a mat-list-item routerLink="/profil" class="mat-list-item" ><mat-icon>account_circle</mat-icon> Profil</a>  
+            <a mat-list-item routerLink="/home" class="mat-list-item"><mat-icon>home</mat-icon>Accueil</a>
+            <a  mat-list-item routerLink="/rdv" class="mat-list-item"><mat-icon>event_note</mat-icon>Rendez-vous</a>
+            <a  mat-list-item routerLink="/historic" class="mat-list-item"><mat-icon>book</mat-icon>Historiques</a>
+          </mat-nav-list>
+              <mat-accordion multi="false">
+                  <mat-nav-list *ngIf="isEmploye()">
+                      <a mat-list-item routerLink="/profil" class="mat-list-item"><mat-icon>account_circle</mat-icon>Profil</a>  
+                      <a mat-list-item routerLink="/suiviTaches" class="mat-list-item"><mat-icon>assignment</mat-icon>Ma journée </a>
                   </mat-nav-list>
                   <mat-expansion-panel *ngIf="isEmploye()">
                     <mat-expansion-panel-header>
@@ -38,9 +31,35 @@
             <a mat-list-item routerLink="/manageService">Service</a>
             <a mat-list-item routerLink="/profil">Mon Profil</a>  
         </mat-nav-list>
+                      <mat-expansion-panel-header>
+                          <mat-panel-title><mat-icon>book</mat-icon>Rendez-vous</mat-panel-title>
+                      </mat-expansion-panel-header>
+                      <mat-nav-list>
+                          <a mat-list-item routerLink="/HistoriqueRDV" class="mat-list-item"><mat-icon>book</mat-icon>Historique</a>
+                          <a mat-list-item routerLink="/listeRDV" class="mat-list-item"><mat-icon>calendar_today</mat-icon>Mes Rendez-vous aujourd'hui</a>
+                      </mat-nav-list>
+                      <mat-expansion-panel *ngIf="isEmploye()">
+                        <mat-expansion-panel-header>
+                            <mat-panel-title><mat-icon> list_alt</mat-icon>Services</mat-panel-title>
+                        </mat-expansion-panel-header>
+                        <mat-nav-list>
+                            <a mat-list-item routerLink="/servNonAssigne" class="mat-list-item"><mat-icon> list_alt</mat-icon>Services non-assignés</a>
+                        </mat-nav-list>
+                    </mat-expansion-panel>
+                  </mat-expansion-panel>
+              </mat-accordion>
+              <mat-nav-list *ngIf="isManager()">
+                <a mat-list-item routerLink="/clients" class="mat-list-item"><mat-icon>supervised_user_circle</mat-icon>Client</a>
+                <a mat-list-item routerLink="/employes" class="mat-list-item"><mat-icon>supervised_user_circle</mat-icon>Employé</a>
+                <a mat-list-item routerLink="/offres" class="mat-list-item"><mat-icon>stars</mat-icon>Offre</a>
+                <a mat-list-item routerLink="/manageService" class="mat-list-item"><mat-icon> list_alt</mat-icon>Service</a>
+                <a mat-list-item routerLink="/profil" class="mat-list-item"><mat-icon>account_circle</mat-icon> Profil</a>  
+            </mat-nav-list>
+          </div>
       </div>
   </mat-sidenav>
   <mat-sidenav-content class="main-content">
     <router-outlet></router-outlet>
   </mat-sidenav-content>
 </mat-sidenav-container>
+
