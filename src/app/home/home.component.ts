@@ -60,6 +60,12 @@ export class HomeComponent {
   isClient(){
     return this.authService.isClient()
   }
+
+  isManager(){
+    return this.authService.isManager()
+  }
+
+  
   
 
 

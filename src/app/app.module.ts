@@ -31,6 +31,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatSnackBarModule } from '@angular/material/snack-bar'
 import { MatDialogModule } from '@angular/material/dialog'
 import { MatSelectModule } from '@angular/material/select'
+import { NgxChartsModule } from '@swimlane/ngx-charts';
 
 import { RdvComponent } from './rdv/rdv.component'
 import { HomeComponent } from './home/home.component';
@@ -52,6 +53,7 @@ import { GestionOffreComponent } from './gestion-offre/gestion-offre.component';
 import { DialogAjoutOffreComponent } from './dialog-ajout-offre/dialog-ajout-offre.component';
 import { ProfilComponent } from './user/profil/profil.component';
 import { MatChipsModule } from '@angular/material/chips';
+import { StatRDVComponent } from './stat-rdv/stat-rdv.component';
 
 
 @NgModule({
@@ -80,6 +82,7 @@ import { MatChipsModule } from '@angular/material/chips';
     GestionOffreComponent,
     DialogAjoutOffreComponent,
     ProfilComponent,
+    StatRDVComponent,
   
   ],
   imports: [
@@ -106,7 +109,8 @@ import { MatChipsModule } from '@angular/material/chips';
     MatSnackBarModule,
     MatDialogModule,
     MatSelectModule,
-    MatChipsModule
+    MatChipsModule,
+    NgxChartsModule
   ],
   providers: [
     provideAnimationsAsync(),
