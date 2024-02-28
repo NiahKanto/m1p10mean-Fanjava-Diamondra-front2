@@ -7,11 +7,12 @@
 }
 
 .navbar {
+    margin-top: 64px;
     height: calc(100vh - 128px);
-    padding: 20px; /* Espacement intérieur pour la navbar */
-    background-color: #AFE3C0; /* Couleur de fond pour la navbar */
-    color: #000; /* Couleur du texte pour la navbar */
-    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; /* Police de caractère pour la navbar */
+    padding: 16px; /* Espacement intérieur pour la navbar */
+    /* background-color: #AFE3C0;  Couleur de fond pour la navbar */
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    align-items: flex-start !important;
 }
 
 .mat-nav-list,
@@ -21,11 +22,18 @@
 }
 
 .mat-list-item {
-    color: #000; /* Couleur du texte des éléments de liste dans la navbar */
-    padding: 12px 24px; /* Ajouter un peu d'espace autour des éléments de liste */
-    font-weight: bold; /* Mettre en gras les éléments de liste */
-    text-transform: uppercase; /* Mettre en majuscules */
-    transition: background-color 0.3s; /* Animation de transition */
+    display: flex !important;
+    align-items: center !important;
+    gap: 10px !important;
+    font-size: 16px !important;
+    color: #757575 !important; /* Couleur du texte des éléments de liste dans la navbar */
+    padding: 12px 24px !important; /* Ajouter un peu d'espace autour des éléments de liste */
+    font-weight: bold !important; /* Mettre en gras les éléments de liste */
+    transition: background-color 0.3s !important; /* Animation de transition */
+    border: 1.5px solid #f6f6f6 !important;
+    border-radius: 8px !important;
+    margin-bottom: 5px !important;
+    width: 100%;
 }
 
 .mat-list-item:hover { 
@@ -49,3 +57,21 @@
     height: calc(100vh - 128px); /* Hauteur du contenu principal (taille de la fenêtre moins la hauteur du header) */
     overflow-y: auto; /* Ajoute une barre de défilement verticale si le contenu dépasse la hauteur de la fenêtre */
 } 
+.inactive{
+    display: none !important; 
+}
+
+@media (max-width: 767px) {
+    .navbar {
+        width: 75vw;
+    }
+    .mat-nav-list{
+        width: 100%;
+    }
+}
+@media (max-width: 400px) {
+    .navbar {
+        width: 100vw;
+    }
+}
+ 
