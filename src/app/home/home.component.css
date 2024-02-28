@@ -1,34 +1,62 @@
-.home {
-    width: 100%; /* Utilise toute la largeur de la page */
-    margin-top: 40px; /* Marge en haut de la liste */
-    padding: 0 20px; /* Espacement intérieur pour une apparence aérée */
-    box-sizing: border-box; /* Inclut les bordures et les marges dans la largeur totale */
+.rappel-card {
+    max-width: 600px; /* Largeur maximale de la carte */
+    width: 100%; /* Garantit que la carte s'adapte à la largeur maximale */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Ombre */
+    text-align: left; /* Alignement du texte à gauche */
+    margin-bottom: 20px; /* Marge en bas pour l'espacement entre les cartes */
+    height: 100%;
   }
-
-.rappel-card{
-    border-radius: 8px;
-    box-shadow: 0 2px 2px rgb(233, 225, 225);
-    margin: 5px;
-    background-color:darksalmon
-}
-
-.avatar{
-    background-color: brown;
+  .rappel-container{
+    margin-right: 16px;
+  }
+  .rappel-card-title{
+      font-size: 24px;
+      font-weight:500;
+  }
+  .avatar {
+    color: #fff;
+    width: 50px; /* Largeur de l'avatar */
+    height: 50px; /* Hauteur de l'avatar */
+    border-radius: 50%; /* Bord arrondi */
+    background-color: #003566; /* Couleur de fond */
     display: flex;
-    align-items: center;
     justify-content: center;
-}
-
-.notif-card{
-    border-radius: 8px;
-    box-shadow: 0 2px 2px rgb(233, 225, 225);
-    margin: 5px;
-    background-color:rgb(122, 233, 224)
-}
+    align-items: center;
+    margin-right: 10px; /* Marge à droite pour l'espacement */
+  }
+  
+  mat-icon {
+    font-size: 24px; /* Taille de l'icône */
+  }
+  
+  mat-card-title {
+    font-size: 20px; /* Taille du titre */
+    margin-bottom: 10px; /* Marge en bas pour l'espacement */
+  }
+  
+  mat-card-subtitle {
+    font-size: 16px; /* Taille du sous-titre */
+    color: #666; /* Couleur du texte */
+  }
+  
+  /* Optionnel : ajoutez des médias pour rendre la mise en page réactive */
+  @media (max-width: 768px) {
+    .rappel-card {
+      padding: 15px; /* Réduire le rembourrage pour les écrans plus petits */
+    }
+  }
+  /* CSS */
+  .rappel-title {
+    color: #2a9b70; /* Couleur du titre */
+    text-align: center; /* Alignement centré */
+    margin-bottom: 20px; /* Marge en bas pour l'espacement */
+    font-size: 24px; /* Taille de la police du titre */
+  }
+  
+  
 
 .avatar2{
-    background-color: rgb(54, 87, 194);
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    background-color: #ffc300 !important;
 }

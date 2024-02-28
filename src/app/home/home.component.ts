@@ -16,6 +16,9 @@ import { Offres } from '../Types/Offre';
   styleUrl: './home.component.css' 
 })
 export class HomeComponent {
+  selectedRdvId: any;
+  rdvDetails:  any;
+
   constructor(private authService: AuthentificationService, private http: HttpClient){}
   rdv : RDVDataUnit = {
     dateHeure: new Date(),
@@ -39,6 +42,23 @@ export class HomeComponent {
       'Authorization': `Bearer ${this.authService.getToken()}`
     });
     return  this.http.get<Offres>('https://m1p10mean-fanjava-diamondra-back.vercel.app/offre/listToday',{headers: headers});
+  }
+
+  getfindServ4RDV(idRdv: string): Observable<any> {
+    const headers = new HttpHeaders({
+      'Authorization': `Bearer ${this.authService.getToken()}`
+    });
+    return this.http.get(`http://localhost:3000/rdv/findServ4RDV/${idRdv}`, { headers: headers });
+  }
+
+  voirDetails(idRdv: string): void {
+    console.log('appel fonction')
+    this.selectedRdvId = idRdv;
+    console.log('idRdv='+idRdv)
+    this.getfindServ4RDV(idRdv).subscribe((details: any) => {
+      this.rdvDetails = details;
+      console.log('rdvdetail==='+details)
+    });
   }
 
   ngOnInit(){

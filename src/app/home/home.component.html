@@ -1,27 +1,70 @@
-<div class="home">
-    <div *ngIf="isClient()">
-        <mat-card *ngIf="rdv" class="rappel-card" >
-            <mat-card-header>
-                <div mat-card-avatar class="avatar" >
-                    <mat-icon>event</mat-icon>
+<div class="container">
+    <div class="row d-flex justify-content-center">
+        <div class="home p-3 col-md-12 col-xs-12">
+            <div *ngIf="isClient()" class="d-flex mt-3" >
+                <div class="rappel-container">
+                    <h4 class="rappel-card-title" >Mes rendez-vous</h4>
+                    <mat-card *ngIf="rdv" class="rappel-card" >
+                        <mat-card-header>
+                            <div mat-card-avatar class="avatar" >
+                                <mat-icon>event</mat-icon>
+                            </div>
+                            <mat-card-title>Prochain rendez-vous</mat-card-title>
+                            <mat-card-subtitle>{{ rdv.dateHeure | date:'dd-MM-yyyy' }} à {{ rdv.dateHeure | date:'HH:mm' }}</mat-card-subtitle>
+                        </mat-card-header>
+                        <mat-card-actions>
+                            <!-- <button mat-button color="primary" (click)="voirDetails(rdv._id)">Voir Détails</button> -->
+                          </mat-card-actions>
+                    </mat-card>
                 </div>
-                <mat-card-title>Prochain rendez-vous</mat-card-title>
-                <mat-card-subtitle>{{ rdv.dateHeure | date:'dd-MM-yyyy' }} à {{ rdv.dateHeure | date:'HH:mm' }}</mat-card-subtitle>
-            </mat-card-header>
-        </mat-card>
-        <mat-card *ngFor="let offre of offres" class="notif-card" >
-            <mat-card-header>
-                <div mat-card-avatar class="avatar2" >
-                    <mat-icon>event</mat-icon>
+                <div class="rappel-container">
+                    <h4 class="rappel-card-title" >Les offres spéciaux</h4>
+                    <mat-card *ngFor="let offre of offres" class="rappel-card" >
+                        <mat-card-header>
+                            <div mat-card-avatar class="avatar avatar2" >
+                                <mat-icon>event</mat-icon>
+                            </div>
+                            <mat-card-title>{{offre.nom}}</mat-card-title>
+                                <mat-card-subtitle class="mb-3" >Du {{ offre.dateDebut | date:'dd-MM-yyyy' }} au {{offre.dateFin | date:'dd-MM-yyyy'}}</mat-card-subtitle  >
+                                <mat-card-subtitle>
+                                    {{ offre.description }}
+                                </mat-card-subtitle>
+                        </mat-card-header>
+                        <mat-card-actions>
+                            <!-- <button mat-button color="primary" (click)="voirDetails(rdv._id)">Voir Détails</button> -->
+                          </mat-card-actions>
+                    </mat-card>
                 </div>
-                <mat-card-title>{{offre.nom}}</mat-card-title>
-                <mat-card-subtitle>Du {{ offre.dateDebut | date:'dd-MM-yyyy' }} au {{offre.dateFin | date:'dd-MM-yyyy'}}</mat-card-subtitle>
-                <mat-card-content>{{ offre.description }}</mat-card-content>
-            </mat-card-header>
-        </mat-card>
-    </div>
-    <div *ngIf="isEmploye()" >
-        <app-rdv-liste-component></app-rdv-liste-component>
+            </div>
+            <div *ngIf="isEmploye()" >
+                <app-rdv-liste-component></app-rdv-liste-component>
+            </div>
+        </div>
+
+        
+        <!-- Colonne pour les détails du rendez-vous sélectionné -->
+        <div class="col-md-6 col-xs-12" *ngIf="rdvDetails && selectedRdvId">
+            <div class="card">
+            <div class="card-header">
+                <h5 class="card-title">Détails du rendez-vous</h5>
+            </div>
+            <div class="card-body">
+                <ul class="list-group">
+                <li *ngFor="let service of rdvDetails" class="list-group-item">
+                    <div>
+                    <strong>{{ service.nom }}</strong>
+                    </div>
+                    <div>
+                    <span>Delai : {{ service.delai }}</span>
+                    </div>
+                    <div>
+                    <span>Commission : {{ service.commission }}</span>
+                    </div>
+                </li>
+                </ul>
+            </div>
+            </div>
+        </div>
     </div>
     <div *ngIf="isManager()" >
        <app-stat-rdv></app-stat-rdv> 
