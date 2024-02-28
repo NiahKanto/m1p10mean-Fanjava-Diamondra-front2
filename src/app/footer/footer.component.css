@@ -1,14 +1,23 @@
 .footer {
+    display: flex;
+    justify-content: space-between;
     background-color: #AFE3C0; /* Couleur de fond */
     color: #000000; /* Couleur du texte */
     text-align: center; /* Alignement du texte au centre */
-    padding: 20px; /* Espacement intérieur */
+    padding: 16px; /* Espacement intérieur */
     font-size: 12px; /* Taille de la police */
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; /* Police de caractère */
     /* border-top: 3px solid #e67e22; Bordure supérieure */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Ombre douce */
   }
   
+  .logo-sary {
+    width: 48px;
+    /* Largeur souhaitée */
+    height: auto;
+    justify-self: center;
+    /* Hauteur automatique pour maintenir les proportions */
+}
   .footer p {
     /* display: block; Afficher le texte sur une nouvelle ligne */
     text-align: center;
