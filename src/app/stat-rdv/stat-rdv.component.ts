@@ -28,7 +28,7 @@ export class StatRDVComponent {
     const headers = new HttpHeaders({
       'Authorization': `Bearer ${this.authService.getToken()}`
     });
-    return  this.http.get<any>('http://localhost:3000/rdv/statRDVMonth',{headers: headers});
+    return  this.http.get<any>('https://m1p10mean-fanjava-diamondra-back.vercel.app/rdv/statRDVMonth',{headers: headers});
   }
 
   ngOnInit(){
