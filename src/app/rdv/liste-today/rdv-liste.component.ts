@@ -21,7 +21,7 @@ export class RDVlisteComponent implements OnInit {
     const headers = new HttpHeaders({
       'Authorization': `Bearer ${this.authService.getToken()}`
     });
-    return this.http.get(`http://localhost:3000/rdv/findServ4RDV/${idRdv}`, { headers: headers });
+    return this.http.get(`https://m1p10mean-fanjava-diamondra-back.vercel.app/rdv/findServ4RDV/${idRdv}`, { headers: headers });
   }
  
   voirDetails(idRdv: string): void {

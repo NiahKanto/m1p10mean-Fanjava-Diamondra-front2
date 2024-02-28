@@ -17,6 +17,6 @@ export class serviceService {
       });
       console.log("tonga aty @miantso fonction")
       console.log("idddd"+id)
-    return this.http.get(`http://localhost:3000/service/findById/${id}`,{headers: headers});
+    return this.http.get(`https://m1p10mean-fanjava-diamondra-back.vercel.app/service/findById/${id}`,{headers: headers});
   }
 }

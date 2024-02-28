@@ -42,14 +42,14 @@ export class RdvComponent implements OnInit{
     const headers = new HttpHeaders({
       'Authorization': `Bearer ${this.authService.getToken()}`
     });
-    return  this.http.get<Services>('http://localhost:3000/service/all',{headers: headers});
+    return  this.http.get<Services>('https://m1p10mean-fanjava-diamondra-back.vercel.app/service/all',{headers: headers});
   }
 
   sendData(credentials: RDV) : Observable<any> {
     const headers = new HttpHeaders({
       'Authorization': `Bearer ${this.authService.getToken()}`
     });
-    return this.http.post('http://localhost:3000/rdv/add',credentials,{headers: headers});
+    return this.http.post('https://m1p10mean-fanjava-diamondra-back.vercel.app/rdv/add',credentials,{headers: headers});
   }
 
   ngOnInit(): void {

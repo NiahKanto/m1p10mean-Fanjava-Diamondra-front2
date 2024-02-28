@@ -68,7 +68,7 @@ export class ServiceFicheComponent implements OnInit {
     const headers = new HttpHeaders({
       'Authorization': `Bearer ${this.authService.getToken()}`
     });
-    return this.http.post('http://localhost:3000/service/modifyNom',{nom: nom, id: id},{headers: headers});
+    return this.http.post('https://m1p10mean-fanjava-diamondra-back.vercel.app/service/modifyNom',{nom: nom, id: id},{headers: headers});
   }
 
   handleModifyNom(){
@@ -108,7 +108,7 @@ export class ServiceFicheComponent implements OnInit {
     const headers = new HttpHeaders({
       'Authorization': `Bearer ${this.authService.getToken()}`
     });
-    return this.http.post('http://localhost:3000/service/modifyPrix',{prix: prix, id: id},{headers: headers});
+    return this.http.post('https://m1p10mean-fanjava-diamondra-back.vercel.app/service/modifyPrix',{prix: prix, id: id},{headers: headers});
   }
 
   handleModifyPrix(){
@@ -148,7 +148,7 @@ export class ServiceFicheComponent implements OnInit {
     const headers = new HttpHeaders({
       'Authorization': `Bearer ${this.authService.getToken()}`
     });
-    return this.http.post('http://localhost:3000/service/modifyDelai',{delai: delai, id: id},{headers: headers});
+    return this.http.post('https://m1p10mean-fanjava-diamondra-back.vercel.app/service/modifyDelai',{delai: delai, id: id},{headers: headers});
   }
 
   handleModifyDelai(){
@@ -188,7 +188,7 @@ export class ServiceFicheComponent implements OnInit {
     const headers = new HttpHeaders({
       'Authorization': `Bearer ${this.authService.getToken()}`
     });
-    return this.http.post('http://localhost:3000/service/modifyCommission',{commission: commission, id: id},{headers: headers});
+    return this.http.post('https://m1p10mean-fanjava-diamondra-back.vercel.app/service/modifyCommission',{commission: commission, id: id},{headers: headers});
   }
 
   handleModifyCommission(){

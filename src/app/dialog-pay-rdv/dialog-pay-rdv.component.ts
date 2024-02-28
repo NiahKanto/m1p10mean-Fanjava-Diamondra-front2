@@ -32,7 +32,7 @@ export class DialogPayRdvComponent {
     const headers = new HttpHeaders({
       'Authorization': `Bearer ${this.authService.getToken()}`
     });
-    return this.http.post('http://localhost:3000/rdv/pay',credentials,{headers: headers});
+    return this.http.post('https://m1p10mean-fanjava-diamondra-back.vercel.app/rdv/pay',credentials,{headers: headers});
   }
 
   addPaiement(){
