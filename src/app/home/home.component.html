@@ -1,116 +1,116 @@
 <div class="container">
-    <div class="row d-flex justify-content-center">
-        <div class="home p-3 col-md-12 col-xs-12">
-            <div *ngIf="isClient()" class="d-flex mt-3" >
-                <section class="hero-wrap js-fullheight" style="background-image: url('images/bg_2.jpg');" data-stellar-background-ratio="0.5">
-                    <div class="overlay"></div>
-                    <div class="container">
-                      <div class="row no-gutters slider-text js-fullheight align-items-center justify-content-center">
-                        <div class="col-md-10 ftco-animate text-center">
-                            <div class="icon">
-                                <span class="flaticon-lotus"></span>
+  <div class="row d-flex justify-content-center">
+      <div class="home p-3 col-md-12 col-xs-12">
+          <div *ngIf="isClient()" class="d-flex mt-3" >
+              <section class="hero-wrap js-fullheight" style="background-image: url('images/bg_2.jpg');" data-stellar-background-ratio="0.5">
+                  <div class="overlay"></div>
+                  <div class="container">
+                    <div class="row no-gutters slider-text js-fullheight align-items-center justify-content-center">
+                      <div class="col-md-10 ftco-animate text-center">
+                          <div class="icon">
+                              <span class="flaticon-lotus"></span>
+                          </div>
+                        <h1 class="hero-title" >MadaManja</h1>
+                        <div class="row justify-content-center">
+                            <div class="col-md-12 mb-3">
+                                <p class="hero-text" >Institut de beauté en ligne, plus proche de vous, plus proche de votre bien-etre</p>
                             </div>
-                          <h1 class="hero-title" >MadaManja</h1>
-                          <div class="row justify-content-center">
-                              <div class="col-md-12 mb-3">
-                                  <p>Institut de beauté en ligne, plus proche de vous, plus proche de votre bien-etre</p>
-                              </div>
-                            </div>
-                          <p>
-                              <a href="/rdv" class="btn btn-primary p-3 px-5 py-4 mr-md-2">Prendre rendez-vous</a>
-                              <a href="/profile" class="btn btn-outline-primary p-3 px-5 py-4 ml-md-2">Voir mon profil</a>
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                  </section>
-            </div>
-            <div *ngIf="isEmploye()" >
-                <app-rdv-liste-component></app-rdv-liste-component>
-            </div>
-        </div>
-
-
-        <!-- Colonne pour les détails du rendez-vous sélectionné -->
-        <div class="col-md-6 col-xs-12" *ngIf="rdvDetails && selectedRdvId">
-            <div class="card">
-            <div class="card-header dtls-header">
-                <h5  class="offer-name" >Détails du rendez-vous</h5>
-            </div>
-            <div class="card-body">
-                <ul class="list-group">
-                <li *ngFor="let service of rdvDetails" class="list-group-item">
-                    <div>
-                    <strong class="offer-name" ><a [routerLink]="['/ficheService', service.idService]">{{ service.nom }}</a></strong>
-                    <div class="d-flex">
-                      <div class="libelle" >
-                        <span class="libelle-fiche" >Delai : {{ service.delai }}</span>
-                        </div>
-                      <div class="libelle" >
-                      <span class="libelle-fiche">Prix : {{ service.prix }}Ar</span>
+                          </div>
+                        <p>
+                            <a href="/rdv" class="btn btn-primary p-3 px-5 py-4 mr-md-2">Prendre rendez-vous</a>
+                            <a href="/profil" class="btn btn-outline-primary p-3 px-5 py-4 ml-md-2">Voir mon profil</a>
+                        </p>
                       </div>
                     </div>
                   </div>
+                </section>
+          </div>
+          <div *ngIf="isEmploye()" >
+              <app-rdv-liste-component></app-rdv-liste-component>
+          </div>
+      </div>
 
-                </li>
-                </ul>
-            </div>
-            </div>
-        </div>
-        <div class="col-md-6 col-xs-12 mt-2" *ngIf="offreDetails && selectedOffreId">
-            <div class="card">
-            <div class="card-header">
-                <h5 class="offer-name">Détails de l'Offre</h5>
-            </div>
-            <div class="card-body">
-                <ul class="list-group">
-                <li *ngFor="let service of offreDetails" class="list-group-item">
-                    <div class="" >
-                    <strong class="offer-name" >{{ service.nom }}</strong>
-                    <div class="d-flex">
-                      <div class="libelle" >
-                        <span class="libelle-fiche" >Delai : {{ service.delai }}</span>
-                        </div>
-                      <div class="libelle" >
-                      <span class="libelle-fiche">Prix : {{ service.prix }}Ar</span>
+
+      <!-- Colonne pour les détails du rendez-vous sélectionné -->
+      <div class="col-md-6 col-xs-12" *ngIf="rdvDetails && selectedRdvId">
+          <div class="card">
+          <div class="card-header dtls-header">
+              <h5  class="offer-name" >Détails du rendez-vous</h5>
+          </div>
+          <div class="card-body">
+              <ul class="list-group">
+              <li *ngFor="let service of rdvDetails" class="list-group-item">
+                  <div>
+                  <strong class="offer-name" ><a [routerLink]="['/ficheService', service.idService]">{{ service.nom }}</a></strong>
+                  <div class="d-flex">
+                    <div class="libelle" >
+                      <span class="libelle-fiche" >Delai : {{ service.delai }}</span>
                       </div>
-                     
+                    <div class="libelle" >
+                    <span class="libelle-fiche">Prix : {{ service.prix }}Ar</span>
                     </div>
-                    <strong>Prendre un rendez-vous :</strong>
-                    <div *ngIf="errorMessage !== ''" class="error-message">
-                        {{ errorMessage }}
-                    </div>
-                    <mat-form-field style="width: 100%;">
-                        <input matInput [matDatepicker]="picker" [(ngModel)]="selectedDate" (dateChange)="onDateChange($event)" readonly>
-                        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-                        <mat-datepicker #picker></mat-datepicker>
-                    </mat-form-field>
-                    {{' '}}
-                    <mat-form-field style="width: 100%;">
-                        <input [format]="24" matInput [ngxTimepicker]="timerPicker" [(ngModel)]="selectedTime" [disableClick]="true" readonly >
-                        <ngx-material-timepicker-toggle matSuffix [for]="timerPicker"></ngx-material-timepicker-toggle>
-                        <ngx-material-timepicker #timerPicker></ngx-material-timepicker>
-                    </mat-form-field><br>
-                    <button class="btn" mat-button (click)="addRDV()" >Enregistrer</button>
+                  </div>
+                </div>
+
+              </li>
+              </ul>
+          </div>
+          </div>
+      </div>
+      <div class="col-md-6 col-xs-12 mt-2" *ngIf="offreDetails && selectedOffreId">
+          <div class="card">
+          <div class="card-header">
+              <h5 class="offer-name">Détails de l'Offre</h5>
+          </div>
+          <div class="card-body">
+              <ul class="list-group">
+              <li *ngFor="let service of offreDetails" class="list-group-item">
+                  <div class="" >
+                  <strong class="offer-name" >{{ service.nom }}</strong>
+                  <div class="d-flex">
+                    <div class="libelle" >
+                      <span class="libelle-fiche" >Delai : {{ service.delai }}</span>
+                      </div>
+                    <div class="libelle" >
+                    <span class="libelle-fiche">Prix : {{ service.prix }}Ar</span>
                     </div>
 
-                </li>
-                </ul>
-            </div>
-            </div>
-        </div>
+                  </div>
+                  <strong>Prendre un rendez-vous :</strong>
+                  <div *ngIf="errorMessage !== ''" class="error-message">
+                      {{ errorMessage }}
+                  </div>
+                  <mat-form-field style="width: 100%;">
+                      <input matInput [matDatepicker]="picker" [(ngModel)]="selectedDate" (dateChange)="onDateChange($event)" readonly>
+                      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                      <mat-datepicker #picker></mat-datepicker>
+                  </mat-form-field>
+                  {{' '}}
+                  <mat-form-field style="width: 100%;">
+                      <input [format]="24" matInput [ngxTimepicker]="timerPicker" [(ngModel)]="selectedTime" [disableClick]="true" readonly >
+                      <ngx-material-timepicker-toggle matSuffix [for]="timerPicker"></ngx-material-timepicker-toggle>
+                      <ngx-material-timepicker #timerPicker></ngx-material-timepicker>
+                  </mat-form-field><br>
+                  <button class="btn" mat-button (click)="addRDV()" >Enregistrer</button>
+                  </div>
+
+              </li>
+              </ul>
+          </div>
+          </div>
+      </div>
 
 
-    </div>
-    <div *ngIf="isManager()" >
-       <div class="custom-box">
-        <app-stat-rdv></app-stat-rdv>
-       </div>
-       <div class="custom-box">
-        <app-stat-paiement></app-stat-paiement>
-       </div>
-       <div class="custom-box">
-        <app-stat-benefice></app-stat-benefice>
-       </div>
-    </div>
+  </div>
+  <div *ngIf="isManager()" >
+     <div class="custom-box">
+      <app-stat-rdv></app-stat-rdv>
+     </div>
+     <div class="custom-box">
+      <app-stat-paiement></app-stat-paiement>
+     </div>
+     <div class="custom-box">
+      <app-stat-benefice></app-stat-benefice>
+     </div>
+  </div>
 </div>
