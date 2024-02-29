@@ -83,3 +83,15 @@
   background-color: #dce1dd !important;
   color: #333 !important;
 }
+.custom-box{
+  padding: 20px;
+  border-radius: 16px;
+    background-color: #ffffff;
+    border: 2px solid #2a9b70;
+    box-shadow: 0 0 4px 6px rgba(117, 117, 117, 0.25);
+    margin-bottom: 24px;
+}
+.hero-title{
+  font-size: 40px;
+  font-weight: 100;
+}

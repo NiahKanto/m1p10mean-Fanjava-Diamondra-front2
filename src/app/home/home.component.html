@@ -10,9 +10,9 @@
                             <div class="icon">
                                 <span class="flaticon-lotus"></span>
                             </div>
-                          <h1>MadaManja</h1>
+                          <h1 class="hero-title" >MadaManja</h1>
                           <div class="row justify-content-center">
-                              <div class="col-md-7 mb-3">
+                              <div class="col-md-12 mb-3">
                                   <p>Institut de beauté en ligne, plus proche de vous, plus proche de votre bien-etre</p>
                               </div>
                             </div>
@@ -86,8 +86,14 @@
 
     </div>
     <div *ngIf="isManager()" >
-       <app-stat-rdv></app-stat-rdv>
-       <app-stat-paiement></app-stat-paiement>
-       <app-stat-benefice></app-stat-benefice>
+       <div class="custom-box">
+        <app-stat-rdv></app-stat-rdv>
+       </div>
+       <div class="custom-box">
+        <app-stat-paiement></app-stat-paiement>
+       </div>
+       <div class="custom-box">
+        <app-stat-benefice></app-stat-benefice>
+       </div>
     </div>
 </div>
