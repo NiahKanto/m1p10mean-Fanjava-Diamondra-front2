@@ -54,6 +54,7 @@ import { DialogAjoutOffreComponent } from './dialog-ajout-offre/dialog-ajout-off
 import { ProfilComponent } from './user/profil/profil.component';
 import { MatChipsModule } from '@angular/material/chips';
 import { StatRDVComponent } from './stat-rdv/stat-rdv.component';
+import { StatPaiementComponent } from './stat-paiement/stat-paiement.component';
 
 
 @NgModule({
@@ -83,6 +84,7 @@ import { StatRDVComponent } from './stat-rdv/stat-rdv.component';
     DialogAjoutOffreComponent,
     ProfilComponent,
     StatRDVComponent,
+    StatPaiementComponent,
   
   ],
   imports: [
