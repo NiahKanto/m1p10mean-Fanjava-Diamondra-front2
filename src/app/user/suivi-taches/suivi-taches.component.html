@@ -57,6 +57,9 @@
     </div>
 
     <div class="commission-container">
+        <br><br>
+        <button class="btn" mat-button (click)="saveChangement(encours,fini)" >Enregistrer</button>
+        <br><br>
         <h2>Commissions de la journée</h2>
         <div class="total-commission">
           <h3>Total de la journée : <strong>{{ total }} Ar</strong></h3>
@@ -69,7 +72,6 @@
             </div>
           </div>
         </div>
-        <button class="btn" mat-button (click)="saveChangement(encours,fini)" >Enregistrer</button>
       </div>
 
 </div>
