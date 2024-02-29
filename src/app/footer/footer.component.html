@@ -1,4 +1,13 @@
-<mat-toolbar color="primary" class="footer">
-  <p>© 2024</p>
-  <p style="text-align: center;">By RABEARIMANANA HARINIAINA Kanto Fanjava & RANADISON Koloinanirina Diamondra</p>
-</mat-toolbar>
+
+<div  *ngIf="!isClient()" >
+  <mat-toolbar color="primary" class="footer">
+    <p>© 2024</p>
+    <p style="text-align: center;">By RABEARIMANANA HARINIAINA Kanto Fanjava & RANADISON Koloinanirina Diamondra</p>
+  </mat-toolbar>
+</div>
+<div  *ngIf="isClient()" >
+  <mat-toolbar color="primary" class="footer" style="background-color: rgba(0, 0, 0, 0.1);">
+    <p>© 2024</p>
+    <p style="text-align: center;">By RABEARIMANANA HARINIAINA Kanto Fanjava & RANADISON Koloinanirina Diamondra</p>
+  </mat-toolbar>
+</div>
