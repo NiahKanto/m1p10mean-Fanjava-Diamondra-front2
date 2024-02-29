@@ -15,7 +15,7 @@
         <ngx-material-timepicker-toggle matSuffix [for]="timerPicker"></ngx-material-timepicker-toggle>
         <ngx-material-timepicker #timerPicker></ngx-material-timepicker>
     </mat-form-field>
-    <h3>Choix des services :</h3> 
+    <h3>Choix des services :</h3>
     <mat-grid-list cols="2" gutterSize="10px" rowHeight="{{rowHeight}}px" >
         <mat-grid-tile>
             <div class="container" cdkDropList id="services" [cdkDropListConnectedTo]="['targetServices']" [cdkDropListData]="services" (cdkDropListDropped)="drop($event)" [cdkDropListSortingDisabled]="true"  >

@@ -15,7 +15,8 @@
     </mat-menu>
   </mat-toolbar-row>
 </mat-toolbar>
-<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light scrolled awake" id="ftco-navbar">
+
+<nav *ngIf="isClient()" class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light scrolled awake" id="ftco-navbar">
   <div class="container">
     <a class="navbar-brand" href="index.html">
       <img src="assets/beaute-verte.png" alt="Logo" class="logo-sary">

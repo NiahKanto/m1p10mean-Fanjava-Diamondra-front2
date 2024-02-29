@@ -1,5 +1,9 @@
 .profil-container{
-  background-color: white;
+  padding: 20px;
+  border-radius: 16px;
+    background-color: #fff;
+    border: 2px solid #2a9b70;
+    box-shadow: 0 0 4px 6px rgba(117, 117, 117, 0.25);
 }
 
   .btn{
