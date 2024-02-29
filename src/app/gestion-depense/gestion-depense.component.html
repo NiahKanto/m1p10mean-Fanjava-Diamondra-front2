@@ -1,0 +1,24 @@
+<div class="rdv-list">
+    <h2 class="list-title">Liste des depenses</h2>
+    <button class="btn" mat-button (click)="openDialog()" >Ajouter</button>
+    <p></p>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Description</th>
+          <th>Prix</th>
+          <th>Date</th>
+        </tr>
+      </thead>
+      <tbody>
+        <ng-container *ngFor="let depense of depenses">
+            <tr >
+                <td>{{ depense.nom }}</td>
+                <td>{{depense.prix}}Ar</td>
+                <td>{{depense.date | date:'dd-MM-yyyy'}}</td>
+            </tr>
+        </ng-container>
+      </tbody>
+    </table>
+  </div>
+  

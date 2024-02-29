@@ -55,6 +55,9 @@ import { ProfilComponent } from './user/profil/profil.component';
 import { MatChipsModule } from '@angular/material/chips';
 import { StatRDVComponent } from './stat-rdv/stat-rdv.component';
 import { StatPaiementComponent } from './stat-paiement/stat-paiement.component';
+import { GestionDepenseComponent } from './gestion-depense/gestion-depense.component';
+import { DialogAjoutDepenseComponent } from './dialog-ajout-depense/dialog-ajout-depense.component';
+import { StatBeneficeComponent } from './stat-benefice/stat-benefice.component';
 
 
 @NgModule({
@@ -85,6 +88,9 @@ import { StatPaiementComponent } from './stat-paiement/stat-paiement.component';
     ProfilComponent,
     StatRDVComponent,
     StatPaiementComponent,
+    GestionDepenseComponent,
+    DialogAjoutDepenseComponent,
+    StatBeneficeComponent,
   
   ],
   imports: [

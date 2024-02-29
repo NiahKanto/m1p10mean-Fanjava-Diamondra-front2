@@ -15,6 +15,7 @@ import { ClientComponent } from './client/client.component';
 import { EmployeComponent } from './employe/employe.component';
 import { GestionOffreComponent } from './gestion-offre/gestion-offre.component';
 import { ProfilComponent } from './user/profil/profil.component'; 
+import { GestionDepenseComponent } from './gestion-depense/gestion-depense.component';
 
 const routes: Routes = [
 
@@ -32,6 +33,7 @@ const routes: Routes = [
   { path: 'employes', component: EmployeComponent, canActivate: [AuthGuardManager]},
   { path: 'offres', component: GestionOffreComponent, canActivate: [AuthGuardManager]},
   { path: 'profil', component: ProfilComponent},
+  { path: 'depenses', component: GestionDepenseComponent, canActivate: [AuthGuardManager]},
 ];
 
 

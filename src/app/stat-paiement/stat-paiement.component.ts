@@ -20,7 +20,7 @@ export class StatPaiementComponent {
   showLegend = true;
 
   xAxisLabel = 'Mois';
-  yAxisLabel = 'Nombre de rendez-vous'
+  yAxisLabel = 'Montant'
 
   constructor(private authService: AuthentificationService, private http: HttpClient){
     const year = (new Date()).getFullYear();

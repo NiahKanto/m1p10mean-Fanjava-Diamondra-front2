@@ -1,0 +1,15 @@
+<div class="srv-create">
+    <mat-dialog-content>
+        <h2 class="list-title">Ajout depense</h2>
+        <div *ngIf="errorMessage !== ''" class="error-message">
+            {{ errorMessage }}
+        </div><p></p>
+        <span>Nom : </span>
+        <input [(ngModel)]="nom" placeholder="Entrez le nom"><br>
+        <span>Montant : </span>
+        <input [(ngModel)]="prix" placeholder="Entrez le montant" type="number" ><br>
+        <span>Date: </span>
+        <input [(ngModel)]="date" placeholder="Entrez la date" type="date" ><br>
+        <button class="btn" mat-button (click)="addService()" >Envoyer</button>
+    </mat-dialog-content>
+</div>

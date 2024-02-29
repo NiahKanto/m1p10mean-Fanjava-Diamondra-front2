@@ -1,0 +1,40 @@
+.rdv-list {
+    width: 100%; /* Utilise toute la largeur de la page */
+    margin-top: 40px; /* Marge en haut de la liste */
+    padding: 0 20px; /* Espacement intérieur pour une apparence aérée */
+    box-sizing: border-box; /* Inclut les bordures et les marges dans la largeur totale */
+  }
+  
+  .table {
+    width: 100%; /* Utilise toute la largeur de la liste */
+    border-collapse: collapse; /* Fusionne les bordures des cellules */
+  }
+  
+  /* Styles pour les en-têtes de colonnes */
+  th {
+    background-color: #f2f2f2; /* Couleur de fond */
+    border: 1px solid #ddd; /* Bordure */
+    padding: 10px; /* Espacement intérieur */
+  }
+  
+  /* Styles pour les cellules de données */
+  td {
+    border: 1px solid #ddd; /* Bordure */
+    padding: 10px; /* Espacement intérieur */
+  }
+  
+  /* Styles pour le titre de la liste */
+  .list-title {
+    font-size: 24px; /* Taille de police */
+    font-weight: bold; /* Texte en gras */
+    color: #2a9b70; 
+  }
+
+    .btn{
+      background-color: #2c5044;
+      color: #ffffff; /* Couleur du texte */
+      text-align: center; /* Alignement du texte au centre */
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; /* Police de caractère */
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Ombre douce */
+    }
+    
