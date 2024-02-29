@@ -1,9 +1,11 @@
 <mat-toolbar class="header">
   <mat-toolbar-row>
     <!-- <span><link rel="icon" type="image/png" href="beaute-verte.png"></span> -->
-    <button mat-icon-button (click)="toggleDiv()" class="menu">
-      <mat-icon >menu</mat-icon>
-    </button>
+    <div *ngIf="!isClient()">
+      <button mat-icon-button (click)="toggleDiv()" class="menu">
+        <mat-icon >menu</mat-icon>
+      </button>
+    </div>
     <img src="assets/beaute-verte.png" alt="Logo" class="logo-sary">
     <span class="logo">MadaManja</span>
     <span class="spacer"></span>
