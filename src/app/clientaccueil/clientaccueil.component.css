@@ -94,4 +94,12 @@
   max-height: 50vh !important;
   /* overflow: hidden; */
   overflow-x: scroll;
+  margin-bottom: 64px;
+}
+.btn{
+  background-color: #2a9b70;
+  color: #ffffff !important; /* Couleur du texte */
+  text-align: center; /* Alignement du texte au centre */
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; /* Police de caractère */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Ombre douce */
 }
