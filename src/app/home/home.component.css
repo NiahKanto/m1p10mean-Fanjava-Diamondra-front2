@@ -83,6 +83,7 @@
   background-color: #dce1dd !important;
   color: #333 !important;
 }
+
 .custom-box{
   padding: 20px;
   border-radius: 16px;
@@ -95,3 +96,8 @@
   font-size: 40px;
   font-weight: 100;
 }
+
+.error-message{
+  width: 100%;
+}
+
