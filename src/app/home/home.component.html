@@ -1,22 +1,93 @@
-<section class="hero-wrap js-fullheight" style="background-image: url('images/bg_2.jpg');" data-stellar-background-ratio="0.5">
-    <div class="overlay"></div>
-    <div class="container">
-      <div class="row no-gutters slider-text js-fullheight align-items-center justify-content-center">
-        <div class="col-md-10 ftco-animate text-center">
-            <div class="icon">
-                <span class="flaticon-lotus"></span>
+<div class="container">
+    <div class="row d-flex justify-content-center">
+        <div class="home p-3 col-md-12 col-xs-12">
+            <div *ngIf="isClient()" class="d-flex mt-3" >
+                <section class="hero-wrap js-fullheight" style="background-image: url('images/bg_2.jpg');" data-stellar-background-ratio="0.5">
+                    <div class="overlay"></div>
+                    <div class="container">
+                      <div class="row no-gutters slider-text js-fullheight align-items-center justify-content-center">
+                        <div class="col-md-10 ftco-animate text-center">
+                            <div class="icon">
+                                <span class="flaticon-lotus"></span>
+                            </div>
+                          <h1>MadaManja</h1>
+                          <div class="row justify-content-center">
+                              <div class="col-md-7 mb-3">
+                                  <p>Institut de beauté en ligne, plus proche de vous, plus proche de votre bien-etre</p>
+                              </div>
+                            </div>
+                          <p>
+                              <a href="/rdv" class="btn btn-primary p-3 px-5 py-4 mr-md-2">Prendre rendez-vous</a>
+                              <a href="/profile" class="btn btn-outline-primary p-3 px-5 py-4 ml-md-2">Voir mon profil</a>
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </section>
             </div>
-          <h1>MadaManja</h1>
-          <div class="row justify-content-center">
-              <div class="col-md-7 mb-3">
-                  <p>Institut de beauté en ligne, plus proche de vous, plus proche de votre bien-etre</p>
-              </div>
+            <div *ngIf="isEmploye()" >
+                <app-rdv-liste-component></app-rdv-liste-component>
             </div>
-          <p>
-              <a href="/rdv" class="btn btn-primary p-3 px-5 py-4 mr-md-2">Prendre rendez-vous</a>
-              <a href="/profile" class="btn btn-outline-primary p-3 px-5 py-4 ml-md-2">Voir mon profil</a>
-          </p>
         </div>
-      </div>
+
+
+        <!-- Colonne pour les détails du rendez-vous sélectionné -->
+        <div class="col-md-6 col-xs-12" *ngIf="rdvDetails && selectedRdvId">
+            <div class="card">
+            <div class="card-header dtls-header">
+                <h5  class="offer-name" >Détails du rendez-vous</h5>
+            </div>
+            <div class="card-body">
+                <ul class="list-group">
+                <li *ngFor="let service of rdvDetails" class="list-group-item">
+                    <div>
+                    <strong class="offer-name" ><a [routerLink]="['/ficheService', service.idService]">{{ service.nom }}</a></strong>
+                    <div class="d-flex">
+                      <div class="libelle" >
+                        <span class="libelle-fiche" >Delai : {{ service.delai }}</span>
+                        </div>
+                      <div class="libelle" >
+                      <span class="libelle-fiche">Commission : {{ service.commission }}</span>
+                      </div>
+                    </div>
+                  </div>
+
+                </li>
+                </ul>
+            </div>
+            </div>
+        </div>
+        <div class="col-md-6 col-xs-12 mt-2" *ngIf="offreDetails && selectedOffreId">
+            <div class="card">
+            <div class="card-header">
+                <h5 class="offer-name">Détails de l'Offre</h5>
+            </div>
+            <div class="card-body">
+                <ul class="list-group">
+                <li *ngFor="let service of offreDetails" class="list-group-item">
+                    <div class="" >
+                    <strong class="offer-name" >{{ service.nom }}</strong>
+                    <div class="d-flex">
+                      <div class="libelle" >
+                        <span class="libelle-fiche" >Delai : {{ service.delai }}</span>
+                        </div>
+                      <div class="libelle" >
+                      <span class="libelle-fiche">Commission : {{ service.commission }}</span>
+                      </div>
+                    </div>
+                    </div>
+
+                </li>
+                </ul>
+            </div>
+            </div>
+        </div>
+
+
     </div>
-  </section>
+    <div *ngIf="isManager()" >
+       <app-stat-rdv></app-stat-rdv>
+       <app-stat-paiement></app-stat-paiement>
+       <app-stat-benefice></app-stat-benefice>
+    </div>
+</div>
