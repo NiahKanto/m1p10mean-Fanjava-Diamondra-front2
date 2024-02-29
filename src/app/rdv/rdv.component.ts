@@ -7,6 +7,7 @@ import { Observable } from 'rxjs'
 import { MatDatepickerInputEvent } from '@angular/material/datepicker';
 import { RDV, ServicesRDV, ServiceRDV } from '../Types/RDV'
 import { DatePipe } from '@angular/common';
+import { Users } from '../Types/User';
 import { MatSnackBar, MatSnackBarHorizontalPosition, MatSnackBarVerticalPosition } from '@angular/material/snack-bar';
 
 @Component({
@@ -28,6 +29,8 @@ export class RdvComponent implements OnInit{
   targetServices : Services=[];
   rowHeight = 0;
   errorMessage = '';
+  emps: Users = [];
+  selectEmp : any[] = [];
 
   horizontalPosition: MatSnackBarHorizontalPosition = 'end';
   verticalPosition: MatSnackBarVerticalPosition = 'top'
@@ -45,6 +48,13 @@ export class RdvComponent implements OnInit{
     return  this.http.get<Services>('https://m1p10mean-fanjava-diamondra-back.vercel.app/service/all',{headers: headers});
   }
 
+  fetchEmp() : Observable<Users> {
+    const headers = new HttpHeaders({
+      'Authorization': `Bearer ${this.authService.getToken()}`
+    });
+    return  this.http.get<Users>('https://m1p10mean-fanjava-diamondra-back.vercel.app/liste_user/employe',{headers: headers});
+  }
+
   sendData(credentials: RDV) : Observable<any> {
     const headers = new HttpHeaders({
       'Authorization': `Bearer ${this.authService.getToken()}`
@@ -56,7 +66,14 @@ export class RdvComponent implements OnInit{
     this.fetchServices().subscribe((data: Services) => {
       this.services = data;
       this.rowHeight = 40 * this.services.length;
-    })
+      this.services.forEach((service =>{
+        const s : ServiceRDV = {idService: service._id, idEmploye : null  };
+        this.selectEmp.push(s);
+      }))
+    });
+    this.fetchEmp().subscribe((data: Users) => {
+      this.emps = data;
+    });
   }
 
   onDateChange(event: MatDatepickerInputEvent<Date> ){
@@ -83,7 +100,7 @@ export class RdvComponent implements OnInit{
     }
     const paramService: ServicesRDV = [];
     this.targetServices.forEach((service =>{
-      const s : ServiceRDV = {idService: service._id, idEmploye: null };
+      const s : ServiceRDV = {idService: service._id, idEmploye: service.idEmploye ?  service.idEmploye : null  };
       paramService.push(s);
     }))
     const times = this.selectedTime.split(':');
@@ -100,8 +117,24 @@ export class RdvComponent implements OnInit{
       this.selectedTime = '';
       this.targetServices = [];
       this.openSnackBar('Rendez-vous ajouté avec succès','Fermer');
+      this.fetchServices().subscribe((data: Services) => {
+        this.services = data;
+        this.rowHeight = 40 * this.services.length;
+      });
     }, error => {
         this.errorMessage=error.error.message;
     })
+  }
+
+  
+  onOptionChange(index: any){
+    const emp = this.selectEmp[index];
+    if(emp !== ''){
+      this.targetServices[index].idEmploye = emp;
+    }
+    else{
+      this.targetServices[index].idEmploye = undefined;
+    }
+    console.log(this.targetServices);
   }
 }

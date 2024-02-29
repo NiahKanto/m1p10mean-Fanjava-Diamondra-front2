@@ -5,6 +5,9 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { RDVDataUnit, RDVUnit, RDVDataTotal } from '../Types/RDV';
 import { Observable } from 'rxjs';
 import { Offres } from '../Types/Offre';
+import { MatDatepickerInputEvent } from '@angular/material/datepicker';
+import { RDV } from '../Types/RDV';
+import { DatePipe } from '@angular/common';
 
 @Injectable({
   providedIn: 'root'
@@ -20,11 +23,15 @@ export class HomeComponent {
   selectedOffreId: any;
   rdvDetails:  any;
   offreDetails:  any;
+  errorMessage = ''
   
-  constructor(private authService: AuthentificationService, private http: HttpClient){}
+  constructor(private authService: AuthentificationService, private http: HttpClient,private datePipe: DatePipe,){}
   rdv :any
   totalRdv: any;
   offres : Offres = []
+  selectedDate: Date|null = null;
+  selectedTime: string = '';
+
 
   fetchRDV() : Observable<any> {
     const headers = new HttpHeaders({
@@ -102,8 +109,46 @@ export class HomeComponent {
     return this.authService.isManager()
   }
 
-  
-  
+  onDateChange(event: MatDatepickerInputEvent<Date> ){
+    this.selectedDate = event.value;
+  }
+
+  sendData(credentials: RDV) : Observable<any> {
+    const headers = new HttpHeaders({
+      'Authorization': `Bearer ${this.authService.getToken()}`
+    });
+    return this.http.post('https://m1p10mean-fanjava-diamondra-back.vercel.app/rdv/add',credentials,{headers: headers});
+  }
+
+  addRDV(){
+    this.errorMessage ='';
+    if(this.selectedDate === null || this.selectedTime === ''){
+      this.errorMessage="Veuillez définir la date et l'heure";
+      return;
+    }
+    const paramService: any[] = [];
+    this.offreDetails.forEach(((service: { idService: any; prix:any; }) =>{
+      const s = {idService: service.idService, idEmploye: null, prix: service.prix };
+      paramService.push(s);
+    }))
+    console.log(paramService);
+    
+    const times = this.selectedTime.split(':');
+    this.selectedDate.setHours(parseInt(times[0]));
+    this.selectedDate.setMinutes(parseInt(times[1]));
+    const dateHeure = this.datePipe.transform(this.selectedDate,'yyyy-MM-dd HH:mm:ss')
+    const rdv: RDV ={
+      dateHeure: dateHeure,
+      service: paramService
+    };
+    this.sendData(rdv).subscribe(succes => {
+      this.errorMessage = '';
+      this.selectedDate = null;
+      this.selectedTime = '';
+    }, error => {
+        this.errorMessage=error.error.message;
+    })
+  }
 
 
 }

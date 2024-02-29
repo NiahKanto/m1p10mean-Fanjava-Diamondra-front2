@@ -28,7 +28,13 @@
                     <mat-icon >add_box</mat-icon>
                     <p>Glissez les services ici</p>
                 </div>
-                <div class="item" *ngFor="let item of targetServices" cdkDrag >{{item.nom}} - {{item.delai}}min - {{item.prix}}Ar</div>
+                <div class="item" *ngFor="let item of targetServices; let i=index" cdkDrag >
+                    {{item.nom}} - {{item.delai}}min - {{item.prix}}Ar
+                    <select [(ngModel)]="selectEmp[i]._id" (change)="onOptionChange(i)" >
+                        <option value="" >...</option>
+                        <option *ngFor="let emp of emps" value={{emp._id}} >{{ emp.nom }}</option>
+                    </select>
+                </div>
             </div>
         </mat-grid-tile>
     </mat-grid-list>

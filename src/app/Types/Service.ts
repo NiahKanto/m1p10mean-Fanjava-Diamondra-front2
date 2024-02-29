@@ -4,6 +4,7 @@ export interface Service{
     commission: number
     delai: number
     prix: number
+    idEmploye? : string
 }
 
 export type Services = Service[];

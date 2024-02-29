@@ -11,6 +11,7 @@ export interface UserInscription {
 }
 
 export interface User{
+    _id: string
     nom: string
     email: string
 }
