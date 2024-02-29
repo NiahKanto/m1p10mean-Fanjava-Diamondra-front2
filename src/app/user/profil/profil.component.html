@@ -1,16 +1,16 @@
 <div class="profil-container col-lg-12 col-md-12 col-xs-12 mt-3">
-    
+
     <div *ngIf="errorMessage !== ''" class="error-message">
       <p>{{ errorMessage }} </p>
       <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
     </div>
     <div class="profil-info">
-      
+
       <mat-card style="border: none;" >
         <h2>Mon profil <button mat-icon-button (click)="toggleEditMode()">
           <mat-icon>{{ editMode ? 'cancel' : 'edit' }}</mat-icon>
         </button></h2>
-        
+
         <mat-card-content>
           <div class="row">
             <div *ngIf="!editMode" class="d-flex flex-column justify-content-center">
@@ -23,14 +23,14 @@
                     <span>{{ utilisateur.email }}</span>
                 </div>
                 <div class="info-item">
-                    <strong>Rôles :</strong> 
-                    <mat-chip *ngFor="let role of utilisateur.roles">{{ role }}</mat-chip> 
+                    <strong>Rôles :</strong>
+                    <mat-chip *ngFor="let role of utilisateur.roles">{{ role }}</mat-chip>
                 </div>
                 <div class="info-item" *ngIf="!isClient()">
-                    <strong>Horaire de travail :</strong> 
+                    <strong>Horaire de travail :</strong>
                     <span>Du: lundi au samedi, de 8h a 17h</span>
                 </div>
-            </div> 
+            </div>
                 <div class="">
                   <div *ngIf="editMode">
                       <form #profileForm="ngForm" (ngSubmit)="saveChanges(profileForm)" class="col-md-12 d-flex flex-column justify-content-center">
@@ -45,14 +45,14 @@
                             </mat-form-field>
                           </div>
                         <button class="btn" type="submit"  >Enregistrer</button>
-                        
+
                       </form>
                       <br>
                       <button mat-raised-button  (click)="togglePasswordEditMode()" style="margin-left: 16px;width: 212px;" >Modifier mot de passe</button>
-                              
+
                   </div>
                 </div>
-     
+
               <!-- Formulaire de modification du mot de passe -->
               <div class="col-md-8" *ngIf="passwordEditMode">
                 <form #passwordForm="ngForm" (ngSubmit)="changePassword(passwordForm)">
@@ -67,9 +67,8 @@
               </div>
             </div>
         </mat-card-content>
-        
+
       </mat-card>
     </div>
   </div>
 
-  

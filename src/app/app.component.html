@@ -23,10 +23,10 @@
   </div>
   <div *ngIf="isLoggedIn() && !isInscription()">
     <app-header></app-header>
-    <div *ngIf="isClient()">
+    <div class="app-container" *ngIf="isClient()">
       <router-outlet ></router-outlet>
     </div>
-    <div *ngIf="!isClient()" >
+    <div  *ngIf="!isClient()" >
       <app-navbar></app-navbar>
     </div>
     <app-footer></app-footer>

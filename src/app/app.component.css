@@ -1,0 +1,7 @@
+.app-container{
+  height: 100vh;
+  background-image: url("../assets/bg_3.jpg");
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
