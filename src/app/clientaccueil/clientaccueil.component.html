@@ -44,55 +44,71 @@
 
 
         <!-- Colonne pour les détails du rendez-vous sélectionné -->
-        <div class="col-md-6 col-xs-12" *ngIf="rdvDetails && selectedRdvId">
-            <div class="card">
-            <div class="card-header dtls-header">
-                <h5  class="offer-name" >Détails du rendez-vous</h5>
-            </div>
-            <div class="card-body">
-                <ul class="list-group">
-                <li *ngFor="let service of rdvDetails" class="list-group-item">
-                    <div>
-                    <strong class="offer-name" ><a [routerLink]="['/ficheService', service.idService]">{{ service.nom }}</a></strong>
-                    <div class="d-flex">
-                      <div class="libelle" >
-                        <span class="libelle-fiche" >Delai : {{ service.delai }}</span>
-                        </div>
-                      <div class="libelle" >
-                      <span class="libelle-fiche">Commission : {{ service.commission }}</span>
-                      </div>
-                    </div>
-                  </div>
-
-                </li>
-                </ul>
-            </div>
-            </div>
+      <div class="col-md-6 col-xs-12" *ngIf="rdvDetails && selectedRdvId">
+        <div class="card">
+        <div class="card-header dtls-header">
+            <h5  class="offer-name" >Détails du rendez-vous</h5>
         </div>
-        <div class="col-md-6 col-xs-12 mt-2" *ngIf="offreDetails && selectedOffreId">
-            <div class="card">
-            <div class="card-header">
-                <h5 class="offer-name">Détails de l'Offre</h5>
-            </div>
-            <div class="card-body">
-                <ul class="list-group">
-                <li *ngFor="let service of offreDetails" class="list-group-item">
-                    <div class="" >
-                    <strong class="offer-name" >{{ service.nom }}</strong>
-                    <div class="d-flex">
-                      <div class="libelle" >
-                        <span class="libelle-fiche" >Delai : {{ service.delai }}</span>
-                        </div>
-                      <div class="libelle" >
-                      <span class="libelle-fiche">Commission : {{ service.commission }}</span>
-                      </div>
+        <div class="card-body">
+            <ul class="list-group">
+            <li *ngFor="let service of rdvDetails" class="list-group-item">
+                <div>
+                <strong class="offer-name" ><a [routerLink]="['/ficheService', service.idService]">{{ service.nom }}</a></strong>
+                <div class="d-flex">
+                  <div class="libelle" >
+                    <span class="libelle-fiche" >Delai : {{ service.delai }}</span>
                     </div>
-                    </div>
+                  <div class="libelle" >
+                  <span class="libelle-fiche">Prix : {{ service.prix }}Ar</span>
+                  </div>
+                </div>
+              </div>
 
-                </li>
-                </ul>
-            </div>
-            </div>
+            </li>
+            </ul>
+        </div>
+        </div>
+      </div>
+        <div class="col-md-6 col-xs-12 mt-2" *ngIf="offreDetails && selectedOffreId">
+        <div class="card">
+        <div class="card-header">
+            <h5 class="offer-name">Détails de l'Offre</h5>
+        </div>
+        <div class="card-body">
+            <ul class="list-group">
+            <li *ngFor="let service of offreDetails" class="list-group-item">
+                <div class="" >
+                <strong class="offer-name" >{{ service.nom }}</strong>
+                <div class="d-flex">
+                  <div class="libelle" >
+                    <span class="libelle-fiche" >Delai : {{ service.delai }}</span>
+                    </div>
+                          <div class="libelle" >
+                          <span class="libelle-fiche">Prix : {{ service.prix }}Ar</span>
+                          </div>
+                </div>
+                <strong>Prendre un rendez-vous :</strong>
+                <div *ngIf="errorMessage !== ''" class="error-message">
+                    {{ errorMessage }}
+                </div>
+                <mat-form-field style="width: 100%;">
+                    <input matInput [matDatepicker]="picker" [(ngModel)]="selectedDate" (dateChange)="onDateChange($event)" readonly>
+                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                </mat-form-field>
+                {{' '}}
+                <mat-form-field style="width: 100%;">
+                    <input [format]="24" matInput [ngxTimepicker]="timerPicker" [(ngModel)]="selectedTime" [disableClick]="true" readonly >
+                    <ngx-material-timepicker-toggle matSuffix [for]="timerPicker"></ngx-material-timepicker-toggle>
+                    <ngx-material-timepicker #timerPicker></ngx-material-timepicker>
+                </mat-form-field><br>
+                <button class="btn" mat-button (click)="addRDV()" >Enregistrer</button>
+                </div>
+
+            </li>
+            </ul>
+        </div>
+        </div>
         </div>
 
 
