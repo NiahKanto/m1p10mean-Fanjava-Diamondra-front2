@@ -33,5 +33,8 @@ export class AppComponent {
     }
     return false;
   }
+  isClient(){
+    return this.authService.isClient()
+  }
 
 }

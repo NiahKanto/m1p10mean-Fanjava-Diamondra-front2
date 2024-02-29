@@ -2,40 +2,28 @@
     <div class="row d-flex justify-content-center">
         <div class="home p-3 col-md-12 col-xs-12">
             <div *ngIf="isClient()" class="d-flex mt-3" >
-                <div *ngIf="rdv" class="rappel-container">
-                  <h4 class="rappel-card-title" >Mes rendez-vous</h4>
-                  <mat-card  class="rappel-card" >
-                        <mat-card-header>
-                            <div mat-card-avatar class="avatar" >
-                                <mat-icon>event</mat-icon>
+                <section class="hero-wrap js-fullheight" style="background-image: url('images/bg_2.jpg');" data-stellar-background-ratio="0.5">
+                    <div class="overlay"></div>
+                    <div class="container">
+                      <div class="row no-gutters slider-text js-fullheight align-items-center justify-content-center">
+                        <div class="col-md-10 ftco-animate text-center">
+                            <div class="icon">
+                                <span class="flaticon-lotus"></span>
                             </div>
-                            <mat-card-title>Prochain rendez-vous</mat-card-title>
-                            <mat-card-subtitle>{{ rdv.dateHeure | date:'dd-MM-yyyy' }} à {{ rdv.dateHeure | date:'HH:mm' }}</mat-card-subtitle>
-                            <mat-card-subtitle>à un prix total de: {{ totalRdv.totalMontant }}Ar </mat-card-subtitle>
-                        </mat-card-header>
-                        <mat-card-actions>
-                            <button mat-button color="primary" (click)="voirDetailsRDV(rdv._id)">Voir Détails</button>
-                          </mat-card-actions>
-                    </mat-card>
-                </div>
-                <div *ngIf="offres" class="rappel-container">
-                    <h4 class="rappel-card-title" >Les offres spéciaux</h4>
-                    <mat-card *ngFor="let offre of offres" class="rappel-card" >
-                        <mat-card-header>
-                            <div mat-card-avatar class="avatar avatar2" >
-                                <mat-icon>event</mat-icon>
+                          <h1 class="hero-title" >MadaManja</h1>
+                          <div class="row justify-content-center">
+                              <div class="col-md-12 mb-3">
+                                  <p>Institut de beauté en ligne, plus proche de vous, plus proche de votre bien-etre</p>
+                              </div>
                             </div>
-                            <mat-card-title>{{offre.nom}}</mat-card-title>
-                                <mat-card-subtitle class="mb-3" >Du {{ offre.dateDebut | date:'dd-MM-yyyy' }} au {{offre.dateFin | date:'dd-MM-yyyy'}} à un prix imbattable de {{offre.prixTotal}}</mat-card-subtitle  >
-                                <mat-card-subtitle>
-                                    {{ offre.description }}
-                                </mat-card-subtitle>
-                        </mat-card-header>
-                        <mat-card-actions>
-                            <button mat-button color="primary" (click)="voirDetailsOffre(offre._id)">Voir Détails</button>
-                          </mat-card-actions>
-                    </mat-card>
-                </div>
+                          <p>
+                              <a href="/rdv" class="btn btn-primary p-3 px-5 py-4 mr-md-2">Prendre rendez-vous</a>
+                              <a href="/profile" class="btn btn-outline-primary p-3 px-5 py-4 ml-md-2">Voir mon profil</a>
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </section>
             </div>
             <div *ngIf="isEmploye()" >
                 <app-rdv-liste-component></app-rdv-liste-component>
@@ -115,8 +103,14 @@
 
     </div>
     <div *ngIf="isManager()" >
-       <app-stat-rdv></app-stat-rdv>
-       <app-stat-paiement></app-stat-paiement>
-       <app-stat-benefice></app-stat-benefice>
+       <div class="custom-box">
+        <app-stat-rdv></app-stat-rdv>
+       </div>
+       <div class="custom-box">
+        <app-stat-paiement></app-stat-paiement>
+       </div>
+       <div class="custom-box">
+        <app-stat-benefice></app-stat-benefice>
+       </div>
     </div>
 </div>

@@ -15,12 +15,15 @@ import { SharedService } from '../services/shared.service';
 })
 export class HeaderComponent {
   constructor(private authService: AuthentificationService, private router: Router,private sharedService: SharedService){}
-  
+
   logout():void{
     this.authService.logout();
     this.router.navigate(['/']);
   }
   toggleDiv() {
     this.sharedService.toggleDivVisibility();
+  }
+  isClient(){
+    return this.authService.isClient()
   }
 }

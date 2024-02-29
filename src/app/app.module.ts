@@ -58,6 +58,7 @@ import { StatPaiementComponent } from './stat-paiement/stat-paiement.component';
 import { GestionDepenseComponent } from './gestion-depense/gestion-depense.component';
 import { DialogAjoutDepenseComponent } from './dialog-ajout-depense/dialog-ajout-depense.component';
 import { StatBeneficeComponent } from './stat-benefice/stat-benefice.component';
+import { ClientaccueilComponent } from './clientaccueil/clientaccueil.component';
 
 
 @NgModule({
@@ -91,6 +92,7 @@ import { StatBeneficeComponent } from './stat-benefice/stat-benefice.component';
     GestionDepenseComponent,
     DialogAjoutDepenseComponent,
     StatBeneficeComponent,
+    ClientaccueilComponent,
   
   ],
   imports: [

@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AuthGuardManager } from './auth.guard';
 import { HomeComponent } from './home/home.component'; 
+import { ClientaccueilComponent } from './clientaccueil/clientaccueil.component'; 
 import { RdvComponent } from './rdv/rdv.component';
 import { RDVhistoriqueComponent } from './rdv//historique/rdv-historique.component'; 
 import { RDVlisteComponent } from './rdv/liste-today/rdv-liste.component'; 
@@ -34,6 +35,7 @@ const routes: Routes = [
   { path: 'offres', component: GestionOffreComponent, canActivate: [AuthGuardManager]},
   { path: 'profil', component: ProfilComponent},
   { path: 'depenses', component: GestionDepenseComponent, canActivate: [AuthGuardManager]},
+  { path: 'accueilClientBis', component: ClientaccueilComponent},
 ];
 
 

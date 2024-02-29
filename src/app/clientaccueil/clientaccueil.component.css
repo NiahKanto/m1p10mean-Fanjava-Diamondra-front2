@@ -7,13 +7,17 @@
     text-align: left; /* Alignement du texte à gauche */
     margin-bottom: 20px; /* Marge en bas pour l'espacement entre les cartes */
     height: 100%;
+    border: 2px solid #2a9b70;
+    box-shadow: 0 0 2px 3px rgba(117, 117, 117, 0.25) !important;
   }
   .rappel-container{
     margin-right: 16px;
+
   }
   .rappel-card-title{
       font-size: 24px !important;
       font-weight:500 !important;
+      color: #333;
   }
   .rappel-card-title:first-child{
     text-align: start;
@@ -83,21 +87,3 @@
   background-color: #dce1dd !important;
   color: #333 !important;
 }
-
-.custom-box{
-  padding: 20px;
-  border-radius: 16px;
-    background-color: #ffffff;
-    border: 2px solid #2a9b70;
-    box-shadow: 0 0 4px 6px rgba(117, 117, 117, 0.25);
-    margin-bottom: 24px;
-}
-.hero-title{
-  font-size: 40px;
-  font-weight: 100;
-}
-
-.error-message{
-  width: 100%;
-}
-

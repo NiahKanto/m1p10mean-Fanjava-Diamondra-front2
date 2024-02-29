@@ -17,8 +17,8 @@ import { MatSnackBar, MatSnackBarHorizontalPosition, MatSnackBarVerticalPosition
 })
 export class RdvComponent implements OnInit{
   constructor(
-    private http: HttpClient, 
-    private authService: AuthentificationService, 
+    private http: HttpClient,
+    private authService: AuthentificationService,
     private datePipe: DatePipe,
     private _snackBar: MatSnackBar
   ){}
@@ -37,7 +37,7 @@ export class RdvComponent implements OnInit{
 
   drop(event: CdkDragDrop<Services>){
     if(event.previousContainer !== event.container){
-        transferArrayItem(event.previousContainer.data, event.container.data,event.previousIndex,event.currentIndex);     
+        transferArrayItem(event.previousContainer.data, event.container.data,event.previousIndex,event.currentIndex);
     }
   }
 
