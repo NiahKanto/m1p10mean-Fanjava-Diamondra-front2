@@ -87,7 +87,11 @@
                           <span class="libelle-fiche">Prix : {{ service.prix }}Ar</span>
                           </div>
                 </div>
-                <strong>Prendre un rendez-vous :</strong>
+                
+                </div>
+
+            </li>
+            <strong>Prendre un rendez-vous :</strong>
                 <div *ngIf="errorMessage !== ''" class="error-message">
                     {{ errorMessage }}
                 </div>
@@ -103,9 +107,6 @@
                     <ngx-material-timepicker #timerPicker></ngx-material-timepicker>
                 </mat-form-field><br>
                 <button class="btn" mat-button (click)="addRDV()" >Enregistrer</button>
-                </div>
-
-            </li>
             </ul>
         </div>
         </div>
