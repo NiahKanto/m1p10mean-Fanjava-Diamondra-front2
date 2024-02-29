@@ -90,3 +90,8 @@
   background-color: #dce1dd !important;
   color: #333 !important;
 }
+.card-body{
+  max-height: 50vh !important;
+  /* overflow: hidden; */
+  overflow-x: scroll;
+}
