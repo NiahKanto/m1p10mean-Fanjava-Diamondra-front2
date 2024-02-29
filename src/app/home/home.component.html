@@ -2,9 +2,9 @@
     <div class="row d-flex justify-content-center">
         <div class="home p-3 col-md-12 col-xs-12">
             <div *ngIf="isClient()" class="d-flex mt-3" >
-                <div class="rappel-container">
-                  <mat-card *ngIf="rdv" class="rappel-card" >
-                    <h4 class="rappel-card-title" >Mes rendez-vous</h4>
+                <div *ngIf="rdv" class="rappel-container">
+                  <h4 class="rappel-card-title" >Mes rendez-vous</h4>
+                  <mat-card  class="rappel-card" >
                         <mat-card-header>
                             <div mat-card-avatar class="avatar" >
                                 <mat-icon>event</mat-icon>
@@ -18,7 +18,7 @@
                           </mat-card-actions>
                     </mat-card>
                 </div>
-                <div class="rappel-container">
+                <div *ngIf="offres" class="rappel-container">
                     <h4 class="rappel-card-title" >Les offres spéciaux</h4>
                     <mat-card *ngFor="let offre of offres" class="rappel-card" >
                         <mat-card-header>
