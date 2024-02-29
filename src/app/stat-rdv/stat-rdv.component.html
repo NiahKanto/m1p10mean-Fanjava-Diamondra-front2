@@ -1,12 +1,32 @@
 <h2 class="list-title">Nombre de rendez-vous par mois de l'année</h2>
-<ngx-charts-bar-vertical
-    [results]="single"
-    [xAxis]="showXAxis"
-    [yAxis]="showYAxis"
-    [legend]="showLegend"
-    [showXAxisLabel]="showXAxisLabel"
-    [showYAxisLabel]="showYAxisLabel"
-    [xAxisLabel]="xAxisLabel"
-    [yAxisLabel]="yAxisLabel"
-    >    
-</ngx-charts-bar-vertical>
+<div>
+    <ngx-charts-bar-vertical
+        [results]="single"
+        [xAxis]="showXAxis"
+        [yAxis]="showYAxis"
+        [legend]="showLegend"
+        [showXAxisLabel]="showXAxisLabel"
+        [showYAxisLabel]="showYAxisLabel"
+        [xAxisLabel]="xAxisLabel"
+        [yAxisLabel]="yAxisLabel"
+        (select)="onBarSelect($event)"
+        >    
+    </ngx-charts-bar-vertical>
+</div>
+
+<table class="table">
+    <thead>
+      <tr>
+        <th>Date</th>
+        <th>Total</th>
+      </tr>
+    </thead>
+    <tbody>
+      <ng-container *ngFor="let day of dayValues">
+          <tr >
+              <td>{{ day._id.day }}-{{ day._id.month }}-{{ day._id.year }}</td>
+              <td>{{ day.total }}</td>
+          </tr>
+      </ng-container>
+    </tbody>
+  </table>

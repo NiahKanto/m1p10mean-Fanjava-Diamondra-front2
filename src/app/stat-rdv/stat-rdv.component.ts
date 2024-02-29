@@ -11,6 +11,7 @@ import { Observable } from 'rxjs';
 })
 export class StatRDVComponent {
   single: any[] = [];
+  dayValues: any[] = [];
 
   showXAxis = true;
   showYAxis = true;
@@ -31,6 +32,13 @@ export class StatRDVComponent {
     return  this.http.get<any>('https://m1p10mean-fanjava-diamondra-back.vercel.app/rdv/statRDVMonth',{headers: headers});
   }
 
+  fetchStatDay(month: number) : Observable<any> {
+    const headers = new HttpHeaders({
+      'Authorization': `Bearer ${this.authService.getToken()}`
+    });
+    return  this.http.get<any>('https://m1p10mean-fanjava-diamondra-back.vercel.app/rdv/statRDVDay/'+month,{headers: headers});
+  }
+
   ngOnInit(){
     this.fetchStat().subscribe((data: any) => {
       const newSingle = [];
@@ -44,6 +52,14 @@ export class StatRDVComponent {
         }
       }
       this.single = newSingle;
+    });
+  }
+
+  onBarSelect(event: any){
+    const dates = event.name.split('-');
+    const m = parseInt(dates[0]);
+    this.fetchStatDay(m).subscribe((data: any) => {
+      this.dayValues = data;
     });
   }
 
